@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cf67ltys0dqk1"]
+
+[ext_resource type="Texture2D" uid="uid://bfhohhem28pht" path="res://assets/ui/prueba/papo.jpg" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://c0fwiirhpx5gh" path="res://assets/ui/prueba/image-removebg-preview.png" id="2_0hol4"]
+[ext_resource type="Script" uid="uid://cdy3rpjyr138o" path="res://image_removebg_preview.gd" id="3_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bh67gw1qaxnkc" path="res://assets/ui/prueba/pngtree-cute-fox-head-in-pixel-art-style-png-image_15073492.png" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://cpxivybwqqmng" path="res://pngtree_cute_fox_head_in_pixel_art_style_png_image_15073492.gd" id="5_kdubu"]
+
+[node name="Node2D" type="Node2D" unique_id=11685738]
+
+[node name="Papo" type="Sprite2D" parent="." unique_id=2080462158]
+position = Vector2(553, 341.00003)
+scale = Vector2(1.3921568, 1.2394366)
+texture = ExtResource("1_epypp")
+
+[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=1669313951]
+position = Vector2(853, 531)
+scale = Vector2(0.3068182, 0.3275862)
+texture = ExtResource("2_0hol4")
+script = ExtResource("3_q6r6c")
+
+[node name="PngtreeCuteFoxHeadInPixelArtStylePngImage15073492" type="Sprite2D" parent="." unique_id=1380484004]
+position = Vector2(244, 208)
+scale = Vector2(0.038999945, 0.042199906)
+texture = ExtResource("4_q6r6c")
+script = ExtResource("5_kdubu")
