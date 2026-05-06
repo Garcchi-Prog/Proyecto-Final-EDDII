@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b88khmshm8mtk"]
+
+[ext_resource type="Texture2D" uid="uid://cfy5s1low0p25" path="res://resources/dialogues/textbox/text-box-plantilla def.png" id="1_rcaex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcaex"]
+atlas = ExtResource("1_rcaex")
+region = Rect2(0, 0, 584, 350)
+
+[node name="Control" type="Control" unique_id=160735546]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextBox" type="NinePatchRect" parent="." unique_id=338470267]
+layout_mode = 0
+offset_right = 584.0
+offset_bottom = 350.0
+texture = SubResource("AtlasTexture_rcaex")
+region_rect = Rect2(14.666687, 47.333336, 552, 236)

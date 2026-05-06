@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cgglrodpgh6bb"
+path="res://.godot/imported/Prologo.dialogue-fdc1235b66a8bcc596e7b853011fc6f6.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/Prologo.dialogue"
+dest_files=["res://.godot/imported/Prologo.dialogue-fdc1235b66a8bcc596e7b853011fc6f6.tres"]
+
+[params]
+
+defaults=true
