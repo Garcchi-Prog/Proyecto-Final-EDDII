@@ -1,9 +1,57 @@
-[gd_scene format=3 uid="uid://cevr5lxye5odv"]
+[gd_scene format=3 uid="uid://dkprbuuuf617y"]
 
-[node name="Control" type="Control" unique_id=2051554270]
+[ext_resource type="Texture2D" uid="uid://0en833tp8wj0" path="res://assets/ui/buttons/Btn_menu_gray.png" id="3_btn_gray"]
+[ext_resource type="Texture2D" uid="uid://8euxfwuurtie" path="res://assets/ui/buttons/Btn_menu_red.png" id="4_btn_red"]
+[ext_resource type="Script" uid="uid://d3yojn2fu5wf7" path="res://scripts/ui/main_menu.gd" id="5_main_script"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_247la"]
+load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
+
+[node name="MainMenu" type="Control" unique_id=1525494159]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("5_main_script")
+
+[node name="bg" type="TextureRect" parent="." unique_id=909823647]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("CompressedTexture2D_247la")
+expand_mode = 1
+
+[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=260590093]
+
+[node name="sfx_hover" type="AudioStreamPlayer2D" parent="." unique_id=778865427]
+
+[node name="sfx_click" type="AudioStreamPlayer2D" parent="." unique_id=1335556528]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649916049]
+root_node = NodePath("../sfx_click")
+
+[node name="menu_container" type="VBoxContainer" parent="." unique_id=712928972]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 200.0
+offset_right = 2044.0
+offset_bottom = 3424.0
+scale = Vector2(0.12, 0.12)
+
+[node name="btn_multiplayer" type="TextureButton" parent="menu_container" unique_id=1219444622]
+layout_mode = 2
+texture_normal = ExtResource("3_btn_gray")
+texture_hover = ExtResource("4_btn_red")
+
+[node name="btn_options" type="TextureButton" parent="menu_container" unique_id=922780842]
+layout_mode = 2
+texture_normal = ExtResource("3_btn_gray")
+texture_hover = ExtResource("4_btn_red")
+
+[node name="btn_help" type="TextureButton" parent="menu_container" unique_id=387710187]
+layout_mode = 2
+texture_normal = ExtResource("3_btn_gray")
+texture_hover = ExtResource("4_btn_red")
+
+[node name="btn_exit" type="TextureButton" parent="menu_container" unique_id=532434401]
+layout_mode = 2
+texture_normal = ExtResource("3_btn_gray")
+texture_hover = ExtResource("4_btn_red")
