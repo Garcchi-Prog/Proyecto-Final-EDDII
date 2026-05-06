@@ -14,8 +14,8 @@ script = ExtResource("5_main_script")
 
 [node name="bg" type="TextureRect" parent="." unique_id=909823647]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("CompressedTexture2D_247la")
 expand_mode = 1
 
