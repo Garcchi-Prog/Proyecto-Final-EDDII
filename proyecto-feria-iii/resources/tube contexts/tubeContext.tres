@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TubeContext" format=3 uid="uid://duj4dusb5nggy"]
+
+[ext_resource type="Script" uid="uid://t4pe7yqc3pnt" path="res://addons/tube/tube_context.gd" id="1_gibi2"]
+
+[resource]
+script = ExtResource("1_gibi2")
+metadata/_custom_type_script = "uid://t4pe7yqc3pnt"

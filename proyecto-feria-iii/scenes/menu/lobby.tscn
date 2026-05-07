@@ -1,7 +1,35 @@
 [gd_scene format=3 uid="uid://lyy28ryrykc7"]
 
+[ext_resource type="Script" uid="uid://42qdt4vv8psl" path="res://scripts/ui/lobby.gd" id="1_5k83l"]
+[ext_resource type="Texture2D" uid="uid://4fhatc66aufs" path="res://icon.svg" id="1_720y1"]
+[ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="3_6s1bq"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yk8q6"]
 load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k83l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s1bq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="Lobby" type="Control" unique_id=1469162475]
 layout_mode = 3
@@ -10,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5k83l")
 
 [node name="bg" type="TextureRect" parent="." unique_id=2112512103]
 layout_mode = 1
@@ -35,4 +64,151 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1106897383]
 layout_mode = 2
-color = Color(0.13333334, 0.13333334, 0.13333334, 0.827451)
+color = Color(0.16402912, 1.364958e-06, 7.7310017e-07, 0.85882354)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect" unique_id=1394620061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=323378486]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer" unique_id=2024346541]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" unique_id=87224021]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Create Room" type="Button" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=972806960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Create Room"
+
+[node name="New Id" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1654294466]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k83l")
+text = "                 "
+vertical_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" unique_id=498216946]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" unique_id=793278141]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Join Room" type="Button" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1174198948]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Join Room"
+
+[node name="Room Id" type="LineEdit" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1828592482]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+placeholder_text = "ID"
+alignment = 1
+max_length = 40
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=1788504030]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2" unique_id=763674357]
+layout_mode = 2
+theme_override_constants/separation = 600
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=379476810]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer" unique_id=779433131]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Jugador 1" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1500817581]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
+text = "Servidor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1181711687]
+layout_mode = 2
+texture = ExtResource("1_720y1")
+expand_mode = 5
+
+[node name="Rol" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer" unique_id=951865431]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=838906899]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2" unique_id=1016657492]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Jugador 2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=93478142]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
+text = " Cliente "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1918945091]
+layout_mode = 2
+texture = ExtResource("1_720y1")
+expand_mode = 5
+
+[node name="Rol" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=2137339054]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
+text = "---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ColorRect/VBoxContainer" unique_id=1920283157]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer/ColorRect/VBoxContainer/CenterContainer" unique_id=1206416941]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+disabled = true
+text = "Start Game"
+
+[node name="TubeClient" type="Node" parent="." unique_id=157956257]
+script = ExtResource("3_6s1bq")
+metadata/_custom_type_script = "uid://cy006uvidc4y"
+
+[connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/Create Room" to="." method="_on_create_room_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Join Room" to="." method="_on_join_room_pressed"]
