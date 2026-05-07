@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bfhohhem28pht" path="res://assets/ui/prueba/papo.jpg" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://c0fwiirhpx5gh" path="res://assets/ui/prueba/image-removebg-preview.png" id="2_0hol4"]
-[ext_resource type="Script" uid="uid://cdy3rpjyr138o" path="res://image_removebg_preview.gd" id="3_q6r6c"]
+[ext_resource type="Script" uid="uid://cdy3rpjyr138o" path="res://scripts/prueba detective/image_removebg_preview.gd" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bh67gw1qaxnkc" path="res://assets/ui/prueba/pngtree-cute-fox-head-in-pixel-art-style-png-image_15073492.png" id="4_q6r6c"]
-[ext_resource type="Script" uid="uid://cpxivybwqqmng" path="res://pngtree_cute_fox_head_in_pixel_art_style_png_image_15073492.gd" id="5_kdubu"]
+[ext_resource type="Script" uid="uid://cpxivybwqqmng" path="res://scripts/prueba detective/pngtree_cute_fox_head_in_pixel_art_style_png_image_15073492.gd" id="5_kdubu"]
 
 [node name="Node2D" type="Node2D" unique_id=11685738]
 
