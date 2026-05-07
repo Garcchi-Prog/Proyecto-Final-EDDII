@@ -10,7 +10,6 @@ extends Control
 @onready var btn_credits = $btn_credits
 @onready var btn_exit = $btn_exit
 
-
 func _ready():
 
 	if music:
@@ -28,8 +27,6 @@ func _ready():
 	btn_options.pressed.connect(_on_options_pressed)
 	btn_credits.pressed.connect(_on_credits_pressed)
 	btn_exit.pressed.connect(_on_exit_pressed)
-
-
 
 func _connect_button(button):
 
@@ -66,8 +63,6 @@ func _on_button_hover(button):
 	if label:
 		label.modulate = Color(1, 0.2, 0.2)
 
-
-
 func _on_button_exit(button):
 
 	var tween = create_tween()
@@ -90,14 +85,11 @@ func _on_button_exit(button):
 		label.modulate = Color.WHITE
 
 func _on_multiplayer_pressed():
-
 	_play_click()
 
 	get_tree().change_scene_to_file(
 		"res://scenes/menu/lobby.tscn"
 	)
-
-
 
 func _on_options_pressed():
 
@@ -107,8 +99,6 @@ func _on_options_pressed():
 		"res://scenes/menu/options_menu.tscn"
 	)
 
-
-
 func _on_credits_pressed():
 
 	_play_click()
@@ -116,8 +106,6 @@ func _on_credits_pressed():
 	get_tree().change_scene_to_file(
 		"res://scenes/menu/credits_menu.tscn"
 	)
-
-
 
 func _on_exit_pressed():
 

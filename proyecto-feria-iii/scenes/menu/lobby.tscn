@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://lyy28ryrykc7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yk8q6"]
+load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
+
+[node name="Lobby" type="Control" unique_id=1469162475]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="." unique_id=2112512103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_yk8q6")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2002508735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1106897383]
+layout_mode = 2
+color = Color(0.13333334, 0.13333334, 0.13333334, 0.827451)
