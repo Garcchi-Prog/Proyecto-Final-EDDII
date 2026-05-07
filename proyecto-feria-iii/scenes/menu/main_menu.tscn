@@ -2,10 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://0en833tp8wj0" path="res://assets/ui/buttons/Btn_menu_gray.png" id="3_btn_gray"]
 [ext_resource type="Texture2D" uid="uid://8euxfwuurtie" path="res://assets/ui/buttons/Btn_menu_red.png" id="4_btn_red"]
+[ext_resource type="Texture2D" uid="uid://nfqbxjrq5igg" path="res://assets/ui/backgorunds/Game_logo.png" id="4_kiqgm"]
+[ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="4_xn6kt"]
+[ext_resource type="Texture2D" uid="uid://capoxovxyavel" path="res://assets/ui/icons/icn_multipayer.png" id="5_isoef"]
 [ext_resource type="Script" uid="uid://d3yojn2fu5wf7" path="res://scripts/ui/main_menu.gd" id="5_main_script"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_247la"]
 load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
+
+[sub_resource type="Animation" id="Animation_247la"]
+resource_name = "intro"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kiqgm"]
+_data = {
+&"intro": SubResource("Animation_247la")
+}
 
 [node name="MainMenu" type="Control" unique_id=1525494159]
 layout_mode = 3
@@ -27,31 +38,131 @@ expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649916049]
 root_node = NodePath("../sfx_click")
+libraries/ = SubResource("AnimationLibrary_kiqgm")
 
-[node name="menu_container" type="VBoxContainer" parent="." unique_id=712928972]
+[node name="btn_multiplayer" type="TextureButton" parent="." unique_id=1219444622]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 452.0
+offset_right = 588.0
+offset_bottom = 615.0
+texture_normal = ExtResource("3_btn_gray")
+texture_hover = ExtResource("4_btn_red")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="txt_multiplayer" type="Label" parent="btn_multiplayer" unique_id=1503676063]
 layout_mode = 1
-offset_left = 30.0
-offset_top = 200.0
-offset_right = 2044.0
-offset_bottom = 3424.0
-scale = Vector2(0.12, 0.12)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 49.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.05235988
+theme_override_fonts/font = ExtResource("4_xn6kt")
+theme_override_font_sizes/font_size = 34
+text = "MULTIPLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="btn_multiplayer" type="TextureButton" parent="menu_container" unique_id=1219444622]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="btn_multiplayer" unique_id=46618252]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 33.0
+offset_right = 168.0
+offset_bottom = 157.0
+texture = ExtResource("5_isoef")
+expand_mode = 1
+
+[node name="btn_options" type="TextureButton" parent="." unique_id=922780842]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 610.0
+offset_right = 611.0
+offset_bottom = 757.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="btn_options" type="TextureButton" parent="menu_container" unique_id=922780842]
-layout_mode = 2
+[node name="txt_options" type="Label" parent="btn_options" unique_id=698772668]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.05235988
+theme_override_fonts/font = ExtResource("4_xn6kt")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_credits" type="TextureButton" parent="." unique_id=387710187]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 750.0
+offset_right = 635.0
+offset_bottom = 900.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="btn_help" type="TextureButton" parent="menu_container" unique_id=387710187]
-layout_mode = 2
+[node name="txt_credits" type="Label" parent="btn_credits" unique_id=1258247340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 43.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.05235988
+theme_override_fonts/font = ExtResource("4_xn6kt")
+theme_override_font_sizes/font_size = 30
+text = "CREDITS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_exit" type="TextureButton" parent="." unique_id=532434401]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 892.0
+offset_right = 673.0
+offset_bottom = 1056.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="btn_exit" type="TextureButton" parent="menu_container" unique_id=532434401]
-layout_mode = 2
-texture_normal = ExtResource("3_btn_gray")
-texture_hover = ExtResource("4_btn_red")
+[node name="txt_exit" type="Label" parent="btn_exit" unique_id=1713975462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 20.0
+offset_right = -16.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.08726646
+theme_override_fonts/font = ExtResource("4_xn6kt")
+theme_override_font_sizes/font_size = 30
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=499997165]
+position = Vector2(375, 297)
+scale = Vector2(0.6373698, 0.6308594)
+texture = ExtResource("4_kiqgm")
