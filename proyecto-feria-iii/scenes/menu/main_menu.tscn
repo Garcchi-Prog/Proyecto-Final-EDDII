@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dkprbuuuf617y"]
 
+[ext_resource type="AudioStream" uid="uid://bemeg1086311v" path="res://assets/audio/Closing_Argument.mp3" id="2_d4hu8"]
+[ext_resource type="AudioStream" uid="uid://qxhgptqmfprm" path="res://assets/audio/166186__drminky__menu-screen-mouse-over.wav" id="2_qgo02"]
 [ext_resource type="Texture2D" uid="uid://0en833tp8wj0" path="res://assets/ui/buttons/Btn_menu_gray.png" id="3_btn_gray"]
+[ext_resource type="AudioStream" uid="uid://dhi8w1nby7qlu" path="res://assets/audio/729216__techspiredminds__upgradeselect-ui (1).wav" id="3_vovv2"]
 [ext_resource type="Texture2D" uid="uid://8euxfwuurtie" path="res://assets/ui/buttons/Btn_menu_red.png" id="4_btn_red"]
 [ext_resource type="Texture2D" uid="uid://nfqbxjrq5igg" path="res://assets/ui/backgorunds/Game_logo.png" id="4_kiqgm"]
 [ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="4_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://capoxovxyavel" path="res://assets/ui/icons/icn_multipayer.png" id="5_isoef"]
 [ext_resource type="Script" uid="uid://d3yojn2fu5wf7" path="res://scripts/ui/main_menu.gd" id="5_main_script"]
+[ext_resource type="Texture2D" uid="uid://i5mn0len7kgx" path="res://assets/ui/icons/icn_options.png" id="8_bbqo6"]
+[ext_resource type="Texture2D" uid="uid://kup5dgh6tdxi" path="res://assets/ui/icons/icn_credits.png" id="9_d4hu8"]
+[ext_resource type="Texture2D" uid="uid://tg50mg2qgjkg" path="res://assets/ui/icons/icn_exit.png" id="10_p1nwe"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_247la"]
 load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
@@ -40,10 +46,14 @@ texture = SubResource("CompressedTexture2D_247la")
 expand_mode = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="." unique_id=260590093]
+stream = ExtResource("2_d4hu8")
+volume_db = -18.07
 
 [node name="sfx_hover" type="AudioStreamPlayer2D" parent="." unique_id=778865427]
+stream = ExtResource("2_qgo02")
 
 [node name="sfx_click" type="AudioStreamPlayer2D" parent="." unique_id=1335556528]
+stream = ExtResource("3_vovv2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649916049]
 root_node = NodePath("../sfx_click")
@@ -51,10 +61,10 @@ libraries/ = SubResource("AnimationLibrary_kiqgm")
 
 [node name="btn_multiplayer" type="TextureButton" parent="." unique_id=1219444622]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 452.0
-offset_right = 588.0
-offset_bottom = 615.0
+offset_left = 89.5
+offset_top = 378.0
+offset_right = 574.5
+offset_bottom = 541.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
 ignore_texture_size = true
@@ -89,10 +99,10 @@ expand_mode = 1
 
 [node name="btn_options" type="TextureButton" parent="." unique_id=922780842]
 layout_mode = 0
-offset_left = 161.0
-offset_top = 610.0
-offset_right = 611.0
-offset_bottom = 757.0
+offset_left = 147.5
+offset_top = 536.0
+offset_right = 597.5
+offset_bottom = 683.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
 ignore_texture_size = true
@@ -114,12 +124,21 @@ text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="btn_options" unique_id=2104321601]
+layout_mode = 0
+offset_left = 40.5
+offset_top = 27.0
+offset_right = 158.5
+offset_bottom = 153.0
+texture = ExtResource("8_bbqo6")
+expand_mode = 1
+
 [node name="btn_credits" type="TextureButton" parent="." unique_id=387710187]
 layout_mode = 0
-offset_left = 212.0
-offset_top = 750.0
-offset_right = 635.0
-offset_bottom = 900.0
+offset_left = 198.5
+offset_top = 676.0
+offset_right = 621.5
+offset_bottom = 826.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
 ignore_texture_size = true
@@ -142,12 +161,21 @@ text = "CREDITS
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="btn_credits" unique_id=124566570]
+layout_mode = 0
+offset_left = 28.5
+offset_top = 32.0
+offset_right = 146.5
+offset_bottom = 152.0
+texture = ExtResource("9_d4hu8")
+expand_mode = 1
+
 [node name="btn_exit" type="TextureButton" parent="." unique_id=532434401]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 892.0
-offset_right = 673.0
-offset_bottom = 1056.0
+offset_left = 253.5
+offset_top = 818.0
+offset_right = 659.5
+offset_bottom = 982.0
 texture_normal = ExtResource("3_btn_gray")
 texture_hover = ExtResource("4_btn_red")
 ignore_texture_size = true
@@ -158,9 +186,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -16.0
+offset_left = -15.0
 offset_top = 20.0
-offset_right = -16.0
+offset_right = -15.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -171,8 +199,17 @@ text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="btn_exit" unique_id=1180321214]
+layout_mode = 0
+offset_left = 17.5
+offset_top = 32.0
+offset_right = 154.5
+offset_bottom = 171.0
+texture = ExtResource("10_p1nwe")
+expand_mode = 1
+
 [node name="GameLogo" type="Sprite2D" parent="." unique_id=499997165]
-position = Vector2(375, 297)
+position = Vector2(359, 223)
 scale = Vector2(0.6373698, 0.6308594)
 texture = ExtResource("4_kiqgm")
 
