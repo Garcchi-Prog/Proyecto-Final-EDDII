@@ -96,7 +96,7 @@ func _on_options_pressed():
 	_play_click()
 
 	get_tree().change_scene_to_file(
-		"res://scenes/menu/options_menu.tscn"
+		"res://scenes/menu/options.tscn"
 	)
 
 func _on_credits_pressed():
@@ -104,7 +104,7 @@ func _on_credits_pressed():
 	_play_click()
 
 	get_tree().change_scene_to_file(
-		"res://scenes/menu/credits_menu.tscn"
+		"res://scenes/menu/credits.tscn"
 	)
 
 func _on_exit_pressed():
