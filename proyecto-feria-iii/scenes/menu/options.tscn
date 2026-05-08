@@ -1,3 +1,82 @@
 [gd_scene format=3 uid="uid://bn73oo5rrawla"]
 
-[node name="Options" type="Node2D" unique_id=2058179009]
+[ext_resource type="Texture2D" uid="uid://dyjqvjvmn8l1u" path="res://assets/ui/backgorunds/Options_background2.png" id="1_ehon1"]
+[ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="3_vbf1p"]
+[ext_resource type="Texture2D" uid="uid://beds04c0omlri" path="res://assets/ui/backgorunds/Group 2.png" id="4_lu4uf"]
+[ext_resource type="Texture2D" uid="uid://yqy4t05ema8a" path="res://assets/ui/backgorunds/Group 1.png" id="5_oiomh"]
+[ext_resource type="Texture2D" uid="uid://cc0hd2mt881n8" path="res://assets/ui/backgorunds/Group 3.png" id="6_5f8vx"]
+[ext_resource type="Texture2D" uid="uid://lm2kx6t8u58c" path="res://assets/ui/backgorunds/Btn_options_gray.png" id="6_d6e17"]
+[ext_resource type="Texture2D" uid="uid://dgyl36o7m33ad" path="res://assets/ui/backgorunds/Rectangle 8.png" id="7_d6e17"]
+
+[node name="Options" type="Control" unique_id=1832916460]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=775849191]
+layout_mode = 0
+offset_right = 1928.0
+offset_bottom = 1082.0
+texture = ExtResource("1_ehon1")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1541442062]
+layout_mode = 0
+offset_left = 1516.0
+offset_top = 852.0
+offset_right = 1840.0
+offset_bottom = 1006.0
+texture_normal = ExtResource("6_d6e17")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=508756764]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 55.0
+offset_right = 230.0
+offset_bottom = 137.0
+rotation = -0.06981317
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 50
+text = "BACK"
+
+[node name="Icn2" type="TextureRect" parent="." unique_id=1205435530]
+layout_mode = 0
+offset_left = 1318.0
+offset_right = 1928.0
+offset_bottom = 293.0
+texture = ExtResource("4_lu4uf")
+
+[node name="Icn1" type="TextureRect" parent="." unique_id=533622186]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 191.0
+offset_right = 1348.0
+offset_bottom = 883.0
+texture = ExtResource("5_oiomh")
+expand_mode = 1
+
+[node name="Icn3" type="TextureRect" parent="." unique_id=490189242]
+layout_mode = 0
+offset_top = 483.0
+offset_right = 482.0
+offset_bottom = 1082.0
+texture = ExtResource("6_5f8vx")
+expand_mode = 1
+
+[node name="Icn4" type="TextureRect" parent="." unique_id=818916377]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 80.0
+offset_right = 539.0
+offset_bottom = 269.0
+texture = ExtResource("7_d6e17")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Icn4" unique_id=1703071961]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 49.0
+offset_right = 324.0
+offset_bottom = 131.0
+rotation = -0.12217305
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 50
+text = "OPTIONS"

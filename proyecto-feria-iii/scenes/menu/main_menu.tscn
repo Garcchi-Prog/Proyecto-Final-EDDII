@@ -213,4 +213,9 @@ position = Vector2(359, 223)
 scale = Vector2(0.6373698, 0.6308594)
 texture = ExtResource("4_kiqgm")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1130704110]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="btn_multiplayer" to="." method="_on_multiplayer_pressed"]
