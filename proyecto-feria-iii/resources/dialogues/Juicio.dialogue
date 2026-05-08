@@ -1,0 +1,214 @@
+~ start
+
+
+Juez: Procedo a iniciar este juicio contra la acusada Valentina, quien ha sido denunciada por la víctima Lilliana por incitación al odio, falsificación de información y amenazas continuas. Puede la denunciante proceder a dar su declaración de los hechos.
+
+Lilliana: Muchas gracias su Señoría... desde hace medio mes llevo recibiendo mensajes de odio de una cuenta anónima.
+Lilliana: Me incitaba al suicidio e incluso editaba fotos falsas de mí haciendo trampa.
+Lilliana: Me extorsionaba para pasar fotos indebidas e incluso robarle dinero a mis padres.
+Lilliana: Hace unos días, aquella cuenta cometió un error y reveló su identidad.
+Lilliana: Era... Valentina.
+
+Valentina: ¡Eso no es cierto!
+Valentina: ¡Yo nunca te envié nada!
+
+Fiscal: Su Señoría, la negación es el último refugio de los culpables.
+Fiscal: La fiscalía no basa sus casos en palabras, sino en hechos técnicos.
+Fiscal: Presento la captura de pantalla de la confesión:
+Fiscal: "Exacto, yo, Valentina".
+Fiscal: Un error típico de un criminal arrogante.
+
+Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
+Defensa(thought): Voy a tratar de hallar la verdad a través de su trampa.
+
+show choices
+
+"¿A qué distancia estaba de Valentina ese día?":
+jump opcion_incorrecta_1
+
+"Preguntar la hora en la que vio el mensaje.":
+jump pregunta_hora
+
+"¿Qué aplicación usaba para ver los mensajes?":
+jump opcion_incorrecta_2
+
+
+
+label pregunta_hora
+
+Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
+Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
+
+Lilliana: Fue exactamente a las 8:00 PM.
+Lilliana: Estaba en shock inmediatamente lo leí.
+
+Fiscal: Abogado, ¿pretende desviar la atención con minucias horarias?
+Fiscal: Mi clienta ha sido vulnerada.
+Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
+
+show evidence
+
+"Live de Instagram":
+jump evidencia_live
+
+label evidencia_live
+
+Defensa: Pues, según este Live de Instagram, a esa misma hora te encontrabas de fiesta en una discoteca.
+Defensa: Y en ningún momento parecía que hayas recibido ese mensaje.
+
+Lilliana: Pude alterar mi testimonio por el consumo de licor de aquel día...
+Lilliana: ¡Pero ese mensaje me llegó y hay pruebas verídicas!
+
+Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de su calvario no invalida la prueba digital.
+Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
+Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
+
+show choices
+
+"¿El teléfono estaba apagado?":
+jump opcion_incorrecta_3
+
+"¿El mensaje es editado o falsificado?":
+jump mensaje_editado
+
+"¿Alguien más vio su pantalla?":
+jump opcion_incorrecta_4
+
+label mensaje_editado
+
+Defensa: ¡PROTESTO!
+Defensa: Aún falta demostrar si el mensaje es verídico.
+Defensa: Cabe la posibilidad que hayan falsificado las capturas para ocultar lo del editado en el mensaje.
+
+Fiscal: ¿Está acusando formalmente a esta fiscalía de presentar evidencia fabricada?
+Fiscal: Tenga cuidado, abogado.
+Fiscal: Sus insinuaciones carecen de sustento técnico.
+
+Defensa: Aún cabe la posibilidad.
+Defensa: Y a menos que muestre los verdaderos mensajes podremos saber si el testimonio de la joven es correcto o falso.
+
+Fiscal: ...
+Fiscal: Su señoría, ¿mi clienta tiene permiso para abrir su cuenta y verificar si el mensaje es válido?
+
+Juez: Permiso denegado.
+Juez: No se permiten dispositivos con acceso a redes sociales en esta sala.
+
+Fiscal: Entiendo.
+Fiscal: Ya que no se puede seguir, pasemos a la siguiente evidencia.
+
+
+
+Fiscal: Acá podemos ver cómo las amenazas constantes y mensajes de odio han provocado que mi clienta no quiera asistir a clases por un largo tiempo.
+
+Lilliana: E-es verdad...
+Lilliana: El miedo constante no me dejaba siquiera pensar en el hecho de salir de mi cuarto...
+Lilliana: No podía hacer más nada.
+
+Defensa(thought): Esto es algo extraño...
+Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
+
+show evidence
+
+"Registro de asistencias de Circuitos I":
+jump asistencias
+
+label asistencias
+
+Defensa: Permítame contradecir su testimonio.
+Defensa: Hay una discrepancia en su argumento.
+Defensa: Este es el registro de asistencias de la materia de Circuitos I, una que cursa la víctima Lilliana.
+
+Defensa: Este registro cubre todo lo que va del semestre, incluyendo el último mes.
+Defensa: Y como puede ver en esta hoja, Lilliana no ha faltado a ni una sola clase.
+
+Fiscal: Protesto.
+Fiscal: Es posible que sea un registro editado u alterado.
+
+Defensa: Lamentablemente para usted, no se puede editar.
+Defensa: Solo el profesor puede modificar las asistencias.
+Defensa: Y como nadie sabía de este caso hasta ahora, entonces se puede afirmar que la joven mintió en su declaración nuevamente.
+
+Juez: ¿Qué tiene el fiscal que decir en su defensa?
+
+Fiscal: ...
+
+Defensa: Como lo sospeché...
+Defensa: En fin, hay algo que quisiera retomar acerca del mensaje.
+Defensa: ¿Tengo permiso para hablar, su señoría?
+
+Juez: Concedido.
+
+
+
+Defensa: Muchas gracias.
+Defensa: Hay algo que me faltó preguntarle a Lilliana.
+Defensa: Y es acerca de la identidad de la cuenta anónima.
+
+Lilliana: ¿Qué habría más que decir...?
+
+show choices
+
+"¿Recuerdas la hora del envío?":
+jump opcion_incorrecta_5
+
+"¿Recuerdas el nombre de aquella cuenta?":
+jump nombre_cuenta
+
+"Tu cuenta es famosa, ¿verdad?":
+jump opcion_incorrecta_6
+
+label nombre_cuenta
+
+Lilliana: Ahm...
+Lilliana: No...
+Lilliana: No recuerdo cómo se llamaba antes de que la borrara...
+
+Defensa: Entonces...
+Defensa: ¿Por qué toda la evidencia que tienes es después de que borrara la cuenta?
+
+Fiscal: ¿A qué quiere llegar?
+
+Lilliana: ¡Eso es circunstancial!
+Lilliana: ¡Aún tienen el mensaje donde confiesa desde su teléfono!
+
+Fiscal: Exacto.
+Fiscal: El registro de IP y el dispositivo pertenecen a Valentina.
+Fiscal: Contra la trazabilidad digital no existen argumentos poéticos que valgan.
+
+Defensa: Es cierto.
+Defensa: Se envió desde el teléfono de Valentina.
+Defensa: Sin embargo, hay algo que no tomaron en cuenta.
+Defensa: Valentina guardó evidencia de los mensajes antes de su edición a manos de Lilliana.
+Defensa: Y acá tengo una prueba.
+
+show evidence
+
+"Chat original":
+jump chat_original
+
+label chat_original
+
+Defensa: Exacto.
+Defensa: Lilliana estuvo manipulando y amenazando a Valentina todo este tiempo para crear un escenario donde ella fuera la mala.
+Defensa: ¿Qué tiene que decir en su defensa?
+
+Lilliana: ¡Cállate, cállate, CÁLLATE!
+
+Fiscal: ¡Lilliana, guarde silencio!
+Fiscal: Su Señoría, mi clienta está bajo una presión indebida...
+
+Liliana: ¡Son todos unos idiotas!
+Liliana: ¿Creen que una perdedora como Valentina merece respirar el mismo aire que yo?
+Liliana: ¡Yo soy la estrella de esta escuela!
+Liliana: ¡Ella grabó un video de mí!
+Liliana: ¡Un estúpido video donde yo simplemente ponía a unos becados en su lugar!
+Liliana: ¡Iba a arruinar mi beca universitaria!
+
+Fiscal: ...
+
+Defensa: Gracias por su testimonio, Lilliana.
+Defensa: Acaba de admitir el fraude y el acoso.
+
+Narrador: Lilliana cae de rodillas gritando mientras su teléfono se rompe en el suelo.
+
+=> END

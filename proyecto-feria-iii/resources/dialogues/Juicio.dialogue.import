@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d11pyyf24kbpm"
+path="res://.godot/imported/Juicio.dialogue-16bd5bf528c793c45d65606118d19774.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/Juicio.dialogue"
+dest_files=["res://.godot/imported/Juicio.dialogue-16bd5bf528c793c45d65606118d19774.tres"]
+
+[params]
+
+defaults=true
