@@ -1,11 +1,18 @@
 extends Node2D
 
+var inArea: bool = false
+@onready var cajon_exp: CanvasLayer = $"Cajon-Exp"
+@onready var fondo: TextureRect = $fondo
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_cajon_mouse_entered() -> void:
+	inArea = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_cajon_mouse_exited() -> void:
+	inArea = false
+	
+func _input(event: InputEvent) -> void:
+	if not inArea:
+		return
+	
+	if event.is_action_pressed("clic izq"):
+		cajon_exp.visible = true
