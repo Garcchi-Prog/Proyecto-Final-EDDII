@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://lm2kx6t8u58c" path="res://assets/ui/backgorunds/Btn_options_gray.png" id="6_d6e17"]
 [ext_resource type="Texture2D" uid="uid://dgyl36o7m33ad" path="res://assets/ui/backgorunds/Rectangle 8.png" id="7_d6e17"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehon1"]
+bg_color = Color(0.78039217, 0.039215688, 0.050980393, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbf1p"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+
 [node name="Options" type="Control" unique_id=1832916460]
 layout_mode = 3
 anchors_preset = 0
@@ -28,14 +34,14 @@ texture_normal = ExtResource("6_d6e17")
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=508756764]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 55.0
-offset_right = 230.0
-offset_bottom = 137.0
+offset_left = 96.0
+offset_top = 52.0
+offset_right = 267.0
+offset_bottom = 134.0
 rotation = -0.06981317
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 50
-text = "BACK"
+text = "ATRAS"
 
 [node name="Icn2" type="TextureRect" parent="." unique_id=1205435530]
 layout_mode = 0
@@ -52,6 +58,115 @@ offset_right = 1348.0
 offset_bottom = 883.0
 texture = ExtResource("5_oiomh")
 expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Icn1" unique_id=384180983]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 102.0
+offset_right = 270.0
+offset_bottom = 703.0
+
+[node name="Accesibilidad" type="Label" parent="Icn1/VBoxContainer" unique_id=1009145522]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.07058824, 0.12156863, 1)
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 30
+text = "ACCESIBILIDAD"
+
+[node name="ModoDaltonico" type="Label" parent="Icn1/VBoxContainer" unique_id=1048524641]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "Modo daltonico
+"
+
+[node name="BtnLeft" type="Button" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1758375333]
+layout_mode = 0
+offset_left = 304.0
+offset_top = -19.0
+offset_right = 369.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+text = "<"
+
+[node name="Label" type="Label" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1693563426]
+layout_mode = 0
+offset_left = 374.0
+offset_right = 433.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "Normal"
+
+[node name="BtnRigth" type="Button" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1794623037]
+layout_mode = 0
+offset_left = 449.0
+offset_top = -19.0
+offset_right = 514.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+text = ">"
+
+[node name="AltoContraste" type="Label" parent="Icn1/VBoxContainer" unique_id=1196063837]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "Alto contraste
+"
+
+[node name="BtnOn" type="Button" parent="Icn1/VBoxContainer/AltoContraste" unique_id=1294540831]
+layout_mode = 0
+offset_left = 329.0
+offset_top = -20.0
+offset_right = 395.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehon1")
+text = "ON"
+
+[node name="BtnOff" type="Button" parent="Icn1/VBoxContainer/AltoContraste" unique_id=1010101675]
+layout_mode = 0
+offset_left = 422.0
+offset_top = -20.0
+offset_right = 489.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbf1p")
+text = "OFF
+
+"
+
+[node name="Audio" type="Label" parent="Icn1/VBoxContainer" unique_id=1869751772]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.07058824, 0.12156863, 1)
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 30
+text = "AUDIO"
+
+[node name="VolumenGeneral" type="Label" parent="Icn1/VBoxContainer" unique_id=1782495885]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "VOLUMEN GENERAL
+"
+
+[node name="VolumenMusica" type="Label" parent="Icn1/VBoxContainer" unique_id=440334876]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "VOLUMEN MUSICA
+"
+
+[node name="Pantalla" type="Label" parent="Icn1/VBoxContainer" unique_id=1569296421]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.07058824, 0.12156863, 1)
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 30
+text = "PANTALLA"
+
+[node name="PantallaCompleta" type="Label" parent="Icn1/VBoxContainer" unique_id=1143649189]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vbf1p")
+text = "PANTALLA COMPLETA"
 
 [node name="Icn3" type="TextureRect" parent="." unique_id=490189242]
 layout_mode = 0
@@ -79,4 +194,4 @@ offset_bottom = 131.0
 rotation = -0.12217305
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 50
-text = "OPTIONS"
+text = "OPCIONES"
