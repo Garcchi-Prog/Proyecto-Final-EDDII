@@ -84,7 +84,7 @@ grow_vertical = 2
 rotation = -0.05235988
 theme_override_fonts/font = ExtResource("4_xn6kt")
 theme_override_font_sizes/font_size = 34
-text = "MULTIPLAYER"
+text = "MULTIJUGADOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -120,7 +120,7 @@ grow_vertical = 2
 rotation = -0.05235988
 theme_override_fonts/font = ExtResource("4_xn6kt")
 theme_override_font_sizes/font_size = 32
-text = "OPTIONS"
+text = "OPCIONES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -156,7 +156,7 @@ grow_vertical = 2
 rotation = -0.05235988
 theme_override_fonts/font = ExtResource("4_xn6kt")
 theme_override_font_sizes/font_size = 30
-text = "CREDITS
+text = "CREDITOS
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -195,7 +195,7 @@ grow_vertical = 2
 rotation = -0.08726646
 theme_override_fonts/font = ExtResource("4_xn6kt")
 theme_override_font_sizes/font_size = 30
-text = "EXIT"
+text = "SALIR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
