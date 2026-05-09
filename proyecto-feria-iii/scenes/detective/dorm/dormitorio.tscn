@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3t1yln26ghef"]
+
+[ext_resource type="Script" uid="uid://baoi8uqdoyi5n" path="res://scenes/detective/dorm/dormitorio.gd" id="1_n1od5"]
+[ext_resource type="Texture2D" uid="uid://bhpsh6ttpy5nx" path="res://assets/ui/backgorunds/dormitorio.webp" id="2_aakms"]
+[ext_resource type="Texture2D" uid="uid://dhrkgvy61n1ei" path="res://scenes/cajon.png" id="3_365hq"]
+[ext_resource type="Script" uid="uid://8ivskai6us6v" path="res://scenes/detective/dorm/cajon.gd" id="4_thwpb"]
+
+[node name="dormitorio" type="Node2D" unique_id=326183420]
+script = ExtResource("1_n1od5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=276051266]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_aakms")
+expand_mode = 1
+
+[node name="Cajon" type="Sprite2D" parent="." unique_id=253375960]
+position = Vector2(1476.75, 696.625)
+scale = Vector2(0.47734883, 0.5220763)
+texture = ExtResource("3_365hq")
+script = ExtResource("4_thwpb")
