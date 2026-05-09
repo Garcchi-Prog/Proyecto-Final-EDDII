@@ -22,6 +22,7 @@ func _on_area_2d_mouse_exited() -> void:
 
 func salir() -> void:
 	self.visible = false
+	get_parent().fondo.material.set_shader_parameter("strength",0)
 
 func _on_button_pressed() -> void:
 	salir()

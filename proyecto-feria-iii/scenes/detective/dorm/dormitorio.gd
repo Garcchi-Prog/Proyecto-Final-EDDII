@@ -15,4 +15,5 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.is_action_pressed("clic izq"):
+		fondo.material.set_shader_parameter("strength",10)
 		cajon_exp.visible = true

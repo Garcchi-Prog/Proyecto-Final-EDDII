@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://d3t1yln26ghef"]
 
 [ext_resource type="Script" uid="uid://baoi8uqdoyi5n" path="res://scenes/detective/dorm/dormitorio.gd" id="1_n1od5"]
+[ext_resource type="Shader" uid="uid://diu1fk8v2g4ti" path="res://resources/shader/dormitorio.gdshader" id="2_365hq"]
 [ext_resource type="Texture2D" uid="uid://bhpsh6ttpy5nx" path="res://assets/detective/fondo/dormitorio.webp" id="2_aakms"]
 [ext_resource type="Texture2D" uid="uid://dhrkgvy61n1ei" path="res://scenes/cajon.png" id="3_365hq"]
 [ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="4_n1od5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thwpb"]
+shader = ExtResource("2_365hq")
+shader_parameter/strength = 0.0
+shader_parameter/sample_power = 4
+shader_parameter/is_canvas_group = false
 
 [node name="dormitorio" type="Node2D" unique_id=326183420]
 script = ExtResource("1_n1od5")
 
 [node name="fondo" type="TextureRect" parent="." unique_id=276051266]
+material = SubResource("ShaderMaterial_thwpb")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_aakms")
 expand_mode = 1
 
-[node name="cajon" type="TextureRect" parent="." unique_id=1873411977]
+[node name="cajon" type="TextureRect" parent="fondo" unique_id=1873411977]
+use_parent_material = true
+layout_mode = 0
 offset_left = 1339.0
 offset_top = 592.0
 offset_right = 1935.0
@@ -26,5 +36,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Cajon-Exp" parent="." unique_id=1383882090 instance=ExtResource("4_n1od5")]
 visible = false
 
-[connection signal="mouse_entered" from="cajon" to="." method="_on_cajon_mouse_entered"]
-[connection signal="mouse_exited" from="cajon" to="." method="_on_cajon_mouse_exited"]
+[connection signal="mouse_entered" from="fondo/cajon" to="." method="_on_cajon_mouse_entered"]
+[connection signal="mouse_exited" from="fondo/cajon" to="." method="_on_cajon_mouse_exited"]
