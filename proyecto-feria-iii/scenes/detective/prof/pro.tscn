@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bll7bjk6hxdm3"]
+
+[ext_resource type="Texture2D" uid="uid://cixwqe2q1c0o2" path="res://assets/detective/fondo/oficina prof.jpg" id="1_0vo8y"]
+[ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="2_e4p7r"]
+[ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="3_nlg5k"]
+
+[node name="Pro" type="Node2D" unique_id=1436520135]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1004939869]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_0vo8y")
+expand_mode = 1
+
+[node name="icon mapa" type="TextureRect" parent="TextureRect" unique_id=1220241809]
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 936.0
+offset_right = 1867.0
+offset_bottom = 1036.0
+texture = ExtResource("2_e4p7r")
+expand_mode = 1
+script = ExtResource("3_nlg5k")

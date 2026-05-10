@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://iulbxlewbtcq"]
+
+[ext_resource type="Script" uid="uid://e75dsobtjbuv" path="res://scenes/detective/mapa/mapa.gd" id="1_ik40l"]
+[ext_resource type="Texture2D" uid="uid://dtkggxpsghmlw" path="res://assets/detective/fondo/mapa de la u.jpg" id="2_ik40l"]
+[ext_resource type="Texture2D" uid="uid://dfoi2x6ifb2l3" path="res://assets/detective/fondo/flecha.png" id="3_1pvdd"]
+[ext_resource type="Script" uid="uid://budj6bnge5x2a" path="res://scenes/detective/mapa/area_2d.gd" id="3_vmngw"]
+[ext_resource type="Script" uid="uid://dt1fgc4ctkdqs" path="res://scenes/detective/mapa/area_2d_2.gd" id="4_ak742"]
+[ext_resource type="Script" uid="uid://bulqsp721ip3q" path="res://scenes/detective/mapa/flecha.gd" id="4_vmngw"]
+[ext_resource type="Script" uid="uid://dgdlvyjbvekoa" path="res://scenes/detective/mapa/area_2d_3.gd" id="5_7pofx"]
+[ext_resource type="Script" uid="uid://cikp4q40sak1j" path="res://scenes/detective/mapa/area_2d_4.gd" id="6_fowg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik40l"]
+size = Vector2(509, 181.5)
+
+[node name="Mapa" type="Node2D" unique_id=584668378]
+script = ExtResource("1_ik40l")
+
+[node name="mapadect" type="TextureRect" parent="." unique_id=111436986]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ik40l")
+
+[node name="dor" type="Area2D" parent="mapadect" unique_id=1969699689]
+position = Vector2(267, 243)
+script = ExtResource("3_vmngw")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/dor" unique_id=972206613]
+position = Vector2(253.5, 115)
+shape = SubResource("RectangleShape2D_ik40l")
+
+[node name="ofa" type="Area2D" parent="mapadect" unique_id=583194714]
+position = Vector2(460, 581)
+script = ExtResource("4_ak742")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/ofa" unique_id=1081763269]
+position = Vector2(253.5, 115)
+shape = SubResource("RectangleShape2D_ik40l")
+
+[node name="ofp" type="Area2D" parent="mapadect" unique_id=1403523190]
+position = Vector2(1213, 141)
+script = ExtResource("5_7pofx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/ofp" unique_id=977908547]
+position = Vector2(257.5, 155.5)
+shape = SubResource("RectangleShape2D_ik40l")
+
+[node name="lab" type="Area2D" parent="mapadect" unique_id=1281258809]
+position = Vector2(1371, 400)
+script = ExtResource("6_fowg3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/lab" unique_id=526326439]
+position = Vector2(240.5, 121.25)
+shape = SubResource("RectangleShape2D_ik40l")
+
+[node name="flecha" type="TextureRect" parent="mapadect" unique_id=665844513]
+layout_mode = 0
+offset_left = 1777.0
+offset_top = 954.0
+offset_right = 1877.0
+offset_bottom = 1054.0
+texture = ExtResource("3_1pvdd")
+expand_mode = 1
+script = ExtResource("4_vmngw")

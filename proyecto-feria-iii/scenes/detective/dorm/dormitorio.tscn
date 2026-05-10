@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bhpsh6ttpy5nx" path="res://assets/detective/fondo/dormitorio.webp" id="2_aakms"]
 [ext_resource type="Texture2D" uid="uid://dhrkgvy61n1ei" path="res://scenes/cajon.png" id="3_365hq"]
 [ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="4_n1od5"]
+[ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="5_365hq"]
+[ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="6_thwpb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_thwpb"]
 shader = ExtResource("2_365hq")
@@ -32,6 +34,16 @@ offset_bottom = 1011.0
 scale = Vector2(0.477, 0.477)
 texture = ExtResource("3_365hq")
 metadata/_edit_use_anchors_ = true
+
+[node name="icon mapa" type="TextureRect" parent="fondo" unique_id=1682948930]
+layout_mode = 0
+offset_left = 1767.0
+offset_top = 936.0
+offset_right = 1867.0
+offset_bottom = 1036.0
+texture = ExtResource("5_365hq")
+expand_mode = 1
+script = ExtResource("6_thwpb")
 
 [node name="Cajon-Exp" parent="." unique_id=1383882090 instance=ExtResource("4_n1od5")]
 visible = false
