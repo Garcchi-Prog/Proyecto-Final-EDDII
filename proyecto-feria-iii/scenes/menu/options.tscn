@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://bn73oo5rrawla"]
 
 [ext_resource type="Texture2D" uid="uid://dyjqvjvmn8l1u" path="res://assets/ui/backgorunds/Options_background2.png" id="1_ehon1"]
+[ext_resource type="Script" uid="uid://bruar8kyi614s" path="res://scripts/ui/options.gd" id="1_oiomh"]
 [ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="3_vbf1p"]
 [ext_resource type="Texture2D" uid="uid://beds04c0omlri" path="res://assets/ui/backgorunds/Group 2.png" id="4_lu4uf"]
 [ext_resource type="Texture2D" uid="uid://yqy4t05ema8a" path="res://assets/ui/backgorunds/Group 1.png" id="5_oiomh"]
 [ext_resource type="Texture2D" uid="uid://cc0hd2mt881n8" path="res://assets/ui/backgorunds/Group 3.png" id="6_5f8vx"]
 [ext_resource type="Texture2D" uid="uid://lm2kx6t8u58c" path="res://assets/ui/backgorunds/Btn_options_gray.png" id="6_d6e17"]
+[ext_resource type="Texture2D" uid="uid://ccrbdqbnrnf66" path="res://assets/ui/backgorunds/Rectangle 11 (3).png" id="7_5f8vx"]
 [ext_resource type="Texture2D" uid="uid://dgyl36o7m33ad" path="res://assets/ui/backgorunds/Rectangle 8.png" id="7_d6e17"]
+[ext_resource type="Texture2D" uid="uid://6ggfdwlvyhrn" path="res://assets/ui/backgorunds/Rectangle 11 (1).png" id="8_d6e17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehon1"]
 bg_color = Color(0.78039217, 0.039215688, 0.050980393, 1)
@@ -17,6 +20,7 @@ bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
 [node name="Options" type="Control" unique_id=1832916460]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_oiomh")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=775849191]
 layout_mode = 0
@@ -81,7 +85,7 @@ text = "Modo daltonico
 
 [node name="BtnLeft" type="Button" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1758375333]
 layout_mode = 0
-offset_left = 304.0
+offset_left = 344.0
 offset_top = -19.0
 offset_right = 369.0
 offset_bottom = 43.0
@@ -101,7 +105,7 @@ text = "Normal"
 layout_mode = 0
 offset_left = 449.0
 offset_top = -19.0
-offset_right = 514.0
+offset_right = 475.0
 offset_bottom = 43.0
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 32
@@ -150,11 +154,55 @@ theme_override_fonts/font = ExtResource("3_vbf1p")
 text = "VOLUMEN GENERAL
 "
 
+[node name="barra_volumen" type="TextureProgressBar" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=716606458]
+layout_mode = 0
+offset_left = 226.0
+offset_right = 261.0
+offset_bottom = 40.0
+value = 70.0
+texture_under = ExtResource("7_5f8vx")
+texture_progress = ExtResource("8_d6e17")
+
+[node name="HSlider" type="HSlider" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=1214941830]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 219.0
+offset_right = 227.0
+offset_bottom = 16.0
+
+[node name="lbl_porcentaje" type="Label" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=246164072]
+layout_mode = 0
+offset_left = 304.0
+offset_right = 344.0
+offset_bottom = 23.0
+
 [node name="VolumenMusica" type="Label" parent="Icn1/VBoxContainer" unique_id=440334876]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vbf1p")
 text = "VOLUMEN MUSICA
 "
+
+[node name="barra_volumen" type="TextureProgressBar" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=834377484]
+layout_mode = 0
+offset_left = 226.0
+offset_right = 261.0
+offset_bottom = 40.0
+value = 70.0
+texture_under = ExtResource("7_5f8vx")
+texture_progress = ExtResource("8_d6e17")
+
+[node name="HSlider" type="HSlider" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=196127506]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 219.0
+offset_right = 227.0
+offset_bottom = 16.0
+
+[node name="lbl_porcentaje" type="Label" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=615827072]
+layout_mode = 0
+offset_left = 304.0
+offset_right = 344.0
+offset_bottom = 23.0
 
 [node name="Pantalla" type="Label" parent="Icn1/VBoxContainer" unique_id=1569296421]
 layout_mode = 2
@@ -167,6 +215,30 @@ text = "PANTALLA"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vbf1p")
 text = "PANTALLA COMPLETA"
+
+[node name="BtnOn" type="Button" parent="Icn1/VBoxContainer/PantallaCompleta" unique_id=611540367]
+layout_mode = 0
+offset_left = 329.0
+offset_top = -20.0
+offset_right = 395.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehon1")
+text = "ON"
+
+[node name="BtnOff" type="Button" parent="Icn1/VBoxContainer/PantallaCompleta" unique_id=1250098500]
+layout_mode = 0
+offset_left = 422.0
+offset_top = -20.0
+offset_right = 489.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_vbf1p")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbf1p")
+text = "OFF
+
+"
 
 [node name="Icn3" type="TextureRect" parent="." unique_id=490189242]
 layout_mode = 0
@@ -195,3 +267,9 @@ rotation = -0.12217305
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 50
 text = "OPCIONES"
+
+[connection signal="pressed" from="Icn1/VBoxContainer/ModoDaltonico/BtnLeft" to="." method="_on_btn_left_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/ModoDaltonico/BtnRigth" to="." method="_on_btn_rigth_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/AltoContraste/BtnOn" to="." method="_on_btn_on_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/AltoContraste/BtnOff" to="." method="_on_btn_off_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/PantallaCompleta/BtnOn" to="." method="_on_btn_on_pressed"]
