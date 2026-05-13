@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://bn73oo5rrawla"]
+[gd_scene format=3 uid="uid://boyw2u3fvkrov"]
 
 [ext_resource type="Texture2D" uid="uid://dyjqvjvmn8l1u" path="res://assets/ui/backgorunds/Options_background2.png" id="1_ehon1"]
 [ext_resource type="Script" uid="uid://bruar8kyi614s" path="res://scripts/ui/options.gd" id="1_oiomh"]
+[ext_resource type="AudioStream" uid="uid://qxhgptqmfprm" path="res://assets/audio/166186__drminky__menu-screen-mouse-over.wav" id="2_5f8vx"]
 [ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="3_vbf1p"]
 [ext_resource type="Texture2D" uid="uid://beds04c0omlri" path="res://assets/ui/backgorunds/Group 2.png" id="4_lu4uf"]
-[ext_resource type="Texture2D" uid="uid://yqy4t05ema8a" path="res://assets/ui/backgorunds/Group 1.png" id="5_oiomh"]
 [ext_resource type="Texture2D" uid="uid://cc0hd2mt881n8" path="res://assets/ui/backgorunds/Group 3.png" id="6_5f8vx"]
 [ext_resource type="Texture2D" uid="uid://lm2kx6t8u58c" path="res://assets/ui/backgorunds/Btn_options_gray.png" id="6_d6e17"]
-[ext_resource type="Texture2D" uid="uid://ccrbdqbnrnf66" path="res://assets/ui/backgorunds/Rectangle 11 (3).png" id="7_5f8vx"]
+[ext_resource type="Texture2D" uid="uid://caq43wqnvr4vj" path="res://assets/ui/backgorunds/Rectangle 11 (8).png" id="7_5f8vx"]
 [ext_resource type="Texture2D" uid="uid://dgyl36o7m33ad" path="res://assets/ui/backgorunds/Rectangle 8.png" id="7_d6e17"]
-[ext_resource type="Texture2D" uid="uid://6ggfdwlvyhrn" path="res://assets/ui/backgorunds/Rectangle 11 (1).png" id="8_d6e17"]
+[ext_resource type="Texture2D" uid="uid://ba5yjgtg6oxhw" path="res://assets/ui/backgorunds/Rectangle 11 (6).png" id="8_d6e17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehon1"]
 bg_color = Color(0.78039217, 0.039215688, 0.050980393, 1)
@@ -20,12 +20,17 @@ bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
 [node name="Options" type="Control" unique_id=1832916460]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_oiomh")
+
+[node name="hover_sfx" type="AudioStreamPlayer2D" parent="." unique_id=884493196]
+stream = ExtResource("2_5f8vx")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=775849191]
 layout_mode = 0
 offset_right = 1928.0
 offset_bottom = 1082.0
+mouse_filter = 2
 texture = ExtResource("1_ehon1")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1541442062]
@@ -54,21 +59,16 @@ offset_right = 1928.0
 offset_bottom = 293.0
 texture = ExtResource("4_lu4uf")
 
-[node name="Icn1" type="TextureRect" parent="." unique_id=533622186]
+[node name="Icn1" type="Container" parent="." unique_id=448796133]
 layout_mode = 0
 offset_left = 539.0
 offset_top = 191.0
 offset_right = 1348.0
 offset_bottom = 883.0
-texture = ExtResource("5_oiomh")
-expand_mode = 1
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Icn1" unique_id=384180983]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 102.0
-offset_right = 270.0
-offset_bottom = 703.0
+layout_mode = 2
 
 [node name="Accesibilidad" type="Label" parent="Icn1/VBoxContainer" unique_id=1009145522]
 layout_mode = 2
@@ -85,9 +85,9 @@ text = "Modo daltonico
 
 [node name="BtnLeft" type="Button" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1758375333]
 layout_mode = 0
-offset_left = 344.0
+offset_left = 294.0
 offset_top = -19.0
-offset_right = 369.0
+offset_right = 319.0
 offset_bottom = 43.0
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 32
@@ -95,18 +95,18 @@ text = "<"
 
 [node name="Label" type="Label" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1693563426]
 layout_mode = 0
-offset_left = 374.0
-offset_right = 433.0
-offset_bottom = 23.0
+offset_left = 381.0
+offset_right = 450.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("3_vbf1p")
 text = "Normal"
 
 [node name="BtnRigth" type="Button" parent="Icn1/VBoxContainer/ModoDaltonico" unique_id=1794623037]
 layout_mode = 0
-offset_left = 449.0
-offset_top = -19.0
-offset_right = 475.0
-offset_bottom = 43.0
+offset_left = 534.0
+offset_top = -23.0
+offset_right = 560.0
+offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 32
 text = ">"
@@ -156,25 +156,26 @@ text = "VOLUMEN GENERAL
 
 [node name="barra_volumen" type="TextureProgressBar" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=716606458]
 layout_mode = 0
-offset_left = 226.0
-offset_right = 261.0
-offset_bottom = 40.0
+offset_left = 266.0
+offset_right = 557.0
+offset_bottom = 15.0
 value = 70.0
 texture_under = ExtResource("7_5f8vx")
 texture_progress = ExtResource("8_d6e17")
 
 [node name="HSlider" type="HSlider" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=1214941830]
-modulate = Color(0, 0, 0, 0)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 219.0
-offset_right = 227.0
+offset_left = 266.0
+offset_right = 557.0
 offset_bottom = 16.0
 
 [node name="lbl_porcentaje" type="Label" parent="Icn1/VBoxContainer/VolumenGeneral" unique_id=246164072]
 layout_mode = 0
-offset_left = 304.0
-offset_right = 344.0
-offset_bottom = 23.0
+offset_left = 571.0
+offset_top = -12.0
+offset_right = 611.0
+offset_bottom = 11.0
 
 [node name="VolumenMusica" type="Label" parent="Icn1/VBoxContainer" unique_id=440334876]
 layout_mode = 2
@@ -184,9 +185,9 @@ text = "VOLUMEN MUSICA
 
 [node name="barra_volumen" type="TextureProgressBar" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=834377484]
 layout_mode = 0
-offset_left = 226.0
-offset_right = 261.0
-offset_bottom = 40.0
+offset_left = 266.0
+offset_right = 556.0
+offset_bottom = 6.0
 value = 70.0
 texture_under = ExtResource("7_5f8vx")
 texture_progress = ExtResource("8_d6e17")
@@ -194,15 +195,16 @@ texture_progress = ExtResource("8_d6e17")
 [node name="HSlider" type="HSlider" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=196127506]
 modulate = Color(0, 0, 0, 0)
 layout_mode = 0
-offset_left = 219.0
-offset_right = 227.0
+offset_left = 266.0
+offset_right = 557.0
 offset_bottom = 16.0
 
 [node name="lbl_porcentaje" type="Label" parent="Icn1/VBoxContainer/VolumenMusica" unique_id=615827072]
 layout_mode = 0
-offset_left = 304.0
-offset_right = 344.0
-offset_bottom = 23.0
+offset_left = 571.0
+offset_top = -12.0
+offset_right = 611.0
+offset_bottom = 11.0
 
 [node name="Pantalla" type="Label" parent="Icn1/VBoxContainer" unique_id=1569296421]
 layout_mode = 2
@@ -268,8 +270,10 @@ theme_override_fonts/font = ExtResource("3_vbf1p")
 theme_override_font_sizes/font_size = 50
 text = "OPCIONES"
 
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Icn1/VBoxContainer/ModoDaltonico/BtnLeft" to="." method="_on_btn_left_pressed"]
 [connection signal="pressed" from="Icn1/VBoxContainer/ModoDaltonico/BtnRigth" to="." method="_on_btn_rigth_pressed"]
 [connection signal="pressed" from="Icn1/VBoxContainer/AltoContraste/BtnOn" to="." method="_on_btn_on_pressed"]
 [connection signal="pressed" from="Icn1/VBoxContainer/AltoContraste/BtnOff" to="." method="_on_btn_off_pressed"]
-[connection signal="pressed" from="Icn1/VBoxContainer/PantallaCompleta/BtnOn" to="." method="_on_btn_on_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/PantallaCompleta/BtnOn" to="." method="_on_btn_onpantalla_pressed"]
+[connection signal="pressed" from="Icn1/VBoxContainer/PantallaCompleta/BtnOff" to="." method="_on_btn_offpantalla_pressed"]

@@ -8,18 +8,13 @@ shader = ExtResource("2_d3gp1")
 shader_parameter/mode = 0
 shader_parameter/contrast = 1.0
 
-[node name="VisualManager" type="Control" unique_id=1191382213]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VisualManager" type="CanvasLayer" unique_id=1111517061]
+layer = 128
 script = ExtResource("1_ifiao")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2132319629]
+visibility_layer = 524288
 material = SubResource("ShaderMaterial_s4gnt")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dkprbuuuf617y"]
 
-[ext_resource type="AudioStream" uid="uid://bemeg1086311v" path="res://assets/audio/Closing_Argument.mp3" id="2_d4hu8"]
 [ext_resource type="AudioStream" uid="uid://qxhgptqmfprm" path="res://assets/audio/166186__drminky__menu-screen-mouse-over.wav" id="2_qgo02"]
 [ext_resource type="Texture2D" uid="uid://0en833tp8wj0" path="res://assets/ui/buttons/Btn_menu_gray.png" id="3_btn_gray"]
 [ext_resource type="AudioStream" uid="uid://dhi8w1nby7qlu" path="res://assets/audio/729216__techspiredminds__upgradeselect-ui (1).wav" id="3_vovv2"]
@@ -44,10 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CompressedTexture2D_247la")
 expand_mode = 1
-
-[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=260590093]
-stream = ExtResource("2_d4hu8")
-volume_db = -18.07
 
 [node name="sfx_hover" type="AudioStreamPlayer2D" parent="." unique_id=778865427]
 stream = ExtResource("2_qgo02")

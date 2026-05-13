@@ -1,3 +1,128 @@
-[gd_scene format=3 uid="uid://boyw2u3fvkrov"]
+[gd_scene format=3 uid="uid://bn73oo5rrawla"]
 
-[node name="Credits" type="Node2D" unique_id=1546129976]
+[ext_resource type="Script" uid="uid://dgajlg750n7ta" path="res://scripts/ui/credits.gd" id="1_ev03l"]
+[ext_resource type="Texture2D" uid="uid://dyjqvjvmn8l1u" path="res://assets/ui/backgorunds/Options_background2.png" id="3_no4j4"]
+[ext_resource type="Texture2D" uid="uid://lm2kx6t8u58c" path="res://assets/ui/backgorunds/Btn_options_gray.png" id="4_q8ohh"]
+[ext_resource type="FontFile" uid="uid://cd8d6pefn0s8v" path="res://assets/ui/fonts/KOMIKAX_.ttf" id="5_o708d"]
+[ext_resource type="Texture2D" uid="uid://beds04c0omlri" path="res://assets/ui/backgorunds/Group 2.png" id="6_hg1ia"]
+[ext_resource type="Texture2D" uid="uid://yqy4t05ema8a" path="res://assets/ui/backgorunds/Group 1.png" id="7_uh0dv"]
+[ext_resource type="Texture2D" uid="uid://cc0hd2mt881n8" path="res://assets/ui/backgorunds/Group 3.png" id="10_cwv0x"]
+[ext_resource type="Texture2D" uid="uid://dgyl36o7m33ad" path="res://assets/ui/backgorunds/Rectangle 8.png" id="11_05x5b"]
+
+[node name="Options" type="Control" unique_id=1832916460]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ev03l")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=775849191]
+layout_mode = 0
+offset_right = 1928.0
+offset_bottom = 1082.0
+mouse_filter = 2
+texture = ExtResource("3_no4j4")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1541442062]
+layout_mode = 0
+offset_left = 1516.0
+offset_top = 852.0
+offset_right = 1840.0
+offset_bottom = 1006.0
+texture_normal = ExtResource("4_q8ohh")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=508756764]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 52.0
+offset_right = 267.0
+offset_bottom = 134.0
+rotation = -0.06981317
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 50
+text = "ATRAS"
+
+[node name="Icn2" type="TextureRect" parent="." unique_id=1205435530]
+layout_mode = 0
+offset_left = 1318.0
+offset_right = 1928.0
+offset_bottom = 293.0
+texture = ExtResource("6_hg1ia")
+
+[node name="Icn1" type="TextureRect" parent="." unique_id=533622186]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 191.0
+offset_right = 1348.0
+offset_bottom = 883.0
+mouse_filter = 2
+texture = ExtResource("7_uh0dv")
+expand_mode = 1
+
+[node name="Container" type="VBoxContainer" parent="Icn1" unique_id=133292399]
+layout_mode = 1
+offset_left = 223.0
+offset_top = 152.0
+offset_right = 568.0
+offset_bottom = 534.0
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Accesibilidad" type="Label" parent="Icn1/Container" unique_id=398652032]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75686276, 0.07058824, 0.12156863, 1)
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 30
+text = "Desarrollado por:"
+
+[node name="Accesibilidad5" type="Label" parent="Icn1/Container" unique_id=538490664]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 30
+text = "Juan Pablo Bustillo"
+
+[node name="Accesibilidad4" type="Label" parent="Icn1/Container" unique_id=2128145221]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 30
+text = "Aaron Esmeral"
+
+[node name="Accesibilidad3" type="Label" parent="Icn1/Container" unique_id=569783069]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 30
+text = "Andres Garcia"
+
+[node name="Accesibilidad2" type="Label" parent="Icn1/Container" unique_id=529175706]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 30
+text = "Ismael Noble"
+
+[node name="Icn3" type="TextureRect" parent="." unique_id=490189242]
+layout_mode = 0
+offset_top = 483.0
+offset_right = 482.0
+offset_bottom = 1082.0
+texture = ExtResource("10_cwv0x")
+expand_mode = 1
+
+[node name="Icn4" type="TextureRect" parent="." unique_id=818916377]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 80.0
+offset_right = 539.0
+offset_bottom = 269.0
+texture = ExtResource("11_05x5b")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Icn4" unique_id=1703071961]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 49.0
+offset_right = 324.0
+offset_bottom = 131.0
+rotation = -0.12217305
+theme_override_fonts/font = ExtResource("5_o708d")
+theme_override_font_sizes/font_size = 50
+text = "Creditos"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -11,6 +11,7 @@ extends Control
 @onready var btn_exit = $btn_exit
 
 func _ready():
+	AudioManager.play_music(preload("res://assets/audio/Closing_Argument.mp3"))
 
 	if music:
 		music.play()
@@ -30,26 +31,21 @@ func _ready():
 
 func _connect_button(button):
 
-	# CENTRO ESCALADO
 	button.pivot_offset = button.size / 2
 
-	# HOVER
 	button.mouse_entered.connect(_on_button_hover.bind(button))
 	button.mouse_exited.connect(_on_button_exit.bind(button))
 
 func _on_button_hover(button):
 
-	# SONIDO
 	if hover_sfx:
 		hover_sfx.play()
 
-	# TWEEN
 	var tween = create_tween()
 
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 
-	# ESCALA
 	tween.tween_property(
 		button,
 		"scale",
@@ -57,7 +53,6 @@ func _on_button_hover(button):
 		0.08
 	)
 
-	# LABEL
 	var label = button.get_child(0)
 
 	if label:
@@ -70,7 +65,6 @@ func _on_button_exit(button):
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 
-	# VOLVER NORMAL
 	tween.tween_property(
 		button,
 		"scale",
@@ -78,7 +72,6 @@ func _on_button_exit(button):
 		0.08
 	)
 
-	# LABEL BLANCO
 	var label = button.get_child(0)
 
 	if label:
