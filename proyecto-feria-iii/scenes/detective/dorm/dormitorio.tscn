@@ -4,7 +4,6 @@
 [ext_resource type="Shader" uid="uid://diu1fk8v2g4ti" path="res://resources/shader/dormitorio.gdshader" id="2_365hq"]
 [ext_resource type="Texture2D" uid="uid://bhpsh6ttpy5nx" path="res://assets/detective/fondo/dormitorio.webp" id="2_aakms"]
 [ext_resource type="Texture2D" uid="uid://dhrkgvy61n1ei" path="res://scenes/cajon.png" id="3_365hq"]
-[ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="4_n1od5"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="5_365hq"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="6_thwpb"]
 
@@ -44,9 +43,6 @@ offset_bottom = 1036.0
 texture = ExtResource("5_365hq")
 expand_mode = 1
 script = ExtResource("6_thwpb")
-
-[node name="Cajon-Exp" parent="." unique_id=1383882090 instance=ExtResource("4_n1od5")]
-visible = false
 
 [connection signal="mouse_entered" from="fondo/cajon" to="." method="_on_cajon_mouse_entered"]
 [connection signal="mouse_exited" from="fondo/cajon" to="." method="_on_cajon_mouse_exited"]

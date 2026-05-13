@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://btj7vgmedojd7"]
+
+[ext_resource type="Script" uid="uid://jmvdg6wv3g0v" path="res://papelera_exp.gd" id="1_f8whn"]
+[ext_resource type="Texture2D" uid="uid://ctejj71uy8esw" path="res://assets/detective/fondo/cajon abierto.png" id="2_n04o6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v68xl"]
+size = Vector2(1108.5518, 465.28558)
+
+[node name="papelera-exp" type="CanvasLayer" unique_id=388073823]
+script = ExtResource("1_f8whn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=192251235]
+anchors_preset = -1
+anchor_left = 0.106770836
+anchor_top = 0.08888902
+anchor_right = 0.9067708
+anchor_bottom = 0.90370363
+offset_right = 384.0
+offset_bottom = 219.99994
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_n04o6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="TextureRect" unique_id=2011656376]
+position = Vector2(971.25, 586.25)
+rotation = 0.011217358
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D" unique_id=1541005491]
+rotation = 0.24407956
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_v68xl")
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=2046971951]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="TextureRect/CenterContainer" unique_id=215325535]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Salir"

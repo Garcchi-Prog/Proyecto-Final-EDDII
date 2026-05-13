@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://e75dsobtjbuv" path="res://scenes/detective/mapa/mapa.gd" id="1_ik40l"]
 [ext_resource type="Texture2D" uid="uid://dtkggxpsghmlw" path="res://assets/detective/fondo/mapa de la u.jpg" id="2_ik40l"]
-[ext_resource type="Texture2D" uid="uid://dfoi2x6ifb2l3" path="res://assets/detective/fondo/flecha.png" id="3_1pvdd"]
 [ext_resource type="Script" uid="uid://budj6bnge5x2a" path="res://scenes/detective/mapa/area_2d.gd" id="3_vmngw"]
 [ext_resource type="Script" uid="uid://dt1fgc4ctkdqs" path="res://scenes/detective/mapa/area_2d_2.gd" id="4_ak742"]
-[ext_resource type="Script" uid="uid://bulqsp721ip3q" path="res://scenes/detective/mapa/flecha.gd" id="4_vmngw"]
 [ext_resource type="Script" uid="uid://dgdlvyjbvekoa" path="res://scenes/detective/mapa/area_2d_3.gd" id="5_7pofx"]
 [ext_resource type="Script" uid="uid://cikp4q40sak1j" path="res://scenes/detective/mapa/area_2d_4.gd" id="6_fowg3"]
 
@@ -55,13 +53,3 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/lab" unique_id=526326439]
 position = Vector2(240.5, 121.25)
 shape = SubResource("RectangleShape2D_ik40l")
-
-[node name="flecha" type="TextureRect" parent="mapadect" unique_id=665844513]
-layout_mode = 0
-offset_left = 1777.0
-offset_top = 954.0
-offset_right = 1877.0
-offset_bottom = 1054.0
-texture = ExtResource("3_1pvdd")
-expand_mode = 1
-script = ExtResource("4_vmngw")
