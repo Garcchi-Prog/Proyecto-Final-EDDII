@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bu6dqy2kn14w0"]
+
+[sub_resource type="GDScript" id="GDScript_sy8cp"]
+script/source = "extends Node2D
+
+
+var cajon: bool = false
+var pc: bool = false
+var papelera: bool = false
+"
+
+[node name="PersistentKeys" type="Node2D" unique_id=474895969]
+script = SubResource("GDScript_sy8cp")

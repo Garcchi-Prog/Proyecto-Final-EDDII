@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cefaq4jq3l72j"]
+
+[ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="1_fbwi2"]
+[ext_resource type="Texture2D" uid="uid://ddiyb812037pu" path="res://assets/detective/fondo/cancerbero.jpg" id="2_j36vh"]
+
+[node name="Pc-Exp" unique_id=1383882090 instance=ExtResource("1_fbwi2")]
+
+[node name="TextureRect" parent="." index="0" unique_id=156090564]
+anchor_right = 0.2108073
+anchor_bottom = 0.21967593
+offset_left = 523.0
+offset_top = 362.99988
+offset_right = 907.0
+offset_bottom = 582.9998
+texture = ExtResource("2_j36vh")
+expand_mode = 1
+
+[node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
+position = Vector2(329.99997, 167.49997)
+rotation = 0.0
+scale = Vector2(0.74339217, 0.9241687)
+
+[node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]
+position = Vector2(-34.47046, 0)
+rotation = 0.0

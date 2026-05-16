@@ -36,6 +36,7 @@ texture = ExtResource("3_365hq")
 metadata/_edit_use_anchors_ = true
 
 [node name="icon mapa" type="TextureRect" parent="fondo" unique_id=1682948930]
+use_parent_material = true
 layout_mode = 0
 offset_left = 1767.0
 offset_top = 936.0
@@ -46,6 +47,7 @@ expand_mode = 1
 script = ExtResource("6_thwpb")
 
 [node name="Cajon-Exp" parent="." unique_id=1383882090 instance=ExtResource("7_thwpb")]
+visible = false
 
 [connection signal="mouse_entered" from="fondo/cajon" to="." method="_on_cajon_mouse_entered"]
 [connection signal="mouse_exited" from="fondo/cajon" to="." method="_on_cajon_mouse_exited"]

@@ -25,6 +25,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://ce3vaq2m6vj2y"
 VisualManager="*uid://bk08j2usi35xp"
 AudioManager="*uid://c6a48comekhju"
+Global="*uid://bexvl5cwh34ym"
 
 [dialogue_manager]
 

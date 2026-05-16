@@ -1,13 +1,26 @@
 [gd_scene format=3 uid="uid://btj7vgmedojd7"]
 
-[ext_resource type="Script" uid="uid://jmvdg6wv3g0v" path="res://papelera_exp.gd" id="1_f8whn"]
 [ext_resource type="Texture2D" uid="uid://ctejj71uy8esw" path="res://assets/detective/fondo/cajon abierto.png" id="2_n04o6"]
+
+[sub_resource type="GDScript" id="GDScript_c4w52"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v68xl"]
 size = Vector2(1108.5518, 465.28558)
 
 [node name="papelera-exp" type="CanvasLayer" unique_id=388073823]
-script = ExtResource("1_f8whn")
+script = SubResource("GDScript_c4w52")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=192251235]
 anchors_preset = -1

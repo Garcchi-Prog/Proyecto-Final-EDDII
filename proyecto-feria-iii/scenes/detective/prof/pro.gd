@@ -1,15 +1,9 @@
 extends Node2D
 
 var inArea: bool = false
-var save: bool = false
-@onready var cajon_exp: CanvasLayer = $"Cajon-Exp"
+@onready var cajon_exp: CanvasLayer = $prof
 @onready var fondo: TextureRect = $fondo
 
-func _on_cajon_mouse_entered() -> void:
-	inArea = true
-
-func _on_cajon_mouse_exited() -> void:
-	inArea = false
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("clic izq"):
@@ -20,7 +14,10 @@ func _input(event: InputEvent) -> void:
 		fondo.material.set_shader_parameter("strength",10)
 		cajon_exp.visible = true
 
-func get_resultado() -> bool:
-	if Global.save:
-		$fondo/cajon.queue_free()
-	return Global.save
+
+func _on_papelera_mouse_entered() -> void:
+	inArea = true
+
+
+func _on_papelera_mouse_exited() -> void:
+	inArea = false

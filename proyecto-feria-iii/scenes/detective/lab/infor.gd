@@ -1,14 +1,13 @@
 extends Node2D
 
 var inArea: bool = false
-@onready var cajon_exp: CanvasLayer = $"Cajon-Exp"
+@onready var cajon_exp: CanvasLayer = $"Pc-Exp"
 @onready var fondo: TextureRect = $fondo
 
-
-func _on_cajon_mouse_entered() -> void:
+func _on_pc_mouse_entered() -> void:
 	inArea = true
 
-func _on_cajon_mouse_exited() -> void:
+func _on_pc_mouse_exited() -> void:
 	inArea = false
 	
 func _input(event: InputEvent) -> void:

@@ -2,15 +2,26 @@
 
 [ext_resource type="Script" uid="uid://d1ex684b6vc7l" path="res://scenes/detective/lab/infor.gd" id="1_7eukd"]
 [ext_resource type="Texture2D" uid="uid://cuphd0ynkjwoi" path="res://assets/detective/fondo/Laboratorio_de_computación.jpg" id="1_cukft"]
+[ext_resource type="Shader" uid="uid://diu1fk8v2g4ti" path="res://resources/shader/dormitorio.gdshader" id="2_mkkf4"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="2_p8awh"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="3_xe3u5"]
-[ext_resource type="Texture2D" uid="uid://cieod6sdf3nq4" path="res://assets/detective/fondo/pc.png" id="7_n8fck"]
-[ext_resource type="Script" uid="uid://mh6caghr8hca" path="res://scenes/detective/lab/pc.gd" id="8_170ep"]
+[ext_resource type="PackedScene" uid="uid://cefaq4jq3l72j" path="res://scenes/detective/lab/pc_exp.tscn" id="7_mkkf4"]
+[ext_resource type="Script" uid="uid://g2bqjvwu0k5j" path="res://scenes/detective/prof/pc-Exp.gd" id="8_n8fck"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8fck"]
+shader = ExtResource("2_mkkf4")
+shader_parameter/strength = 0.0
+shader_parameter/sample_power = 4
+shader_parameter/is_canvas_group = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mkkf4"]
+load_path = "res://.godot/imported/pc.png-9d0fb5f397c2ff50a3dddce67d66ef13.ctex"
 
 [node name="Infor" type="Node2D" unique_id=322015405]
 script = ExtResource("1_7eukd")
 
 [node name="fondo" type="TextureRect" parent="." unique_id=824424371]
+material = SubResource("ShaderMaterial_n8fck")
 offset_left = 6.0
 offset_top = -22.0
 offset_right = 1926.0
@@ -19,6 +30,7 @@ texture = ExtResource("1_cukft")
 expand_mode = 1
 
 [node name="icon mapa" type="TextureRect" parent="fondo" unique_id=1976789491]
+use_parent_material = true
 layout_mode = 0
 offset_left = 1767.0
 offset_top = 936.0
@@ -29,11 +41,18 @@ expand_mode = 1
 script = ExtResource("3_xe3u5")
 
 [node name="pc" type="TextureRect" parent="fondo" unique_id=337146665]
+use_parent_material = true
 layout_mode = 0
 offset_left = 980.0
 offset_top = 635.0
 offset_right = 1408.0
 offset_bottom = 1106.0
-texture = ExtResource("7_n8fck")
+texture = SubResource("CompressedTexture2D_mkkf4")
 expand_mode = 1
-script = ExtResource("8_170ep")
+
+[node name="Pc-Exp" parent="." unique_id=1383882090 instance=ExtResource("7_mkkf4")]
+visible = false
+script = ExtResource("8_n8fck")
+
+[connection signal="mouse_entered" from="fondo/pc" to="." method="_on_pc_mouse_entered"]
+[connection signal="mouse_exited" from="fondo/pc" to="." method="_on_pc_mouse_exited"]

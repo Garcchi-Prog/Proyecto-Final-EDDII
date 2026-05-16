@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctejj71uy8esw" path="res://assets/detective/fondo/cajon abierto.png" id="2_h0x5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kay4"]
-size = Vector2(1108.5518, 465.28558)
+size = Vector2(919.7706, 465.28558)
 
 [node name="Cajon-Exp" type="CanvasLayer" unique_id=1383882090]
 follow_viewport_enabled = true
