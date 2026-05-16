@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhrkgvy61n1ei" path="res://scenes/cajon.png" id="3_365hq"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="5_365hq"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="6_thwpb"]
+[ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="7_thwpb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_thwpb"]
 shader = ExtResource("2_365hq")
@@ -43,6 +44,8 @@ offset_bottom = 1036.0
 texture = ExtResource("5_365hq")
 expand_mode = 1
 script = ExtResource("6_thwpb")
+
+[node name="Cajon-Exp" parent="." unique_id=1383882090 instance=ExtResource("7_thwpb")]
 
 [connection signal="mouse_entered" from="fondo/cajon" to="." method="_on_cajon_mouse_entered"]
 [connection signal="mouse_exited" from="fondo/cajon" to="." method="_on_cajon_mouse_exited"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b2cln8rvdvhsw"]
 
+[ext_resource type="Script" uid="uid://d1ex684b6vc7l" path="res://scenes/detective/lab/infor.gd" id="1_7eukd"]
 [ext_resource type="Texture2D" uid="uid://cuphd0ynkjwoi" path="res://assets/detective/fondo/Laboratorio_de_computación.jpg" id="1_cukft"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="2_p8awh"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="3_xe3u5"]
@@ -7,8 +8,9 @@
 [ext_resource type="Script" uid="uid://mh6caghr8hca" path="res://scenes/detective/lab/pc.gd" id="8_170ep"]
 
 [node name="Infor" type="Node2D" unique_id=322015405]
+script = ExtResource("1_7eukd")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=824424371]
+[node name="fondo" type="TextureRect" parent="." unique_id=824424371]
 offset_left = 6.0
 offset_top = -22.0
 offset_right = 1926.0
@@ -16,7 +18,7 @@ offset_bottom = 1058.0
 texture = ExtResource("1_cukft")
 expand_mode = 1
 
-[node name="icon mapa" type="TextureRect" parent="TextureRect" unique_id=1976789491]
+[node name="icon mapa" type="TextureRect" parent="fondo" unique_id=1976789491]
 layout_mode = 0
 offset_left = 1767.0
 offset_top = 936.0
@@ -26,7 +28,7 @@ texture = ExtResource("2_p8awh")
 expand_mode = 1
 script = ExtResource("3_xe3u5")
 
-[node name="pc" type="TextureRect" parent="TextureRect" unique_id=337146665]
+[node name="pc" type="TextureRect" parent="fondo" unique_id=337146665]
 layout_mode = 0
 offset_left = 980.0
 offset_top = 635.0

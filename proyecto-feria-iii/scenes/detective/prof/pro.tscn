@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://bll7bjk6hxdm3"]
 
 [ext_resource type="Texture2D" uid="uid://cixwqe2q1c0o2" path="res://assets/detective/fondo/oficina prof.jpg" id="1_0vo8y"]
-[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_qh3iy"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="2_e4p7r"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="3_nlg5k"]
 [ext_resource type="Texture2D" uid="uid://ch2ce1mmd4prm" path="res://assets/detective/fondo/image-removebg-preview (3).png" id="4_nlg5k"]
 [ext_resource type="Script" uid="uid://r45ymnx3dndm" path="res://scenes/detective/lab/papelera.gd" id="5_qh3iy"]
 
 [node name="Pro" type="Node2D" unique_id=1436520135]
-script = ExtResource("1_qh3iy")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1004939869]
 offset_right = 1920.0

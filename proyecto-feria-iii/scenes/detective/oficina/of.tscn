@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bua7ldwj0o6p2" path="res://assets/detective/fondo/oficina admi.jpg" id="1_xaq0b"]
 [ext_resource type="Texture2D" uid="uid://b3x4hvf15i77s" path="res://assets/detective/fondo/icono mapa.png" id="2_ryt1n"]
+[ext_resource type="Script" uid="uid://wkr55uihm81m" path="res://scenes/detective/oficina/texture_rect.gd" id="2_un2g1"]
 [ext_resource type="Script" uid="uid://dyg2usaynybp2" path="res://scenes/detective/dorm/icon_mapa.gd" id="3_un2g1"]
 
 [node name="Of" type="Node2D" unique_id=1145456299]
@@ -9,8 +10,10 @@
 [node name="TextureRect" type="TextureRect" parent="." unique_id=484155076]
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 0
 texture = ExtResource("1_xaq0b")
 expand_mode = 1
+script = ExtResource("2_un2g1")
 metadata/_edit_use_anchors_ = true
 
 [node name="icon mapa" type="TextureRect" parent="TextureRect" unique_id=1874799230]
