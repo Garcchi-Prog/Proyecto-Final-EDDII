@@ -6,7 +6,8 @@ var inArea: bool = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("clic izq") and inArea:
-		print("Evidencia encontrada!")
+		var dialogue_resource = load("res://dialogue/pro_dialogo.dialogue")
+		DialogueManager.show_dialogue_balloon(dialogue_resource)
 		inArea = false
 		area_2d.free()
 		

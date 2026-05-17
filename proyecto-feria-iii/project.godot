@@ -30,7 +30,7 @@ Global="*uid://bexvl5cwh34ym"
 [dialogue_manager]
 
 editor/advanced/custom_test_scene_path="uid://73jm5qjy52vq"
-runtime/balloon_path="res://resources/dialogues/textbox/balloon.tscn"
+runtime/balloon_path="uid://73jm5qjy52vq"
 
 [display]
 
@@ -63,7 +63,7 @@ folder_colors={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogues/Prologo.dialogue", "res://resources/dialogues/Juicio.dialogue", "res://dialogue/untitled.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialogues/Prologo.dialogue", "res://resources/dialogues/Juicio.dialogue", "res://dialogue/dorm_dialogo.dialogue", "res://dialogue/of_dialogo.dialogue", "res://dialogue/infor_dialogo.dialogue", "res://dialogue/pro_dialogo.dialogue")
 
 [physics]
 

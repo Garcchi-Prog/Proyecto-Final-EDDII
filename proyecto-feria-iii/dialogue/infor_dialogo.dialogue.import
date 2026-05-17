@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://08groho1q7gj"
+path="res://.godot/imported/infor_dialogo.dialogue-dff807702ea80b4ead910001967312a4.tres"
+
+[deps]
+
+source_file="res://dialogue/infor_dialogo.dialogue"
+dest_files=["res://.godot/imported/infor_dialogo.dialogue-dff807702ea80b4ead910001967312a4.tres"]
+
+[params]
+
+defaults=true
