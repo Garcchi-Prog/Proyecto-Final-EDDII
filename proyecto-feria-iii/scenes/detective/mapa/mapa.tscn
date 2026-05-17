@@ -6,9 +6,48 @@
 [ext_resource type="Script" uid="uid://dt1fgc4ctkdqs" path="res://scenes/detective/mapa/area_2d_2.gd" id="4_ak742"]
 [ext_resource type="Script" uid="uid://dgdlvyjbvekoa" path="res://scenes/detective/mapa/area_2d_3.gd" id="5_7pofx"]
 [ext_resource type="Script" uid="uid://cikp4q40sak1j" path="res://scenes/detective/mapa/area_2d_4.gd" id="6_fowg3"]
+[ext_resource type="Texture2D" uid="uid://byerlq70onn5f" path="res://assets/detective/fondo/235861.png" id="7_7pofx"]
+[ext_resource type="Texture2D" uid="uid://cg1p158kmi4x5" path="res://assets/detective/fondo/maxresdefault.jpg" id="7_fp65c"]
+[ext_resource type="Script" uid="uid://dqsb13ntj0nax" path="res://scenes/detective/mapa/animation_player.gd" id="8_ak742"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik40l"]
 size = Vector2(509, 181.5)
+
+[sub_resource type="Animation" id="Animation_ckxxp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oxvnh"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ak742"]
+_data = {
+&"RESET": SubResource("Animation_ckxxp"),
+&"fade": SubResource("Animation_oxvnh")
+}
 
 [node name="Mapa" type="Node2D" unique_id=584668378]
 script = ExtResource("1_ik40l")
@@ -53,3 +92,20 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mapadect/lab" unique_id=526326439]
 position = Vector2(240.5, 121.25)
 shape = SubResource("RectangleShape2D_ik40l")
+
+[node name="235861" type="Sprite2D" parent="mapadect" unique_id=505800801]
+position = Vector2(1826.0001, 991.00006)
+scale = Vector2(0.30761737, 0.28808585)
+texture = ExtResource("7_7pofx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=572510845]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_fp65c")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect" unique_id=884408839]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ak742")
+autoplay = &"fade"
+script = ExtResource("8_ak742")

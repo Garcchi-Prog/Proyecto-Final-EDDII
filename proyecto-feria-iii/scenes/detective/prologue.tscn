@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://r8jp6ofrbfsq"]
 
+[ext_resource type="Script" uid="uid://ep3vaqea1avh" path="res://scenes/detective/prologue.gd" id="1_oxvnh"]
+[ext_resource type="Texture2D" uid="uid://cg1p158kmi4x5" path="res://assets/detective/fondo/maxresdefault.jpg" id="2_eixlw"]
+
 [node name="Prologue" type="Node2D" unique_id=961022138]
+script = ExtResource("1_oxvnh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1339361214]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_eixlw")
+expand_mode = 1

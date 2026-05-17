@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnhw11ve65v15"
+path="res://.godot/imported/prologo_detective.dialogue-ef490a6fec0b2673225c860aa4d7fb59.tres"
+
+[deps]
+
+source_file="res://dialogue/prologo_detective.dialogue"
+dest_files=["res://.godot/imported/prologo_detective.dialogue-ef490a6fec0b2673225c860aa4d7fb59.tres"]
+
+[params]
+
+defaults=true
