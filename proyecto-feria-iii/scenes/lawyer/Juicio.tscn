@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c7slc8i8vgi4o"]
+
+[ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
+
+[node name="Juicio" type="Node2D" unique_id=788102766]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=442160134]
+offset_right = 1928.0
+offset_bottom = 1075.0
+texture = ExtResource("1_g74r4")
+metadata/_edit_use_anchors_ = true
