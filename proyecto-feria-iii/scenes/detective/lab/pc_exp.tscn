@@ -1,25 +1,25 @@
 [gd_scene format=3 uid="uid://cefaq4jq3l72j"]
 
 [ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="1_fbwi2"]
-[ext_resource type="Texture2D" uid="uid://ddiyb812037pu" path="res://assets/detective/fondo/cancerbero.jpg" id="2_j36vh"]
+[ext_resource type="Texture2D" uid="uid://bo7dmxg6thq1k" path="res://assets/detective/evidencia/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg" id="2_j36vh"]
 
 [node name="Pc-Exp" unique_id=1383882090 instance=ExtResource("1_fbwi2")]
 
 [node name="TextureRect" parent="." index="0" unique_id=156090564]
-anchor_right = 0.2108073
-anchor_bottom = 0.21967593
-offset_left = 523.0
-offset_top = 362.99988
-offset_right = 907.0
-offset_bottom = 582.9998
+anchor_right = 0.08450521
+anchor_bottom = -0.11597233
+offset_left = 566.0
+offset_top = -42.000126
+offset_right = 1155.0
+offset_bottom = 1416.75
 texture = ExtResource("2_j36vh")
 expand_mode = 1
 
 [node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
-position = Vector2(329.99997, 167.49997)
+position = Vector2(307.5, 146.25)
 rotation = 0.0
 scale = Vector2(0.74339217, 0.9241687)
 
 [node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]
-position = Vector2(-34.47046, 0)
+position = Vector2(-34.47046, 497.74396)
 rotation = 0.0
