@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://48lkgwenh1ib"]
 
 [ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="1_ylq04"]
-[ext_resource type="Texture2D" uid="uid://d4gwuhgqfqglq" path="res://assets/detective/fondo/asistencia borrar.png" id="2_iesjw"]
+[ext_resource type="Texture2D" uid="uid://cydhtq6bgbj6f" path="res://assets/detective/fondo/asistencia borrar.png" id="2_iesjw"]
 
 [node name="prof" unique_id=1383882090 instance=ExtResource("1_ylq04")]
 
 [node name="TextureRect" parent="." index="0" unique_id=156090564]
-anchor_right = 0.456787
+anchor_right = 0.93885285
 anchor_bottom = 1.0849259
-offset_left = 688.0
-offset_top = 189.99986
-offset_right = 515.969
-offset_bottom = -185.71997
+offset_left = 275.0
+offset_top = 169.99983
+offset_right = 102.968994
+offset_bottom = -205.71997
 scale = Vector2(0.6657002, 0.7108017)
 texture = ExtResource("2_iesjw")
 expand_mode = 1
 
 [node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
-position = Vector2(621.9015, 348.9018)
+position = Vector2(1104.1006, 355.93613)
 rotation = 0.0
 
 [node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]

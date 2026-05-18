@@ -6,20 +6,22 @@
 [node name="Pc-Exp" unique_id=1383882090 instance=ExtResource("1_fbwi2")]
 
 [node name="TextureRect" parent="." index="0" unique_id=156090564]
-anchor_right = 0.08450521
-anchor_bottom = -0.11597233
-offset_left = 566.0
-offset_top = -42.000126
-offset_right = 1155.0
-offset_bottom = 1416.75
+anchor_left = 0.08450521
+anchor_top = -0.11597233
+anchor_right = 0.051822916
+anchor_bottom = -0.2618059
+offset_left = 635.75
+offset_top = 146.25012
+offset_right = 1224.75
+offset_bottom = 1605.0002
 texture = ExtResource("2_j36vh")
 expand_mode = 1
 
 [node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
-position = Vector2(307.5, 146.25)
+position = Vector2(311.25, 117.5)
 rotation = 0.0
 scale = Vector2(0.74339217, 0.9241687)
 
 [node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]
-position = Vector2(-34.47046, 497.74396)
+position = Vector2(-47.08142, 552.0165)
 rotation = 0.0
