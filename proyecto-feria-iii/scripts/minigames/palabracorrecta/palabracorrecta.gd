@@ -2,7 +2,7 @@ extends Control
 
 @onready var contenedor = $ContenedorArbol
 
-var escena_nodo = preload("res://scenes/minigames/PalabraCorrecta/NodoArbol.tscn")
+var escena_nodo = preload("res://scenes/minigames/PalabraCorrecta/NodoArbol.tscn"		)
 
 
 # =========================================================
@@ -121,55 +121,112 @@ func seleccionar_recorrido():
 
 func construir_arbol():
 
-	# Crear lista base
-	var palabras = frase_objetivo.duplicate()
+	match recorrido_actual:
 
-	# Agregar distractores
-	distractores.shuffle()
+		"PREORDEN":
 
-	var cantidad_distractores = randi_range(3, 5)
+			raiz = construir_preorden(frase_objetivo.duplicate())
 
-	for i in range(cantidad_distractores):
+		"INORDEN":
 
-		palabras.append(distractores[i])
+			raiz = construir_inorden(frase_objetivo.duplicate())
 
-	# Mezclar distractores
-	palabras.shuffle()
+		"POSTORDEN":
 
-	# Crear nodos
-	var nodos = []
+			raiz = construir_postorden(frase_objetivo.duplicate())
 
-	for palabra in palabras:
+	# Insertar distractores aleatorios
+	insertar_distractores(raiz)	
 
-		nodos.append(NodoABB.new(palabra))
-
-	# Construir árbol recursivamente
-	raiz = construir_subarbol(nodos)
-
-
-# =========================================================
-# CONSTRUIR SUBARBOL
-# =========================================================
-
-func construir_subarbol(lista):
+func construir_preorden(lista):
 
 	if lista.is_empty():
 
 		return null
 
-	var nodo = lista.pop_front()
+	var palabra = lista.pop_front()
 
-	# Probabilidad de hijos
-	if lista.size() > 0 and randf() < 0.8:
+	var nodo = NodoABB.new(palabra)
 
-		nodo.izquierda = construir_subarbol(lista)
+	var mitad = lista.size() / 2
 
-	if lista.size() > 0 and randf() < 0.8:
+	var izquierda_lista = lista.slice(0, mitad)
 
-		nodo.derecha = construir_subarbol(lista)
+	var derecha_lista = lista.slice(mitad)
+
+	nodo.izquierda = construir_preorden(izquierda_lista)
+
+	nodo.derecha = construir_preorden(derecha_lista)
 
 	return nodo
+	
+func construir_inorden(lista):
 
+	if lista.is_empty():
+
+		return null
+
+	var mitad = lista.size() / 2
+
+	var nodo = NodoABB.new(lista[mitad])
+
+	var izquierda_lista = lista.slice(0, mitad)
+
+	var derecha_lista = lista.slice(mitad + 1)
+
+	nodo.izquierda = construir_inorden(izquierda_lista)
+
+	nodo.derecha = construir_inorden(derecha_lista)
+
+	return nodo
+	
+func construir_postorden(lista):
+
+	if lista.is_empty():
+
+		return null
+
+	var palabra = lista.pop_back()
+
+	var nodo = NodoABB.new(palabra)
+
+	var mitad = lista.size() / 2
+
+	var izquierda_lista = lista.slice(0, mitad)
+
+	var derecha_lista = lista.slice(mitad)
+
+	nodo.izquierda = construir_postorden(izquierda_lista)
+
+	nodo.derecha = construir_postorden(derecha_lista)
+
+	return nodo
+	
+func insertar_distractores(nodo):
+
+	if nodo == null:
+
+		return
+
+	# IZQUIERDA
+	if nodo.izquierda == null and randf() < 0.35:
+
+		nodo.izquierda = NodoABB.new(
+			distractores.pick_random(),
+			false
+		)
+
+	# DERECHA
+	if nodo.derecha == null and randf() < 0.35:
+
+		nodo.derecha = NodoABB.new(
+			distractores.pick_random(),
+			false
+		)
+
+	insertar_distractores(nodo.izquierda)
+
+	insertar_distractores(nodo.derecha)	
 
 # =========================================================
 # OBTENER RECORRIDO CORRECTO
@@ -193,17 +250,8 @@ func obtener_recorrido_correcto():
 
 			postorden(raiz)
 
-	# Filtrar SOLO palabras de la frase
-	var filtradas = []
 
-	for palabra in secuencia_correcta:
-
-		if palabra in frase_objetivo:
-
-			filtradas.append(palabra)
-
-	secuencia_correcta = filtradas
-
+		
 
 # =========================================================
 # PREORDEN
@@ -215,11 +263,13 @@ func preorden(nodo):
 
 		return
 
-	secuencia_correcta.append(nodo.palabra)
+	if nodo.es_frase:
+
+		secuencia_correcta.append(nodo.palabra)
 
 	preorden(nodo.izquierda)
 
-	preorden(nodo.derecha)
+	preorden(nodo.derecha)		
 
 
 # =========================================================
@@ -234,7 +284,9 @@ func inorden(nodo):
 
 	inorden(nodo.izquierda)
 
-	secuencia_correcta.append(nodo.palabra)
+	if nodo.es_frase:
+
+		secuencia_correcta.append(nodo.palabra)
 
 	inorden(nodo.derecha)
 
@@ -253,8 +305,9 @@ func postorden(nodo):
 
 	postorden(nodo.derecha)
 
-	secuencia_correcta.append(nodo.palabra)
+	if nodo.es_frase:
 
+		secuencia_correcta.append(nodo.palabra)		
 
 # =========================================================
 # SELECCIONAR PALABRA
@@ -336,7 +389,9 @@ func dibujar_arbol():
 
 	limpiar_arbol()
 
-	dibujar_nodo(raiz, Vector2(700, 120), 350)
+	var ancho_pantalla = 1920
+
+	dibujar_nodo(raiz, Vector2(ancho_pantalla / 2, 120), 260)
 
 
 func dibujar_nodo(nodo, posicion, espacio):
@@ -358,24 +413,28 @@ func dibujar_nodo(nodo, posicion, espacio):
 	# HIJO IZQUIERDO
 	if nodo.izquierda != null:
 
+		var izquierda_pos = Vector2(
+			posicion.x - espacio,
+			posicion.y + 120
+		)
+
 		dibujar_nodo(
 			nodo.izquierda,
-			Vector2(
-				posicion.x - espacio,
-				posicion.y + 140
-			),
-			espacio * 0.5
+			izquierda_pos,
+			espacio * 0.55
 		)
 
 	# HIJO DERECHO
 	if nodo.derecha != null:
 
+		var derecha_pos = Vector2(
+			posicion.x + espacio,
+			posicion.y + 120
+		)
+
 		dibujar_nodo(
 			nodo.derecha,
-			Vector2(
-				posicion.x + espacio,
-				posicion.y + 140
-			),
-			espacio * 0.5
+			derecha_pos,
+			espacio * 0.55
 		)
-		
+	
