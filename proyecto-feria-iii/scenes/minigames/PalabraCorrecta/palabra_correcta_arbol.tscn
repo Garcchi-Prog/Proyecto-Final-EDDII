@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cs6e3f6qoplcn"]
+
+[ext_resource type="Script" uid="uid://cjm0rmmnmnn4u" path="res://scripts/minigames/palabracorrecta/palabracorrecta.gd" id="1_b3u73"]
+
+[node name="PalabraCorrectaArbol" type="Control" unique_id=1346642252]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3u73")
+
+[node name="ContenedorArbol" type="Control" parent="." unique_id=1840273519]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

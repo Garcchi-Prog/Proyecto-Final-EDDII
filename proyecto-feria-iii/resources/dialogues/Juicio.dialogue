@@ -21,20 +21,11 @@ Fiscal: Un error típico de un criminal arrogante.
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
 Defensa(thought): Voy a tratar de hallar la verdad a través de su trampa.
 
-show choices
-
-"¿A qué distancia estaba de Valentina ese día?":
-jump opcion_incorrecta_1
-
-"Preguntar la hora en la que vio el mensaje.":
-jump pregunta_hora
-
-"¿Qué aplicación usaba para ver los mensajes?":
-jump opcion_incorrecta_2
+do iniciar_minijuego
 
 
 
-label pregunta_hora
+
 
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
