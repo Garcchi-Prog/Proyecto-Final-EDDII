@@ -1,26 +1,64 @@
 [gd_scene format=3 uid="uid://48lkgwenh1ib"]
 
-[ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="1_ylq04"]
+[ext_resource type="Script" uid="uid://g2bqjvwu0k5j" path="res://scenes/detective/prof/pc-Exp.gd" id="1_iesjw"]
 [ext_resource type="Texture2D" uid="uid://cydhtq6bgbj6f" path="res://assets/detective/fondo/asistencia borrar.png" id="2_iesjw"]
 
-[node name="prof" unique_id=1383882090 instance=ExtResource("1_ylq04")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iesjw"]
+size = Vector2(860.25464, 319.64548)
 
-[node name="TextureRect" parent="." index="0" unique_id=156090564]
+[node name="prof" type="CanvasLayer" unique_id=1383882090]
+follow_viewport_enabled = true
+script = ExtResource("1_iesjw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=156090564]
+anchors_preset = -1
+anchor_left = 0.106770836
+anchor_top = 0.08888902
 anchor_right = 0.93885285
 anchor_bottom = 1.0849259
 offset_left = 275.0
 offset_top = 169.99983
 offset_right = 102.968994
 offset_bottom = -205.71997
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.6657002, 0.7108017)
+size_flags_horizontal = 6
+size_flags_vertical = 4
 texture = ExtResource("2_iesjw")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
-position = Vector2(1104.1006, 355.93613)
-rotation = 0.0
+[node name="Area2D" type="Area2D" parent="TextureRect" unique_id=752127790]
+position = Vector2(1083.0701, 309.5097)
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]
-position = Vector2(-371.46423, 0)
-rotation = 0.0
-scale = Vector2(1.1290371, 1.6813046)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D" unique_id=1309262283]
+position = Vector2(-371.46423, 42.20587)
+scale = Vector2(1.1290371, 1.6813042)
+shape = SubResource("RectangleShape2D_iesjw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2056983215]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=449454599]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer" unique_id=1091535841]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/MarginContainer" unique_id=1810320411]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Salir"
+
+[connection signal="mouse_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

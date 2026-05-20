@@ -1,27 +1,65 @@
 [gd_scene format=3 uid="uid://cefaq4jq3l72j"]
 
-[ext_resource type="PackedScene" uid="uid://dqiikxvwbouto" path="res://scenes/detective/dorm/cajon_exp.tscn" id="1_fbwi2"]
 [ext_resource type="Texture2D" uid="uid://bo7dmxg6thq1k" path="res://assets/detective/evidencia/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg" id="2_j36vh"]
+[ext_resource type="Script" uid="uid://g2bqjvwu0k5j" path="res://scenes/detective/prof/pc-Exp.gd" id="2_ki132"]
 
-[node name="Pc-Exp" unique_id=1383882090 instance=ExtResource("1_fbwi2")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki132"]
+size = Vector2(919.7706, 1408.6995)
 
-[node name="TextureRect" parent="." index="0" unique_id=156090564]
-anchor_left = 0.08450521
-anchor_top = -0.11597233
+[node name="Pc-Exp" type="CanvasLayer" unique_id=1383882090]
+follow_viewport_enabled = true
+script = ExtResource("2_ki132")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=156090564]
+anchors_preset = -1
+anchor_left = 0.051822916
+anchor_top = -0.2618059
 anchor_right = 0.051822916
 anchor_bottom = -0.2618059
 offset_left = 635.75
 offset_top = 146.25012
 offset_right = 1224.75
 offset_bottom = 1605.0002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 6
+size_flags_vertical = 4
 texture = ExtResource("2_j36vh")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" parent="TextureRect" index="0" unique_id=752127790]
-position = Vector2(311.25, 117.5)
-rotation = 0.0
+[node name="Area2D" type="Area2D" parent="TextureRect" unique_id=752127790]
+position = Vector2(324.6875, 210.62529)
 scale = Vector2(0.74339217, 0.9241687)
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" parent="TextureRect/Area2D" index="0" unique_id=1309262283]
-position = Vector2(-47.08142, 552.0165)
-rotation = 0.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D" unique_id=1309262283]
+position = Vector2(-47.081177, 477.11807)
+scale = Vector2(0.9999994, 0.99999946)
+shape = SubResource("RectangleShape2D_ki132")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=609724148]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=449454599]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer" unique_id=2049811064]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/MarginContainer" unique_id=1810320411]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Salir"
+
+[connection signal="mouse_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://lyy28ryrykc7"]
 
-[ext_resource type="Script" uid="uid://42qdt4vv8psl" path="res://scripts/ui/lobby.gd" id="1_5k83l"]
+[ext_resource type="Script" path="res://scripts/ui/lobby.gd" id="1_5k83l"]
 [ext_resource type="Texture2D" uid="uid://4fhatc66aufs" path="res://icon.svg" id="1_720y1"]
 [ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="3_6s1bq"]
+[ext_resource type="Resource" uid="uid://duj4dusb5nggy" path="res://resources/tube contexts/tubeContext.tres" id="4_h2fxu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yk8q6"]
 load_path = "res://.godot/imported/Menu_background.png-05e64b9be60a4939551770196384139b.ctex"
@@ -206,8 +207,9 @@ theme_override_font_sizes/font_size = 70
 disabled = true
 text = "Start Game"
 
-[node name="TubeClient" type="Node" parent="." unique_id=157956257]
+[node name="TubeClient" type="Node" parent="." unique_id=1785136425]
 script = ExtResource("3_6s1bq")
+context = ExtResource("4_h2fxu")
 metadata/_custom_type_script = "uid://cy006uvidc4y"
 
 [connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/Create Room" to="." method="_on_create_room_pressed"]

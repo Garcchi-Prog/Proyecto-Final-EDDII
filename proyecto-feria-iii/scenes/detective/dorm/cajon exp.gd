@@ -4,11 +4,17 @@ extends Node
 @onready var area_2d: Area2D = $TextureRect/Area2D
 var inArea: bool = false
 
+func _ready() -> void:
+	if GameManager.pruebas[1][1]:
+		texture_rect.texture = preload("res://assets/detective/fondo/cerrado.png")
+		area_2d.free()
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("clic izq") and inArea:
 		texture_rect.texture = preload("res://assets/detective/fondo/cerrado.png")
 		var dialogue_resource = load("res://dialogue/dorm_dialogo.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource)
+		GameManager.pruebas[1][1] = true
 		inArea = false
 		area_2d.free()
 		

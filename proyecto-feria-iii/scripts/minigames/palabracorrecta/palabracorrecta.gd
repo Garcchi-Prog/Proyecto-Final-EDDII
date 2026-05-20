@@ -391,6 +391,7 @@ func dibujar_arbol():
 
 	var ancho_pantalla = 1920
 
+	@warning_ignore("integer_division")
 	dibujar_nodo(raiz, Vector2(ancho_pantalla / 2, 120), 260)
 
 

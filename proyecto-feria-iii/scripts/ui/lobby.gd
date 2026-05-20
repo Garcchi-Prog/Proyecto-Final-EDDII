@@ -11,7 +11,7 @@ var isSession: bool = false
 
 func _ready() -> void:
 	jugador_1.text = OS.get_environment("USERNAME")
-	
+	tube_client.session_joined.connect(updateInfo)
 
 func _on_create_room_pressed() -> void:
 	if isSession:
@@ -28,3 +28,6 @@ func _on_join_room_pressed() -> void:
 		isSession = false
 		
 	tube_client.join_session(room_id.text)
+
+func updateInfo() -> void:
+	pass

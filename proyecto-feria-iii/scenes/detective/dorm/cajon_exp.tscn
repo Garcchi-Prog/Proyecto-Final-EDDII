@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctejj71uy8esw" path="res://assets/detective/fondo/cajon abierto.png" id="2_h0x5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kay4"]
-size = Vector2(919.7706, 465.28558)
+size = Vector2(919.7706, 485.3487)
 
 [node name="Cajon-Exp" type="CanvasLayer" unique_id=1383882090]
 follow_viewport_enabled = true
@@ -27,13 +27,13 @@ texture = ExtResource("2_h0x5f")
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="TextureRect" unique_id=752127790]
-position = Vector2(971.25, 586.25)
+position = Vector2(950, 587.4998)
 rotation = 0.011217358
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D" unique_id=1309262283]
 rotation = 0.24407956
-scale = Vector2(0.9999995, 0.9999995)
+scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_1kay4")
 
 [node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=449454599]
