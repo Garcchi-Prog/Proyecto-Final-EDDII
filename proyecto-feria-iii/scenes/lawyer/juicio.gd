@@ -1,7 +1,7 @@
 extends Node2D
 
 var dialogue_sc = preload("res://resources/dialogues/Juicio.dialogue")
-var minigame_scene = preload("res://scenes/minigames/palabra_correcta_arbol.tscn")
+var minigame_scene = preload("res://scenes/minigames/PalabraCorrecta/palabra_correcta_arbol.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

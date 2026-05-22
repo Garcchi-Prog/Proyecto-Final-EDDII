@@ -24,7 +24,6 @@ buses/default_bus_layout="uid://cbd6nbfb6lnlq"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://ce3vaq2m6vj2y"
 VisualManager="*uid://bk08j2usi35xp"
-AudioManager="*uid://c6a48comekhju"
 Global="*uid://bexvl5cwh34ym"
 
 [dialogue_manager]
@@ -38,7 +37,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/size/initial_position_type=0
-window/size/resizable=false
 window/size/sharp_corners=true
 window/main_scene="uid://ugd552efvil0"
 

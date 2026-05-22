@@ -20,13 +20,26 @@ Fiscal: Un error típico de un criminal arrogante.
 
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
 Defensa(thought): Voy a tratar de hallar la verdad a través de su trampa.
+Defensa(thought): ¿Qué deberia preguntarle a la joven Lilliana?
 
-do iniciar_minijuego
+~ ronda_preguntas
+- ¿A qué distancia estaba de Valentina ese día?
+	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
+	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
+	=> ronda_preguntas
+
+- Preguntar la hora en la que vio el mensaje. 
+	=> fin_interrogatorio
+
+- ¿Qué aplicación usaba para ver los mensajes?
+	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
+	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
+	=> ronda_preguntas
 
 
 
 
-
+~ fin_interrogatorio
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
 
@@ -54,19 +67,21 @@ Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de
 Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
 Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
-show choices
+~ ronda_pregunta2
+ - ¿El telefono estaba apagado?
+	Fiscal: ¡¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
+	Defensa(thought): Diablos! debo pensar mejor en lo que pregunto
+	=> ronda_pregunta2
 
-"¿El teléfono estaba apagado?":
-jump opcion_incorrecta_3
+- ¿El mensaje es editado o falsificado?. 
+	=> fin_interrogatorio2
 
-"¿El mensaje es editado o falsificado?":
-jump mensaje_editado
+- ¿Alguien mas vio su pantalla?
+	Fiscal: ¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
+	Defensa(thought): Diablos! debo pensar mejor en lo que pregunto
+	=> ronda_pregunta2
 
-"¿Alguien más vio su pantalla?":
-jump opcion_incorrecta_4
-
-label mensaje_editado
-
+~ fin_interrogatorio2
 Defensa: ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
 Defensa: Cabe la posibilidad que hayan falsificado las capturas para ocultar lo del editado en el mensaje.
@@ -137,19 +152,23 @@ Defensa: Y es acerca de la identidad de la cuenta anónima.
 
 Lilliana: ¿Qué habría más que decir...?
 
-show choices
+~ ronda_pregunta3
 
-"¿Recuerdas la hora del envío?":
-jump opcion_incorrecta_5
+- ¿Recuerdas la hora del envio?
+	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones
+	Defensa(thought): Demonios! A este punto pensaran que soy un fraude
+	=> ronda_pregunta3
 
-"¿Recuerdas el nombre de aquella cuenta?":
-jump nombre_cuenta
+- ¿Tu cuenta es famosa, verdad?
+	=> fin_interrogatorio3
 
-"Tu cuenta es famosa, ¿verdad?":
-jump opcion_incorrecta_6
+- ¿Recuerdas el nombre de aquella cuenta?
+	Fiscal: ¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
+	Defensa: Diablos! debo pensar mejor en lo que pregunto
+	=> fin_interrogatorio3
 
-label nombre_cuenta
 
+~ fin_interrogatorio3
 Lilliana: Ahm...
 Lilliana: No...
 Lilliana: No recuerdo cómo se llamaba antes de que la borrara...
