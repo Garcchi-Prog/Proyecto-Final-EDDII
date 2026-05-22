@@ -1,5 +1,8 @@
 ~ start
 
+do Juicio.intentos = 5
+do Juicio.max_intentos = 5
+do Juicio.checkpoint_actual = "primer_checkpoint"
 
 Juez: Procedo a iniciar este juicio contra la acusada Valentina, quien ha sido denunciada por la víctima Lilliana por incitación al odio, falsificación de información y amenazas continuas. Puede la denunciante proceder a dar su declaración de los hechos.
 
@@ -18,28 +21,53 @@ Fiscal: Presento la captura de pantalla de la confesión:
 Fiscal: "Exacto, yo, Valentina".
 Fiscal: Un error típico de un criminal arrogante.
 
+~ primer_checkpoint
+
+do Juicio.checkpoint_actual = "primer_checkpoint"
+
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
 Defensa(thought): Voy a tratar de hallar la verdad a través de su trampa.
-Defensa(thought): ¿Qué deberia preguntarle a la joven Lilliana?
+Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 
 ~ ronda_preguntas
+
 - ¿A qué distancia estaba de Valentina ese día?
+
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
 	=> ronda_preguntas
 
-- Preguntar la hora en la que vio el mensaje. 
+- Preguntar la hora en la que vio el mensaje.
+
+	if Juicio.intentos < Juicio.max_intentos
+		do Juicio.intentos += 1
+
 	=> fin_interrogatorio
 
 - ¿Qué aplicación usaba para ver los mensajes?
+
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
 	=> ronda_preguntas
+
 
 
 
 
 ~ fin_interrogatorio
+
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
 
@@ -52,36 +80,59 @@ Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y franc
 
 show evidence
 
-"Live de Instagram":
-jump evidencia_live
-
-label evidencia_live
-
 Defensa: Pues, según este Live de Instagram, a esa misma hora te encontrabas de fiesta en una discoteca.
 Defensa: Y en ningún momento parecía que hayas recibido ese mensaje.
 
 Lilliana: Pude alterar mi testimonio por el consumo de licor de aquel día...
 Lilliana: ¡Pero ese mensaje me llegó y hay pruebas verídicas!
 
+~ segundo_checkpoint
+
+do Juicio.checkpoint_actual = "segundo_checkpoint"
+
 Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de su calvario no invalida la prueba digital.
 Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
 Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
 ~ ronda_pregunta2
- - ¿El telefono estaba apagado?
-	Fiscal: ¡¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
-	Defensa(thought): Diablos! debo pensar mejor en lo que pregunto
+
+- ¿El teléfono estaba apagado?
+
+	Fiscal: ¡¿Acaso no escucha los testimonios de este juicio además de los suyos?!
+	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
 	=> ronda_pregunta2
 
-- ¿El mensaje es editado o falsificado?. 
+- ¿El mensaje es editado o falsificado?
+
+	if Juicio.intentos < Juicio.max_intentos
+		do Juicio.intentos += 1
+
 	=> fin_interrogatorio2
 
-- ¿Alguien mas vio su pantalla?
-	Fiscal: ¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
-	Defensa(thought): Diablos! debo pensar mejor en lo que pregunto
+- ¿Alguien más vio su pantalla?
+
+	Fiscal: ¿Acaso no escucha los testimonios de este juicio además de los suyos?!
+	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
 	=> ronda_pregunta2
 
+
+
+
+
 ~ fin_interrogatorio2
+
 Defensa: ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
 Defensa: Cabe la posibilidad que hayan falsificado las capturas para ocultar lo del editado en el mensaje.
@@ -102,8 +153,6 @@ Juez: No se permiten dispositivos con acceso a redes sociales en esta sala.
 Fiscal: Entiendo.
 Fiscal: Ya que no se puede seguir, pasemos a la siguiente evidencia.
 
-
-
 Fiscal: Acá podemos ver cómo las amenazas constantes y mensajes de odio han provocado que mi clienta no quiera asistir a clases por un largo tiempo.
 
 Lilliana: E-es verdad...
@@ -114,11 +163,6 @@ Defensa(thought): Esto es algo extraño...
 Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 
 show evidence
-
-"Registro de asistencias de Circuitos I":
-jump asistencias
-
-label asistencias
 
 Defensa: Permítame contradecir su testimonio.
 Defensa: Hay una discrepancia en su argumento.
@@ -139,12 +183,15 @@ Juez: ¿Qué tiene el fiscal que decir en su defensa?
 Fiscal: ...
 
 Defensa: Como lo sospeché...
+
+~ tercer_checkpoint
+
+do Juicio.checkpoint_actual = "tercer_checkpoint"
+
 Defensa: En fin, hay algo que quisiera retomar acerca del mensaje.
 Defensa: ¿Tengo permiso para hablar, su señoría?
 
 Juez: Concedido.
-
-
 
 Defensa: Muchas gracias.
 Defensa: Hay algo que me faltó preguntarle a Lilliana.
@@ -154,21 +201,44 @@ Lilliana: ¿Qué habría más que decir...?
 
 ~ ronda_pregunta3
 
-- ¿Recuerdas la hora del envio?
-	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones
-	Defensa(thought): Demonios! A este punto pensaran que soy un fraude
+- ¿Recuerdas la hora del envío?
+
+	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones.
+	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
 	=> ronda_pregunta3
 
 - ¿Tu cuenta es famosa, verdad?
-	=> fin_interrogatorio3
+
+	Lilliana: Pues, por supuesto que sí. Aun así, ¿qué tiene que ver con mi testimonio?
+	Fiscal: Realmente parece que tu incompetencia no tiene límites humanos.
+	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
+
+	do Juicio.intentos -= 1
+
+	if Juicio.intentos == 0
+		=> game_over
+
+	=> ronda_pregunta3
 
 - ¿Recuerdas el nombre de aquella cuenta?
-	Fiscal: ¿Acaso no escucha los testimonios  de este juicio además de los suyos?!
-	Defensa: Diablos! debo pensar mejor en lo que pregunto
+
+	if Juicio.intentos < Juicio.max_intentos
+		do Juicio.intentos += 1
+
 	=> fin_interrogatorio3
+
+
+
 
 
 ~ fin_interrogatorio3
+
 Lilliana: Ahm...
 Lilliana: No...
 Lilliana: No recuerdo cómo se llamaba antes de que la borrara...
@@ -192,11 +262,6 @@ Defensa: Valentina guardó evidencia de los mensajes antes de su edición a mano
 Defensa: Y acá tengo una prueba.
 
 show evidence
-
-"Chat original":
-jump chat_original
-
-label chat_original
 
 Defensa: Exacto.
 Defensa: Lilliana estuvo manipulando y amenazando a Valentina todo este tiempo para crear un escenario donde ella fuera la mala.
@@ -222,3 +287,32 @@ Defensa: Acaba de admitir el fraude y el acoso.
 Narrador: Lilliana cae de rodillas gritando mientras su teléfono se rompe en el suelo.
 
 => END
+
+
+
+
+
+~ game_over
+
+Juez: Al no haber suficientes pruebas que permitan comprobar la inocencia de la acusada, se declara a esta misma culpable de los cargos de acoso y amenaza a la señorita Lilliana.
+
+Defensa(thought): Con que este es el fin...
+Defensa(thought): No pude cumplir mi objetivo.
+Defensa(thought): ¿En serio voy a rendirme así de fácil...?
+
+- Reintentar desde el último punto de control
+
+	do Juicio.intentos = 5
+
+	if Juicio.checkpoint_actual == "primer_checkpoint"
+		=> primer_checkpoint
+
+	if Juicio.checkpoint_actual == "segundo_checkpoint"
+		=> segundo_checkpoint
+
+	if Juicio.checkpoint_actual == "tercer_checkpoint"
+		=> tercer_checkpoint
+
+- Salir
+
+	=> END
