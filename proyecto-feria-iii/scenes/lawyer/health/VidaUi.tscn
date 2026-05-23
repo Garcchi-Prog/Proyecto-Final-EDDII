@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://m4d720fb2yt6"]
+
+[ext_resource type="Texture2D" uid="uid://ccfpyt3ufnkdq" path="res://assets/ui/icons/heartsprite.png" id="1_oflwt"]
+
+[node name="VidaUi" type="Control" unique_id=1474256297]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1485594889]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Vida1" type="TextureRect" parent="HBoxContainer" unique_id=1209696366]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_oflwt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Vida2" type="TextureRect" parent="HBoxContainer" unique_id=1296985655]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_oflwt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Vida3" type="TextureRect" parent="HBoxContainer" unique_id=1129407686]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_oflwt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Vida4" type="TextureRect" parent="HBoxContainer" unique_id=851273832]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_oflwt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Vida5" type="TextureRect" parent="HBoxContainer" unique_id=573261833]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_oflwt")
+expand_mode = 1
+stretch_mode = 5

@@ -3,8 +3,11 @@ var intentos = 5
 var max_intentos = 5
 var checkpoint_actual = ""
 var prueba_espera = false
+var ui_vidas = null
 
 func _ready():
+	Juicio.ui_vidas = $VidaUI
+	
 	DialogueManager.show_dialogue_balloon(
 		load("res://resources/dialogues/Juicio.dialogue"),
 		"start")
@@ -12,16 +15,22 @@ func _ready():
 	
 func restar_intento():
 	intentos -= 1
+	if ui_vidas:
+		ui_vidas.actualizar_vidas(intentos)
 
 func sumar_intento():
 	if intentos < max_intentos:
 		intentos += 1
+		if ui_vidas:
+			ui_vidas.actualizar_vidas(intentos)
 
 func sin_intentos():
 	return intentos <= 0
 
 func reiniciar_intentos():
 	intentos = max_intentos
+	if ui_vidas:
+		ui_vidas.actualizar_vidas(intentos)
 
 func verificar_prueba(prueba_correcta):
 	if GameManager.prueba_seleccionada == prueba_correcta:

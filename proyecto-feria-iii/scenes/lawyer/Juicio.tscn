@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gxk4c8ixjmhn" path="res://scripts/Juicio.gd" id="1_4xg3d"]
 [ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
+[ext_resource type="PackedScene" uid="uid://m4d720fb2yt6" path="res://scenes/lawyer/health/VidaUi.tscn" id="2_lm43y"]
 
 [node name="Juicio" type="Node2D" unique_id=788102766]
 script = ExtResource("1_4xg3d")
@@ -10,4 +11,14 @@ script = ExtResource("1_4xg3d")
 offset_right = 1928.0
 offset_bottom = 1075.0
 texture = ExtResource("1_g74r4")
+metadata/_edit_use_anchors_ = true
+
+[node name="VidaUi" parent="." unique_id=1474256297 instance=ExtResource("2_lm43y")]
+anchors_preset = 1
+anchor_left = 1.0
+offset_left = 1394.0
+offset_top = 23.0
+offset_right = 1910.0
+offset_bottom = 198.0
+grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
