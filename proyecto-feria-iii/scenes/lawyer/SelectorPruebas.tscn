@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5s3c8h5k4sp5"]
+
+[ext_resource type="Script" uid="uid://bxwmh8nfjfrc2" path="res://scripts/selectorpruebas.gd" id="1_5lyjm"]
+
+[node name="SelectorPruebas" type="CanvasLayer" unique_id=1004797773]
+script = ExtResource("1_5lyjm")
+
+[node name="Panel" type="Panel" parent="." unique_id=497352862]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=469934338]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
