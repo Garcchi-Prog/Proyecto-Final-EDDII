@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://m4d720fb2yt6"]
 
 [ext_resource type="Texture2D" uid="uid://ccfpyt3ufnkdq" path="res://assets/ui/icons/heartsprite.png" id="1_oflwt"]
+[ext_resource type="Script" uid="uid://cq82x6fvtwl2i" path="res://scripts/lawyer/healthui.gd" id="1_wq8b6"]
 
 [node name="VidaUi" type="Control" unique_id=1474256297]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+script = ExtResource("1_wq8b6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1485594889]
 layout_mode = 0

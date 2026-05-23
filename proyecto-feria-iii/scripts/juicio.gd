@@ -5,14 +5,17 @@ var checkpoint_actual = ""
 var prueba_espera = false
 var ui_vidas = null
 
+
 func _ready():
-	Juicio.ui_vidas = $VidaUI
-	
+	ui_vidas = get_tree().current_scene.get_node("VidaUi")
+	ui_vidas.actualizar_vidas(intentos)
 	DialogueManager.show_dialogue_balloon(
 		load("res://resources/dialogues/Juicio.dialogue"),
 		"start")
-	
-	
+
+
+
+
 func restar_intento():
 	intentos -= 1
 	if ui_vidas:
