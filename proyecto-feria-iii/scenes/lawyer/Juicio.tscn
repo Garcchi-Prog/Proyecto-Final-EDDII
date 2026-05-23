@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7slc8i8vgi4o"]
 
-[ext_resource type="Script" uid="uid://dnh3f3u0k2g24" path="res://scenes/lawyer/juicio.gd" id="1_4xg3d"]
+[ext_resource type="Script" uid="uid://gxk4c8ixjmhn" path="res://scripts/Juicio.gd" id="1_4xg3d"]
 [ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
 
 [node name="Juicio" type="Node2D" unique_id=788102766]

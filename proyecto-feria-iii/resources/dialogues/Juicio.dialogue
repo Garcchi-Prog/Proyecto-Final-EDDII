@@ -63,6 +63,9 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 
 ~ fin_interrogatorio
 
+~ segundo_checkpoint
+do Juicio.checkpoint_actual = "segundo_checkpoint"
+
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
 
@@ -98,9 +101,9 @@ Defensa: Y en ningún momento parecía que hayas recibido ese mensaje.
 Lilliana: Pude alterar mi testimonio por el consumo de licor de aquel día...
 Lilliana: ¡Pero ese mensaje me llegó y hay pruebas verídicas!
 
-~ segundo_checkpoint
+~ tercer_checkpoint
 
-do Juicio.checkpoint_actual = "segundo_checkpoint"
+do Juicio.checkpoint_actual = "tercer_checkpoint"
 
 Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de su calvario no invalida la prueba digital.
 Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
@@ -140,6 +143,9 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
 ~ fin_interrogatorio2
 
+~ cuarto_checkpoint
+
+do Juicio.checkpoint_actual = "cuarto_checkpoint"
 Defensa: ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
 Defensa: Cabe la posibilidad que hayan falsificado las capturas para ocultar lo del editado en el mensaje.
@@ -205,9 +211,9 @@ Fiscal: ...
 
 Defensa: Como lo sospeché...
 
-~ tercer_checkpoint
+~ quinto_checkpoint
 
-do Juicio.checkpoint_actual = "tercer_checkpoint"
+do Juicio.checkpoint_actual = "quinto_checkpoint"
 
 Defensa: En fin, hay algo que quisiera retomar acerca del mensaje.
 Defensa: ¿Tengo permiso para hablar, su señoría?
@@ -256,6 +262,9 @@ Lilliana: ¿Qué habría más que decir...?
 
 
 ~ fin_interrogatorio3
+
+~ sexto_checkpoint
+do Juicio.checkpoint_actual = "sexto_checkpoint"
 
 Lilliana: Ahm...
 Lilliana: No...
@@ -344,6 +353,15 @@ Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 
 	if Juicio.checkpoint_actual == "tercer_checkpoint"
 		=> tercer_checkpoint
+
+	if Juicio.checkpoint_actual == "cuarto_checkpoint"
+		=> cuarto_checkpoint
+
+	if Juicio.checkpoint_actual == "quinto_checkpoint"
+		=> quinto_checkpoint
+
+	if Juicio.checkpoint_actual == "sexto_checkpoint"
+		=> sexto_checkpoint
 
 - Salir
 

@@ -2,7 +2,14 @@ extends Node
 var intentos = 5
 var max_intentos = 5
 var checkpoint_actual = ""
+var prueba_espera = false
 
+func _ready():
+	DialogueManager.show_dialogue_balloon(
+		load("res://resources/dialogues/Juicio.dialogue"),
+		"start")
+	
+	
 func restar_intento():
 	intentos -= 1
 
@@ -24,12 +31,8 @@ func verificar_prueba(prueba_correcta):
 	return false
 
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func mostrar_selector_pruebas():
+	prueba_espera = true
+	var escena = preload("res://scenes/lawyer/SelectorPruebas.tscn")
+	var selector = escena.instantiate()
+	get_tree().current_scene.add_child(selector)

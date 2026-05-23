@@ -8,9 +8,3 @@ var pruebas: Array[Array] = [
 ]
 
 var prueba_seleccionada = ""
-
-func seleccionar_prueba(nombre):
-	prueba_seleccionada = nombre
-
-func mostrar_selector_pruebas():
-	pass

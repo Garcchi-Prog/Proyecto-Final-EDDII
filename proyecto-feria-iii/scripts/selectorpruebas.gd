@@ -21,7 +21,6 @@ func _ready():
 
 
 func seleccionar_prueba(nombre):
-
 	GameManager.prueba_seleccionada = nombre
-
+	Juicio.espera_prueba = false
 	queue_free()
