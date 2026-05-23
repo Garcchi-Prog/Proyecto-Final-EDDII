@@ -6,3 +6,8 @@ var pruebas: Array[Array] = [
 	["Lista de Asistencia", false, false],
 	["prueba 4", false, false]
 ]
+
+var prueba_seleccionada = ""
+
+func seleccionar_prueba(nombre):
+	prueba_seleccionada = nombre

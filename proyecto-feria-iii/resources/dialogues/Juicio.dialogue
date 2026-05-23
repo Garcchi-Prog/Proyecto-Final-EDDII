@@ -26,7 +26,7 @@ Fiscal: Un error típico de un criminal arrogante.
 do Juicio.checkpoint_actual = "primer_checkpoint"
 
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
-Defensa(thought): Voy a tratar de hallar la verdad a través de su trampa.
+Defensa(thought): Voy a desenmascarar la verdad a través de sus mentiras
 Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 
 ~ ronda_preguntas
@@ -36,18 +36,13 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do Juicio.intentos -= 1
-
-	if Juicio.intentos == 0
+	do Juicio.restar_intento()
+	if Juicio.sin_intentos()
 		=> game_over
-
 	=> ronda_preguntas
 
 - Preguntar la hora en la que vio el mensaje.
-
-	if Juicio.intentos < Juicio.max_intentos
-		do Juicio.intentos += 1
-
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio
 
 - ¿Qué aplicación usaba para ver los mensajes?
@@ -55,9 +50,9 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do Juicio.intentos -= 1
+	do Juicio.restar_intento()
 
-	if Juicio.intentos == 0
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_preguntas
@@ -78,7 +73,24 @@ Fiscal: Abogado, ¿pretende desviar la atención con minucias horarias?
 Fiscal: Mi clienta ha sido vulnerada.
 Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
 
-show evidence
+~ evidencia_1
+do Juicio.mostrar_selector_pruebas()
+
+if Juicio.verificar_prueba("Foto del Live")
+	=> prueba_correcta_live
+
+do Juicio.restar_intento()
+
+if Juicio.sin_intentos()
+	=> game_over
+	
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
+Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
+=> evidencia_1
+
+
+
+~ prueba_correcta_live
 
 Defensa: Pues, según este Live de Instagram, a esa misma hora te encontrabas de fiesta en una discoteca.
 Defensa: Y en ningún momento parecía que hayas recibido ese mensaje.
@@ -101,18 +113,15 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¡¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do Juicio.intentos -= 1
+	do Juicio.restar_intento()
 
-	if Juicio.intentos == 0
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta2
 
 - ¿El mensaje es editado o falsificado?
-
-	if Juicio.intentos < Juicio.max_intentos
-		do Juicio.intentos += 1
-
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio2
 
 - ¿Alguien más vio su pantalla?
@@ -120,11 +129,9 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do Juicio.intentos -= 1
-
-	if Juicio.intentos == 0
+	do Juicio.restar_intento()
+	if Juicio.sin_intentos()
 		=> game_over
-
 	=> ronda_pregunta2
 
 
@@ -162,8 +169,22 @@ Lilliana: No podía hacer más nada.
 Defensa(thought): Esto es algo extraño...
 Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 
-show evidence
+~ evidencia_2
+do Juicio.mostrar_selector_pruebas()
 
+if Juicio.verificar_prueba("Lista de Asistencia")
+	=> prueba_correcta_asistencia
+
+do Juicio.restar_intento()
+
+if Juicio.sin_intentos()
+	=> game_over
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
+Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
+=> evidencia_2
+
+
+~ prueba_correcta_asistencia
 Defensa: Permítame contradecir su testimonio.
 Defensa: Hay una discrepancia en su argumento.
 Defensa: Este es el registro de asistencias de la materia de Circuitos I, una que cursa la víctima Lilliana.
@@ -206,9 +227,9 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do Juicio.intentos -= 1
+	do Juicio.restar_intento()
 
-	if Juicio.intentos == 0
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta3
@@ -219,18 +240,15 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente parece que tu incompetencia no tiene límites humanos.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do Juicio.intentos -= 1
+	do Juicio.restar_intento()
 
-	if Juicio.intentos == 0
-		=> game_over
+	if Juicio.sin_intentos()
+		=> game_over	
 
 	=> ronda_pregunta3
 
 - ¿Recuerdas el nombre de aquella cuenta?
-
-	if Juicio.intentos < Juicio.max_intentos
-		do Juicio.intentos += 1
-
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio3
 
 
@@ -261,8 +279,22 @@ Defensa: Sin embargo, hay algo que no tomaron en cuenta.
 Defensa: Valentina guardó evidencia de los mensajes antes de su edición a manos de Lilliana.
 Defensa: Y acá tengo una prueba.
 
-show evidence
+~ evidencia_3
+do Juicio.mostrar_selector_pruebas()
 
+if Juicio.verificar_prueba("Chat Original")
+	=> prueba_correcta_chatog
+
+do Juicio.restar_intento()
+
+if Juicio.sin_intentos()
+	=> game_over
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
+Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
+=> evidencia_3
+
+
+~ prueba_correcta_chatog
 Defensa: Exacto.
 Defensa: Lilliana estuvo manipulando y amenazando a Valentina todo este tiempo para crear un escenario donde ella fuera la mala.
 Defensa: ¿Qué tiene que decir en su defensa?
@@ -300,9 +332,9 @@ Defensa(thought): Con que este es el fin...
 Defensa(thought): No pude cumplir mi objetivo.
 Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 
-- Reintentar desde el último punto de control
+- Reintentar 
 
-	do Juicio.intentos = 5
+	do Juicio.reiniciar_intentos()
 
 	if Juicio.checkpoint_actual == "primer_checkpoint"
 		=> primer_checkpoint
