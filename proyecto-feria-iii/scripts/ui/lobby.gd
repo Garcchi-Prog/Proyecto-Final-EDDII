@@ -37,7 +37,6 @@ func _on_join_room_pressed() -> void:
 		isSession = false
 		
 	GameManager._joinSession(room_id.text)
-	multiplayer_synchronizer.update_visibility()
 
 func updateInfo(peerId: int) -> void:
 	player2_ID = peerId
