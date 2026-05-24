@@ -1,15 +1,30 @@
 [gd_scene format=3 uid="uid://c5s3c8h5k4sp5"]
 
 [ext_resource type="Script" uid="uid://bxwmh8nfjfrc2" path="res://scripts/selectorpruebas.gd" id="1_5lyjm"]
+[ext_resource type="Texture2D" uid="uid://b3mo0ujmgwll2" path="res://scenes/lawyer/detective bg.jpg" id="2_juflo"]
+[ext_resource type="FontFile" uid="uid://btcyy1d60rmai" path="res://resources/dialogues/fonts/animeace2_bld.otf" id="3_labfx"]
 
 [node name="SelectorPruebas" type="CanvasLayer" unique_id=1004797773]
+layer = 100
 script = ExtResource("1_5lyjm")
 
-[node name="Panel" type="Panel" parent="." unique_id=497352862]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=149798819]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_juflo")
 
-[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=469934338]
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=497352862]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/Panel" unique_id=469934338]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -22,3 +37,22 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1775079768]
+custom_minimum_size = Vector2(0.75, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_top = 0.067
+anchor_right = 0.526
+anchor_bottom = 0.067
+offset_left = -178.91998
+offset_top = -0.3600006
+offset_right = -10.700012
+offset_bottom = 132.64
+grow_horizontal = 2
+scale = Vector2(2.135, 2.135)
+theme_override_fonts/normal_font = ExtResource("3_labfx")
+text = "INVENTARIO
+"

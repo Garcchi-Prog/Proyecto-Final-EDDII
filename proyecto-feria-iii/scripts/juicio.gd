@@ -6,6 +6,9 @@ var prueba_espera = false
 var ui_vidas = null
 var prueba_actual = ""
 var label_correcto = ""
+var label_error = ""
+var dialogue_resource = load("res://resources/dialogues/Juicio.dialogue")
+var balloon = null
 
 func _ready():
 
@@ -15,11 +18,11 @@ func _ready():
 
 		ui_vidas.actualizar_vidas(intentos)
 
-		DialogueManager.show_dialogue_balloon(
-			load("res://resources/dialogues/Juicio.dialogue"),
-			"start"
-		)
+		balloon = DialogueManager.show_dialogue_balloon(dialogue_resource,"start")
 
+func continuar_dialogo(label):
+	if balloon:
+		balloon.next(label)
 
 
 func restar_intento():
@@ -50,7 +53,13 @@ func verificar_prueba(prueba_correcta):
 
 
 func mostrar_selector_pruebas():
+
 	prueba_espera = true
+
+	if balloon:
+		balloon.balloon.hide()
+
 	var escena = preload("res://scenes/lawyer/SelectorPruebas.tscn")
 	var selector = escena.instantiate()
+
 	get_tree().current_scene.add_child(selector)

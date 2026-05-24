@@ -77,9 +77,21 @@ Fiscal: Mi clienta ha sido vulnerada.
 Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
 
 ~ evidencia_1
+
 do Juicio.prueba_actual = "Foto del Live"
 do Juicio.label_correcto = "prueba_correcta_live"
+do Juicio.label_error = "error_evidencia_1"
 do Juicio.mostrar_selector_pruebas()
+
+~ error_evidencia
+
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
+Defensa(thought): Debo elegir mejor la prueba...
+
+do Juicio.mostrar_selector_pruebas()
+
+
+
 	
 
 
