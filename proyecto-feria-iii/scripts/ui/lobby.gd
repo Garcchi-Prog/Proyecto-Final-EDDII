@@ -19,7 +19,7 @@ var isSession: bool = false
 var rolesSelected: bool = false
 
 func _ready() -> void:
-	GameManager.playerConnected.connect(updateInfo)
+	GameManager.playerConnected.connect(updateInfo.rpc)
 	redStyle.bg_color = Color("af1a1a99")
 	greenStyle.bg_color = Color("3a6b0099")
 
@@ -66,8 +66,8 @@ func _on_cancel_pressed() -> void:
 
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
-@rpc("any_peer", "call_local")
-func _on_desconectar_pressed() -> void:
+@rpc("any_peer", "call_local", "reliable")
+func _disconnect():
 	jugador_2.add_theme_stylebox_override("normal", redStyle)
 	desconectar.disabled = true
 	
@@ -76,8 +76,11 @@ func _on_desconectar_pressed() -> void:
 	else:
 		isSession = false
 		GameManager._leaveSession()
+		
+func _on_desconectar_pressed() -> void:
+	_disconnect().rpc()
 
-@rpc("authority", "call_local")
+@rpc("call_local", "reliable")
 func _on_start_pressed() -> void:
 	if !rolesSelected:
 		GameManager.lawyerID = ids.pick_random()
@@ -88,7 +91,7 @@ func _on_start_pressed() -> void:
 		
 		rolesSelected = true
 	else:
-		GameManager._start()
+		GameManager._start.rpc()
 	
 	
 	

@@ -20,7 +20,8 @@ var detectID: int
 func _ready() -> void:
 	tube_client.peer_connected.connect(playerConnected.emit)
 
-func _start() -> void:
+@rpc("call_local", "reliable")
+func _start():
 	if detectID == 1:
 		if tube_client.is_server:
 			get_tree().change_scene_to_file("res://scenes/detective/prologue.tscn")
