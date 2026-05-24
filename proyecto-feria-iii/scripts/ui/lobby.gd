@@ -4,6 +4,7 @@ extends Control
 @onready var room_id: LineEdit = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Room Id"
 var Player1_ID: int
 var player2_ID: int
+@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 @onready var jugador_1: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer/Jugador 1"
 @onready var jugador_2: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Jugador 2"
@@ -36,6 +37,7 @@ func _on_join_room_pressed() -> void:
 		isSession = false
 		
 	GameManager._joinSession(room_id.text)
+	multiplayer_synchronizer.update_visibility()
 
 func updateInfo(peerId: int) -> void:
 	player2_ID = peerId
