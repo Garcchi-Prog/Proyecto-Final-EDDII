@@ -45,9 +45,12 @@ func updateInfo(peerId: int) -> void:
 	jugador_2.add_theme_stylebox_override("normal", greenStyle)
 	
 	if !GameManager.tube_client.is_server:
+		print("hola")
 		ids[0] = 1
 		jugador_1.add_theme_stylebox_override("nomal", greenStyle)
 		isSession = true
+	
+	print(isSession)
 	
 	desconectar.disabled = false
 	
@@ -68,6 +71,8 @@ func _on_desconectar_pressed() -> void:
 		GameManager._kick(ids[1])
 	else:
 		GameManager._leaveSession()
+	
+	jugador_2.add_theme_stylebox_override("normal", redStyle)
 	
 	desconectar.disabled = true
 
