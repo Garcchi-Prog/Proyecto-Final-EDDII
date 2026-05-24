@@ -86,8 +86,12 @@ func _on_start_pressed() -> void:
 		GameManager.lawyerID = ids.pick_random()
 		GameManager.detectID = ids[0] if ids[1] == GameManager.lawyerID else ids[1]
 		
-		rol_1.text = "- Detective -" if GameManager.detectID == 1 else "- Abogado -"
-		rol_2.text = "- Detective -" if GameManager.lawyerID == 1 else "- Abogado -"
+		if GameManager.detectID == 1:
+			rol_1.text = "- Detective -"
+			rol_2.text = "- Abogado -"
+		else:
+			rol_1.text = "- Abogado -"
+			rol_2.text = "- Detective -"
 		
 		rolesSelected = true
 	else:
