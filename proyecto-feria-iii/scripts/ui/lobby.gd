@@ -72,6 +72,7 @@ func _on_desconectar_pressed() -> void:
 	if GameManager.tube_client.is_server:
 		GameManager._kick(ids[1])
 	else:
+		isSession = false
 		GameManager._leaveSession()
 	
 	
@@ -83,8 +84,8 @@ func _on_start_pressed() -> void:
 		
 		rol_1.text = "- Detective -" if GameManager.detectID == 1 else "- Abogado -"
 		rol_2.text = "- Detective -" if GameManager.lawyerID == 1 else "- Abogado -"
-	
-	GameManager._start()
+	else:
+		GameManager._start()
 	
 	
 	

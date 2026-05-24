@@ -54,6 +54,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5k83l"]
+properties/0/path = NodePath("MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3/Desconectar:disabled")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
 [node name="Lobby" type="Control" unique_id=1469162475]
 layout_mode = 3
 anchors_preset = 15
@@ -255,6 +260,9 @@ text = "Empezar"
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Volver"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1629135890]
+replication_config = SubResource("SceneReplicationConfig_5k83l")
 
 [connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/Create Room" to="." method="_on_create_room_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Join Room" to="." method="_on_join_room_pressed"]
