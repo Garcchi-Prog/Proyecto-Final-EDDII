@@ -20,17 +20,21 @@ var detectID: int
 func _ready() -> void:
 	tube_client.peer_connected.connect(playerConnected.emit)
 
-@rpc("call_local", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _start():
 	if detectID == 1:
 		if tube_client.is_server:
+			print("hola")
 			get_tree().change_scene_to_file("res://scenes/detective/prologue.tscn")
 		else:
+			print("adios")
 			get_tree().change_scene_to_file("res://scenes/lawyer/Juicio.tscn")
 	else:
 		if tube_client.is_server:
+			print("hola")
 			get_tree().change_scene_to_file("res://scenes/lawyer/Juicio.tscn")
 		else:
+			print("adios")
 			get_tree().change_scene_to_file("res://scenes/detective/prologue.tscn")
 
 func _createSession() -> void:
