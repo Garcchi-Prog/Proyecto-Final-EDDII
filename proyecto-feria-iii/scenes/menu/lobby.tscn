@@ -54,6 +54,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5k83l"]
+
 [node name="Lobby" type="Control" unique_id=1469162475]
 layout_mode = 3
 anchors_preset = 15
@@ -246,6 +248,9 @@ text = "Empezar"
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Cancelar"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1834158388]
+replication_config = SubResource("SceneReplicationConfig_5k83l")
 
 [connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/Create Room" to="." method="_on_create_room_pressed"]
 [connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Join Room" to="." method="_on_join_room_pressed"]
