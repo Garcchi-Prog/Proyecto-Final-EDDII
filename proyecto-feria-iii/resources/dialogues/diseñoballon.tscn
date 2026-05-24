@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene format=3 uid="uid://bx0kcvrebi6rl"]
 
-[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://db72jpymqq5o7" path="res://resources/dialogues/textbox/personatextbox.png" id="2_nlsx6"]
-[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_48gik"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_ricjr"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_e0a1r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -64,11 +63,6 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1337t"]
-texture = ExtResource("2_nlsx6")
-texture_margin_right = 123.0
-texture_margin_bottom = 395.0
-
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -107,7 +101,7 @@ _data = {
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
-script = ExtResource("1_36de5")
+script = ExtResource("1_48gik")
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
 unique_name_in_owner = true
@@ -133,13 +127,32 @@ grow_vertical = 0
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_1337t")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1428277592]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1624289611]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1225160028 instance=ExtResource("2_ricjr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
 custom_minimum_size = Vector2(20, 10)
@@ -171,49 +184,12 @@ grow_vertical = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 1
-script = ExtResource("3_72ixx")
+script = ExtResource("3_e0a1r")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
 text = "Response example"
-
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon" unique_id=507199029]
-unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.133
-anchor_top = 0.753
-anchor_right = 0.133
-anchor_bottom = 0.753
-offset_left = 0.6399994
-offset_top = -0.24005127
-offset_right = 402.03003
-offset_bottom = 48.048523
-rotation = -0.17453292
-mouse_filter = 1
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "Character"
-fit_content = true
-scroll_active = false
-
-[node name="DialogueLabel" parent="Balloon" unique_id=1225160028 instance=ExtResource("2_a8ve6")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15200001
-anchor_top = 0.794
-anchor_right = 0.15200001
-anchor_bottom = 0.794
-offset_left = 0.15997314
-offset_top = 0.47998047
-offset_right = 1228.1599
-offset_bottom = 111.47998
-grow_horizontal = 1
-size_flags_vertical = 3
-text = "Dialogue..."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true

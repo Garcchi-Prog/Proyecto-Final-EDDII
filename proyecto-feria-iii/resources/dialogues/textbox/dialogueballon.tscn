@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b88khmshm8mtk"]
 
-[ext_resource type="Texture2D" uid="uid://cfy5s1low0p25" path="res://resources/dialogues/textbox/text-box-plantilla def.png" id="1_rcaex"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ww54"]
+load_path = "res://.godot/imported/text-box-plantilla def.png-ba236da983b7e6e7f33643681f2b438f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcaex"]
-atlas = ExtResource("1_rcaex")
+atlas = SubResource("CompressedTexture2D_8ww54")
 region = Rect2(0, 0, 584, 350)
 
 [node name="Control" type="Control" unique_id=160735546]

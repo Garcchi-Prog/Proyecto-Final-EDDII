@@ -4,6 +4,9 @@ var max_intentos = 5
 var checkpoint_actual = ""
 var prueba_espera = false
 var ui_vidas = null
+var prueba_actual = ""
+var label_correcto = ""
+
 
 
 func _ready():

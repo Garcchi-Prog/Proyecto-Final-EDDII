@@ -21,6 +21,32 @@ func _ready():
 
 
 func seleccionar_prueba(nombre):
+
 	GameManager.prueba_seleccionada = nombre
-	Juicio.espera_prueba = false
+
+	if nombre == Juicio.prueba_actual:
+
+		DialogueManager.show_dialogue_balloon(
+			load("res://resources/dialogues/Juicio.dialogue"),
+			Juicio.label_correcto
+		)
+
+	else:
+
+		Juicio.restar_intento()
+
+		if Juicio.sin_intentos():
+
+			DialogueManager.show_dialogue_balloon(
+				load("res://resources/dialogues/Juicio.dialogue"),
+				"game_over"
+			)
+
+		else:
+
+			DialogueManager.show_dialogue_balloon(
+				load("res://resources/dialogues/Juicio.dialogue"),
+				"evidencia_1"
+			)
+
 	queue_free()

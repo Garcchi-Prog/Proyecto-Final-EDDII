@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfy5s1low0p25"
-path="res://.godot/imported/text-box-plantilla def.png-ba236da983b7e6e7f33643681f2b438f.ctex"
+uid="uid://db72jpymqq5o7"
+path="res://.godot/imported/personatextbox.png-ca23f69fbb4bd6db663b88bfad26b36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/dialogues/textbox/text-box-plantilla def.png"
-dest_files=["res://.godot/imported/text-box-plantilla def.png-ba236da983b7e6e7f33643681f2b438f.ctex"]
+source_file="res://resources/dialogues/textbox/personatextbox.png"
+dest_files=["res://.godot/imported/personatextbox.png-ca23f69fbb4bd6db663b88bfad26b36e.ctex"]
 
 [params]
 

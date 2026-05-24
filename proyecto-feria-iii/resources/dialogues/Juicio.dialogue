@@ -77,19 +77,11 @@ Fiscal: Mi clienta ha sido vulnerada.
 Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
 
 ~ evidencia_1
+do Juicio.prueba_actual = "Foto del Live"
+do Juicio.label_correcto = "prueba_correcta_live"
 do Juicio.mostrar_selector_pruebas()
-
-if Juicio.verificar_prueba("Foto del Live")
-	=> prueba_correcta_live
-
-do Juicio.restar_intento()
-
-if Juicio.sin_intentos()
-	=> game_over
 	
-Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
-Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
-=> evidencia_1
+
 
 
 
@@ -176,18 +168,9 @@ Defensa(thought): Esto es algo extraño...
 Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 
 ~ evidencia_2
+do Juicio.prueba_actual = "Lista de Asistencia"
+do Juicio.label_correcto = "prueba_correcta_asistencia"
 do Juicio.mostrar_selector_pruebas()
-
-if Juicio.verificar_prueba("Lista de Asistencia")
-	=> prueba_correcta_asistencia
-
-do Juicio.restar_intento()
-
-if Juicio.sin_intentos()
-	=> game_over
-Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
-Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
-=> evidencia_2
 
 
 ~ prueba_correcta_asistencia
@@ -289,18 +272,9 @@ Defensa: Valentina guardó evidencia de los mensajes antes de su edición a mano
 Defensa: Y acá tengo una prueba.
 
 ~ evidencia_3
+do Juicio.prueba_actual = "Chat Original"
+do Juicio.label_correcto = "prueba_correcta_chatog"
 do Juicio.mostrar_selector_pruebas()
-
-if Juicio.verificar_prueba("Chat Original")
-	=> prueba_correcta_chatog
-
-do Juicio.restar_intento()
-
-if Juicio.sin_intentos()
-	=> game_over
-Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando
-Defensa(thought): Rayos, debo mantener la calma y elegir la pista correcta
-=> evidencia_3
 
 
 ~ prueba_correcta_chatog
