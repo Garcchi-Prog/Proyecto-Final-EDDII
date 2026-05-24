@@ -9,6 +9,8 @@ var ids: Array[int] = [0, 0]
 @onready var jugador_2: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Jugador 2"
 @onready var desconectar: Button = $MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3/Desconectar
 @onready var start: Button = $MarginContainer/ColorRect/VBoxContainer/CenterContainer/HBoxContainer/Start
+@onready var rol_1: Label = $MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer/Rol1
+@onready var rol_2: Label = $MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Rol2
 
 var greenStyle: StyleBoxFlat = StyleBoxFlat.new()
 var redStyle: StyleBoxFlat = StyleBoxFlat.new()
@@ -45,12 +47,9 @@ func updateInfo(peerId: int) -> void:
 	jugador_2.add_theme_stylebox_override("normal", greenStyle)
 	
 	if !GameManager.tube_client.is_server:
-		print("hola")
 		ids[0] = 1
 		jugador_1.add_theme_stylebox_override("nomal", greenStyle)
 		isSession = true
-	
-	print(isSession)
 	
 	desconectar.disabled = false
 	
@@ -67,19 +66,23 @@ func _on_cancel_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 func _on_desconectar_pressed() -> void:
+	jugador_2.add_theme_stylebox_override("normal", redStyle)
+	desconectar.disabled = true
+	
 	if GameManager.tube_client.is_server:
 		GameManager._kick(ids[1])
 	else:
 		GameManager._leaveSession()
 	
-	jugador_2.add_theme_stylebox_override("normal", redStyle)
 	
-	desconectar.disabled = true
 
 func _on_start_pressed() -> void:
 	if !rolesSelected:
 		GameManager.lawyerID = ids.pick_random()
 		GameManager.detectID = ids[0] if ids[1] == GameManager.lawyerID else ids[1]
+		
+		rol_1.text = "- Detective -" if GameManager.detectID == 1 else "- Abogado -"
+		rol_2.text = "- Detective -" if GameManager.lawyerID == 1 else "- Abogado -"
 	
 	GameManager._start()
 	

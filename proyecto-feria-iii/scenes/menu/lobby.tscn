@@ -183,7 +183,7 @@ layout_mode = 2
 texture = ExtResource("1_720y1")
 stretch_mode = 3
 
-[node name="Rol" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer" unique_id=951865431]
+[node name="Rol1" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer" unique_id=951865431]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
@@ -228,7 +228,7 @@ layout_mode = 2
 texture = ExtResource("1_720y1")
 stretch_mode = 3
 
-[node name="Rol" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=2137339054]
+[node name="Rol2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=2137339054]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_6s1bq")
