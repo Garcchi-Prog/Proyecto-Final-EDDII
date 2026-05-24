@@ -2,17 +2,19 @@ extends Control
 
 @onready var new_id: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/New Id"
 @onready var room_id: LineEdit = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Room Id"
-var Player1_ID: int
-var player2_ID: int
-@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
+
+var ids: Array[int] = [0, 0]
 
 @onready var jugador_1: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer/Jugador 1"
 @onready var jugador_2: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Jugador 2"
+@onready var desconectar: Button = $MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer3/Desconectar
+@onready var start: Button = $MarginContainer/ColorRect/VBoxContainer/CenterContainer/HBoxContainer/Start
 
 var greenStyle: StyleBoxFlat = StyleBoxFlat.new()
 var redStyle: StyleBoxFlat = StyleBoxFlat.new()
 
 var isSession: bool = false
+var rolesSelected: bool = false
 
 func _ready() -> void:
 	GameManager.playerConnected.connect(updateInfo)
@@ -25,7 +27,7 @@ func _on_create_room_pressed() -> void:
 		isSession = false
 		
 	GameManager._createSession()
-	Player1_ID = 1
+	ids[0] = 1
 	isSession = true
 	new_id.text = GameManager.sessionId
 	
@@ -39,18 +41,48 @@ func _on_join_room_pressed() -> void:
 	GameManager._joinSession(room_id.text)
 
 func updateInfo(peerId: int) -> void:
-	player2_ID = peerId
+	ids[1] = peerId
 	jugador_2.add_theme_stylebox_override("normal", greenStyle)
 	
-	print(GameManager.tube_client.is_server)
-	print(isSession)
+	if !GameManager.tube_client.is_server:
+		ids[0] = 1
+		jugador_1.add_theme_stylebox_override("nomal", greenStyle)
+		isSession = true
+	
+	desconectar.disabled = false
+	
+	if GameManager.tube_client.is_server:
+		start.disabled = false
 
 func _on_cancel_pressed() -> void:
-	if GameManager.tube_client.is_server:
-		GameManager._terminateSession()
-	else: 
-		pass
+	if isSession:
+		if GameManager.tube_client.is_server:
+			GameManager._terminateSession()
+		else: 
+			GameManager._leaveSession()
+
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 func _on_desconectar_pressed() -> void:
-	pass # Replace with function body.
+	if GameManager.tube_client.is_server:
+		GameManager._kick(ids[1])
+	else:
+		GameManager._leaveSession()
+	
+	desconectar.disabled = true
+
+func _on_start_pressed() -> void:
+	if !rolesSelected:
+		GameManager.lawyerID = ids.pick_random()
+		GameManager.detectID = ids[0] if ids[1] == GameManager.lawyerID else ids[1]
+	
+	GameManager._start()
+	
+	
+	
+	
+	
+	
+	
+	
+	
