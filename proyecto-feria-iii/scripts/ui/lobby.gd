@@ -78,7 +78,7 @@ func _disconnect():
 		GameManager._leaveSession()
 		
 func _on_desconectar_pressed() -> void:
-	_disconnect().rpc()
+	_disconnect.rpc()
 
 @rpc("call_local", "reliable")
 func _on_start_pressed() -> void:
