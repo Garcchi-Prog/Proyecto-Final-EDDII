@@ -326,7 +326,7 @@ Defensa: Gracias por su testimonio, Lilliana.
 Defensa: Acaba de admitir el fraude y el acoso.
 
 Narrador: Lilliana cae de rodillas gritando mientras su teléfono se rompe en el suelo.
-
+do get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 => END
 
 
@@ -364,5 +364,5 @@ Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 		=> sexto_checkpoint
 
 - Salir
-
+	do get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 	=> END
