@@ -41,8 +41,16 @@ func _on_join_room_pressed() -> void:
 func updateInfo(peerId: int) -> void:
 	player2_ID = peerId
 	jugador_2.add_theme_stylebox_override("normal", greenStyle)
+	
+	print(GameManager.tube_client.is_server)
+	print(isSession)
 
 func _on_cancel_pressed() -> void:
-	if isSession:
+	if GameManager.tube_client.is_server:
 		GameManager._terminateSession()
+	else: 
+		pass
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+
+func _on_desconectar_pressed() -> void:
+	pass # Replace with function body.
