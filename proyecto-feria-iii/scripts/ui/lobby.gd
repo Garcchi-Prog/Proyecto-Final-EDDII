@@ -84,6 +84,8 @@ func _on_start_pressed() -> void:
 		
 		rol_1.text = "- Detective -" if GameManager.detectID == 1 else "- Abogado -"
 		rol_2.text = "- Detective -" if GameManager.lawyerID == 1 else "- Abogado -"
+		
+		rolesSelected = true
 	else:
 		GameManager._start()
 	
