@@ -2,32 +2,46 @@ extends Control
 
 @onready var new_id: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/New Id"
 @onready var room_id: LineEdit = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/Room Id"
-@onready var tube_client: TubeClient = $TubeClient
+var Player1_ID: int
+var player2_ID: int
 
 @onready var jugador_1: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer/Jugador 1"
 @onready var jugador_2: Label = $"MarginContainer/ColorRect/VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Jugador 2"
 
+var greenStyle: StyleBoxFlat = StyleBoxFlat.new()
+var redStyle: StyleBoxFlat = StyleBoxFlat.new()
+
 var isSession: bool = false
 
 func _ready() -> void:
-	jugador_1.text = OS.get_environment("USERNAME")
-	tube_client.session_joined.connect(updateInfo)
+	GameManager.playerConnected.connect(updateInfo)
+	redStyle.bg_color = Color("af1a1a99")
+	greenStyle.bg_color = Color("3a6b0099")
 
 func _on_create_room_pressed() -> void:
 	if isSession:
-		tube_client._terminate_session()
+		GameManager._terminateSession()
 		isSession = false
 		
-	tube_client.create_session()
+	GameManager._createSession()
+	Player1_ID = 1
 	isSession = true
-	new_id.text = tube_client.session_id
+	new_id.text = GameManager.sessionId
+	
+	jugador_1.add_theme_stylebox_override("normal", greenStyle)
 
 func _on_join_room_pressed() -> void:
 	if isSession:
-		tube_client._terminate_session()
+		GameManager.tube_client._terminate_session()
 		isSession = false
 		
-	tube_client.join_session(room_id.text)
+	GameManager._joinSession(room_id.text)
 
-func updateInfo() -> void:
-	pass
+func updateInfo(peerId: int) -> void:
+	player2_ID = peerId
+	jugador_2.add_theme_stylebox_override("normal", greenStyle)
+
+func _on_cancel_pressed() -> void:
+	if isSession:
+		GameManager._terminateSession()
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
