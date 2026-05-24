@@ -132,6 +132,9 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	
+	
+	character_label.modulate = Color.BLACK
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
