@@ -7,15 +7,18 @@ var ui_vidas = null
 var prueba_actual = ""
 var label_correcto = ""
 
-
-
 func _ready():
-	ui_vidas = get_tree().current_scene.get_node("VidaUi")
-	ui_vidas.actualizar_vidas(intentos)
-	DialogueManager.show_dialogue_balloon(
-		load("res://resources/dialogues/Juicio.dialogue"),
-		"start")
 
+	if get_tree().current_scene.has_node("VidaUi"):
+
+		ui_vidas = get_tree().current_scene.get_node("VidaUi")
+
+		ui_vidas.actualizar_vidas(intentos)
+
+		DialogueManager.show_dialogue_balloon(
+			load("res://resources/dialogues/Juicio.dialogue"),
+			"start"
+		)
 
 
 
