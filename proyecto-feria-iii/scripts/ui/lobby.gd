@@ -42,6 +42,7 @@ func _on_join_room_pressed() -> void:
 		
 	GameManager._joinSession(room_id.text)
 
+@rpc("any_peer", "call_local")
 func updateInfo(peerId: int) -> void:
 	ids[1] = peerId
 	jugador_2.add_theme_stylebox_override("normal", greenStyle)
@@ -65,6 +66,7 @@ func _on_cancel_pressed() -> void:
 
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
+@rpc("any_peer", "call_local")
 func _on_desconectar_pressed() -> void:
 	jugador_2.add_theme_stylebox_override("normal", redStyle)
 	desconectar.disabled = true
@@ -74,9 +76,8 @@ func _on_desconectar_pressed() -> void:
 	else:
 		isSession = false
 		GameManager._leaveSession()
-	
-	
 
+@rpc("authority", "call_local")
 func _on_start_pressed() -> void:
 	if !rolesSelected:
 		GameManager.lawyerID = ids.pick_random()
