@@ -32,7 +32,8 @@ func seleccionar_prueba(nombre):
 
 	# PRUEBA CORRECTA
 	if nombre == Juicio.prueba_actual:
-		Juicio.continuar_dialogo(Juicio.label_error)
+
+		Juicio.continuar_dialogo(Juicio.label_correcto)
 
 		return
 
@@ -46,4 +47,4 @@ func seleccionar_prueba(nombre):
 		return
 
 	# Comentario de error
-	Juicio.continuar_dialogo("error_evidencia")
+	Juicio.continuar_dialogo(Juicio.label_error)

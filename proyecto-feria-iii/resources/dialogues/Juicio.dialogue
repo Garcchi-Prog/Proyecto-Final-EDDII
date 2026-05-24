@@ -2,7 +2,7 @@
 
 do Juicio.intentos = 5
 do Juicio.max_intentos = 5
-do Juicio.checkpoint_actual = "primer_checkpoint"
+
 
 Juez: Procedo a iniciar este juicio contra la acusada Valentina, quien ha sido denunciada por la víctima Lilliana por incitación al odio, falsificación de información y amenazas continuas. Puede la denunciante proceder a dar su declaración de los hechos.
 
@@ -77,18 +77,18 @@ Fiscal: Mi clienta ha sido vulnerada.
 Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
 
 ~ evidencia_1
-
+do Juicio.mostrar_selector_pruebas()
 do Juicio.prueba_actual = "Foto del Live"
 do Juicio.label_correcto = "prueba_correcta_live"
 do Juicio.label_error = "error_evidencia_1"
-do Juicio.mostrar_selector_pruebas()
 
-~ error_evidencia
+
+~ error_evidencia_1
 
 Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
 Defensa(thought): Debo elegir mejor la prueba...
+=> evidencia_1
 
-do Juicio.mostrar_selector_pruebas()
 
 
 
@@ -182,7 +182,14 @@ Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 ~ evidencia_2
 do Juicio.prueba_actual = "Lista de Asistencia"
 do Juicio.label_correcto = "prueba_correcta_asistencia"
+do Juicio.label_error = "error_evidencia_2"
 do Juicio.mostrar_selector_pruebas()
+
+~ error_evidencia_2
+
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
+Defensa(thought): Debo elegir mejor la prueba...
+=> evidencia_2
 
 
 ~ prueba_correcta_asistencia
@@ -286,7 +293,14 @@ Defensa: Y acá tengo una prueba.
 ~ evidencia_3
 do Juicio.prueba_actual = "Chat Original"
 do Juicio.label_correcto = "prueba_correcta_chatog"
+do Juicio.label_error = "error_evidencia_3"
 do Juicio.mostrar_selector_pruebas()
+
+~ error_evidencia_3
+
+Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
+Defensa(thought): Debo elegir mejor la prueba...
+=> evidencia_3
 
 
 ~ prueba_correcta_chatog
