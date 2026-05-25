@@ -2,6 +2,9 @@ extends Node
 
 @onready var tube_client: TubeClient = $TubeClient
 
+var detectiveScene := preload("res://scenes/detective/prologue.tscn").instantiate()
+var lawyerScene := preload("res://scenes/lawyer/Juicio.tscn").instantiate()
+
 signal playerConnected(id: int)
 var sessionId: String
 
@@ -25,17 +28,17 @@ func _start():
 	if detectID == 1:
 		if tube_client.is_server:
 			print("hola")
-			get_tree().change_scene_to_file("res://scenes/detective/prologue.tscn")
+			get_tree().root.add_child(detectiveScene)
 		else:
 			print("adios")
-			get_tree().change_scene_to_file("res://scenes/lawyer/Juicio.tscn")
+			get_tree().root.add_child(lawyerScene)
 	else:
 		if tube_client.is_server:
 			print("hola")
-			get_tree().change_scene_to_file("res://scenes/lawyer/Juicio.tscn")
+			get_tree().root.add_child(lawyerScene)
 		else:
 			print("adios")
-			get_tree().change_scene_to_file("res://scenes/detective/prologue.tscn")
+			get_tree().root.add_child(lawyerScene)
 
 func _createSession() -> void:
 	tube_client.create_session()
