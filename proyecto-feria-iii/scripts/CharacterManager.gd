@@ -51,14 +51,25 @@ func actualizar_personaje(nombre):
 
 		"Defensa":
 			mostrar_sprite("Defensa_normal")
+			
 		"Defensa(thought)":
 			mostrar_sprite("Defensa_pensando")
+			
+		"Defensa(mad)":
+			mostrar_sprite("Defensa enojado")
 
 		"Fiscal":
 			mostrar_sprite("Fiscal_normal")
+		
+		"Fiscal(mad)":
+			mostrar_sprite("Fiscal_pensando")
 
 		"Lilliana":
 			mostrar_sprite("Lilliana_hablando")
+		
+		"Lilliana(normal)":
+			mostrar_sprite("Lilliana_feliz")
+		
 		"Lilliana(mad)":
 			mostrar_sprite("Lilliana_enojada")
 

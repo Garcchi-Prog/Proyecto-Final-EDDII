@@ -14,7 +14,8 @@ Valentina: ¡Yo nunca te envié nada!
 Fiscal: Su Señoría, la negación es el último refugio de los culpables.
 Fiscal: La fiscalía no basa sus casos en palabras, sino en hechos técnicos.
 Fiscal: Presento la captura de pantalla de la confesión:
-Fiscal: "Exacto, yo, Valentina".
+Narrador: En el mensaje decía claramente las siguientes palabras
+Fiscal(mad): "Exacto, yo, Valentina, soy la mente maestra detrás de todo esto, no le diras a nadie, o pagarás las consecuencias".
 Fiscal: Un error típico de un criminal arrogante.
 
 ~ primer_checkpoint
@@ -68,12 +69,13 @@ do set_checkpoint("segundo_checkpoint")
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
 
-Lilliana: Fue exactamente a las 8:00 PM.
-Lilliana: Estaba en shock inmediatamente lo leí.
+Lilliana(normal): Fue exactamente a las 8:00 PM.
+Lilliana(normal): Estaba en mi casa tranquila hasta que me llego aquel mensaje, estaba en shock inmediatamente lo leí.
 
 Fiscal: Abogado, ¿pretende desviar la atención con minucias horarias?
 Fiscal: Mi clienta ha sido vulnerada.
 Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y francamente de bajo nivel.
+Defensa(thought): Tendré que usar aquella evidencia que contrarresta el paradero de Lilliana en ese momento
 
 ~ evidencia_1
 
@@ -83,7 +85,7 @@ do mostrar_selector_pruebas()
 ~ error_evidencia_1
 
 Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
-Defensa(thought): Debo elegir mejor la prueba...
+Defensa(thought): Rayos, debo elegir mejor la prueba...
 
 => evidencia_1
 
@@ -143,7 +145,7 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
 do set_checkpoint("cuarto_checkpoint")
 
-Defensa: ¡PROTESTO!
+Defensa(mad): ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
 Defensa: Cabe la posibilidad que hayan falsificado las capturas para ocultar lo del editado en el mensaje.
 
@@ -163,14 +165,14 @@ Juez: No se permiten dispositivos con acceso a redes sociales en esta sala.
 Fiscal: Entiendo.
 Fiscal: Ya que no se puede seguir, pasemos a la siguiente evidencia.
 
-Fiscal: Acá podemos ver cómo las amenazas constantes y mensajes de odio han provocado que mi clienta no quiera asistir a clases por un largo tiempo.
+Fiscal: Las amenazas constantes y mensajes de odio han provocado que mi clienta no quiera asistir a clases por un largo tiempo.
 
 Lilliana: E-es verdad...
 Lilliana: El miedo constante no me dejaba siquiera pensar en el hecho de salir de mi cuarto...
 Lilliana: No podía hacer más nada.
 
 Defensa(thought): Esto es algo extraño...
-Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
+Defensa(thought): No concuerda con cierta evidencia que tengo a la mano acerca de la asistencia de la joven.
 
 ~ evidencia_2
 
@@ -188,12 +190,12 @@ Defensa(thought): Debo elegir mejor la prueba...
 
 Defensa: Permítame contradecir su testimonio.
 Defensa: Hay una discrepancia en su argumento.
-Defensa: Este es el registro de asistencias de la materia de Circuitos I, una que cursa la víctima Lilliana.
+Defensa(mad): Este es el registro de asistencias de la materia de Circuitos I, una que cursa la víctima Lilliana.
 
 Defensa: Este registro cubre todo lo que va del semestre, incluyendo el último mes.
 Defensa: Y como puede ver en esta hoja, Lilliana no ha faltado a ni una sola clase.
 
-Fiscal: Protesto.
+Fiscal(mad): ¡Protesto!
 Fiscal: Es posible que sea un registro editado u alterado.
 
 Defensa: Lamentablemente para usted, no se puede editar.
@@ -262,9 +264,9 @@ Lilliana: ¿Qué habría más que decir...?
 
 do set_checkpoint("sexto_checkpoint")
 
-Lilliana: Ahm...
-Lilliana: No...
-Lilliana: No recuerdo cómo se llamaba antes de que la borrara...
+Lilliana(normal): Ahm...
+Lilliana(normal): No...
+Lilliana(normal): No recuerdo cómo se llamaba antes de que la borrara...
 
 Defensa: Entonces...
 Defensa: ¿Por qué toda la evidencia que tienes es después de que borrara la cuenta?
@@ -272,17 +274,17 @@ Defensa: ¿Por qué toda la evidencia que tienes es después de que borrara la c
 Fiscal: ¿A qué quiere llegar?
 
 Lilliana: ¡Eso es circunstancial!
-Lilliana: ¡Aún tienen el mensaje donde confiesa desde su teléfono!
+Lilliana(mad): ¡Aún tienen el mensaje donde confiesa desde su teléfono!
 
 Fiscal: Exacto.
 Fiscal: El registro de IP y el dispositivo pertenecen a Valentina.
-Fiscal: Contra la trazabilidad digital no existen argumentos poéticos que valgan.
+Fiscal(mad): Contra la trazabilidad digital no existen argumentos poéticos que valgan.
 
 Defensa: Es cierto.
 Defensa: Se envió desde el teléfono de Valentina.
 Defensa: Sin embargo, hay algo que no tomaron en cuenta.
 Defensa: Valentina guardó evidencia de los mensajes antes de su edición a manos de Lilliana.
-Defensa: Y acá tengo una prueba.
+Defensa(mad): Y acá tengo una prueba.
 
 ~ evidencia_3
 

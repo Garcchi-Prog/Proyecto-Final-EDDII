@@ -14,8 +14,7 @@ var imagenes_pruebas = {
 
 func _ready():
 	for prueba in GameManager.pruebas:
-
-		# Si NO ha sido encontrada
+	# Si NO ha sido encontrada
 		if !prueba[1]:
 			continue
 
@@ -27,7 +26,7 @@ func _ready():
 
 		boton.texture_normal = textura
 
-		boton.custom_minimum_size = Vector2(220, 220)
+		boton.custom_minimum_size = Vector2(450, 450)
 
 		boton.ignore_texture_size = true
 
