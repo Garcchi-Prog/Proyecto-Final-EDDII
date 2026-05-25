@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7slc8i8vgi4o"]
 
 [ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
-[ext_resource type="Script" path="res://scripts/Juicio.gd" id="1_lm43y"]
+[ext_resource type="Script" uid="uid://cskn7uqmcg30b" path="res://scripts/Juicio.gd" id="1_lm43y"]
 [ext_resource type="PackedScene" uid="uid://m4d720fb2yt6" path="res://scenes/lawyer/health/VidaUi.tscn" id="2_lm43y"]
 [ext_resource type="Script" uid="uid://8sdnsk72wvt5" path="res://scripts/CharacterManager.gd" id="3_lm43y"]
 
