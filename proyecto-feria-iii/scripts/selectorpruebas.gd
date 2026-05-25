@@ -13,36 +13,31 @@ var imagenes_pruebas = {
 }
 
 func _ready():
-
 	for prueba in GameManager.pruebas:
+
+		# Si NO ha sido encontrada
+		if !prueba[1]:
+			continue
 
 		var nombre = prueba[0]
 
-		# Crear botón de imagen
 		var boton = TextureButton.new()
 
-		# Cargar textura
 		var textura = load(imagenes_pruebas[nombre])
 
-		# Asignar imagen
 		boton.texture_normal = textura
 
-		# Tamaño fijo
 		boton.custom_minimum_size = Vector2(220, 220)
 
-		# Ignorar tamaño original
 		boton.ignore_texture_size = true
 
-		# Mantener proporción
 		boton.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 
-		# Señal
 		boton.pressed.connect(
 			func():
 				seleccionar_prueba(nombre)
 		)
 
-		# Agregar al grid
 		grid.add_child(boton)
 
 func seleccionar_prueba(nombre):
