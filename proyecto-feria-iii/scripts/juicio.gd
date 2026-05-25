@@ -16,11 +16,7 @@ var character_manager = null
 func _ready():
 	character_manager = $Character
 	ui_vidas.actualizar_vidas(intentos)
-	balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
-	call_deferred("_agregar_estado")
-
-func _agregar_estado():
-	DialogueManager.game_states = [self] + DialogueManager.game_states
+	balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, "start", [self])
 
 func _process(_delta):
 	if balloon == null:
