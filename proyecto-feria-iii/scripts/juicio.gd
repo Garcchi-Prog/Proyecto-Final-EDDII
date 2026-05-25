@@ -13,9 +13,6 @@ var character_manager = null
 @onready var ui_vidas= $VidaUi
 
 func _ready():
-
-	DialogueManager.game_states = [self]
-
 	character_manager = $Character
 
 	ui_vidas.actualizar_vidas(intentos)
@@ -24,6 +21,7 @@ func _ready():
 		dialogue_resource,
 		"start"
 	)
+	DialogueManager.game_states = [self]
 
 
 func _process(_delta):
