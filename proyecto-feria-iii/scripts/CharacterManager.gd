@@ -13,10 +13,10 @@ var sprites = {
 		preload("res://resources/Sprites/abogado/enojado.png"),
 
 	"Fiscal_normal":
-		preload("res://resources/Sprites/fiscal/f nor.png"),
+		preload("res://resources/Sprites/fiscal/f_nor.png"),
 	
 	"Fiscal_pensando":
-		preload("res://resources/Sprites/fiscal/f thinking.png"),
+		preload("res://resources/Sprites/fiscal/f_thinking.png"),
 
 	"Lilliana_hablando":
 		preload("res://resources/Sprites/lilliana/lili hablando.png"),
@@ -51,12 +51,16 @@ func actualizar_personaje(nombre):
 
 		"Defensa":
 			mostrar_sprite("Defensa_normal")
+		"Defensa(thought)":
+			mostrar_sprite("Defensa_pensando")
 
 		"Fiscal":
 			mostrar_sprite("Fiscal_normal")
 
 		"Lilliana":
 			mostrar_sprite("Lilliana_hablando")
+		"Lilliana(mad)":
+			mostrar_sprite("Lilliana_enojada")
 
 		"Valentina":
 			mostrar_sprite("Valentina_normal")

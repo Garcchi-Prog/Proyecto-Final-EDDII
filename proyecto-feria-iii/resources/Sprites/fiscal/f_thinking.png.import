@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbon1kxnww4jn"
-path="res://.godot/imported/f nor.png-b7db3ec0d6f4d3a6df44b283a4853b5f.ctex"
+uid="uid://rgxikpk0rds3"
+path="res://.godot/imported/f_thinking.png-9c3029b27db9175e1a6a3d244cb6f438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/fiscal/f nor.png"
-dest_files=["res://.godot/imported/f nor.png-b7db3ec0d6f4d3a6df44b283a4853b5f.ctex"]
+source_file="res://resources/Sprites/fiscal/f_thinking.png"
+dest_files=["res://.godot/imported/f_thinking.png-9c3029b27db9175e1a6a3d244cb6f438.ctex"]
 
 [params]
 

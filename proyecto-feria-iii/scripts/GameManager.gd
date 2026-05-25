@@ -9,7 +9,7 @@ signal playerConnected(id: int)
 var sessionId: String
 
 var pruebas: Array[Array] = [
-	["Chat Sospechoso", false, false],
+	["PC institucional", false, false],
 	["Foto del Live", false, false],
 	["Lista de Asistencia", false, false],
 	["Chat Original", false, false]
