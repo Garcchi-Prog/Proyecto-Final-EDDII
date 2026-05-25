@@ -19,7 +19,7 @@ Fiscal: Un error típico de un criminal arrogante.
 
 ~ primer_checkpoint
 
-do Juicio.checkpoint_actual = "primer_checkpoint"
+do set_checkpoint("primer_checkpoint")
 
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
 Defensa(thought): Voy a desenmascarar la verdad a través de sus mentiras
@@ -32,16 +32,16 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_preguntas
 
 - Preguntar la hora en la que vio el mensaje.
 
-	do Juicio.sumar_intento()
+	do sumar_intento()
 	=> fin_interrogatorio
 
 - ¿Qué aplicación usaba para ver los mensajes?
@@ -49,9 +49,9 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_preguntas
@@ -63,7 +63,7 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 
 ~ segundo_checkpoint
 
-do Juicio.checkpoint_actual = "segundo_checkpoint"
+do set_checkpoint("segundo_checkpoint")
 
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
@@ -77,10 +77,8 @@ Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y franc
 
 ~ evidencia_1
 
-do Juicio.prueba_actual = "Foto del Live"
-do Juicio.label_correcto = "prueba_correcta_live"
-do Juicio.label_error = "error_evidencia_1"
-do Juicio.mostrar_selector_pruebas()
+do set_prueba("Foto del Live", "prueba_correcta_live", "error_evidencia_1")
+do mostrar_selector_pruebas()
 
 ~ error_evidencia_1
 
@@ -99,7 +97,7 @@ Lilliana: ¡Pero ese mensaje me llegó y hay pruebas verídicas!
 
 ~ tercer_checkpoint
 
-do Juicio.checkpoint_actual = "tercer_checkpoint"
+do set_checkpoint("tercer_checkpoint")
 
 Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de su calvario no invalida la prueba digital.
 Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
@@ -112,16 +110,16 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¡¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta2
 
 - ¿El mensaje es editado o falsificado?
 
-	do Juicio.sumar_intento()
+	do sumar_intento()
 	=> fin_interrogatorio2
 
 - ¿Alguien más vio su pantalla?
@@ -129,9 +127,9 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta2
@@ -143,7 +141,7 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
 ~ cuarto_checkpoint
 
-do Juicio.checkpoint_actual = "cuarto_checkpoint"
+do set_checkpoint("cuarto_checkpoint")
 
 Defensa: ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
@@ -176,10 +174,8 @@ Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 
 ~ evidencia_2
 
-do Juicio.prueba_actual = "Lista de Asistencia"
-do Juicio.label_correcto = "prueba_correcta_asistencia"
-do Juicio.label_error = "error_evidencia_2"
-do Juicio.mostrar_selector_pruebas()
+do set_prueba("Lista de Asistencia", "prueba_correcta_asistencia", "error_evidencia_2")
+do mostrar_selector_pruebas()
 
 ~ error_evidencia_2
 
@@ -212,7 +208,7 @@ Defensa: Como lo sospeché...
 
 ~ quinto_checkpoint
 
-do Juicio.checkpoint_actual = "quinto_checkpoint"
+do set_checkpoint("quinto_checkpoint")
 
 Defensa: En fin, hay algo que quisiera retomar acerca del mensaje.
 Defensa: ¿Tengo permiso para hablar, su señoría?
@@ -232,9 +228,9 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta3
@@ -245,16 +241,16 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente parece que tu incompetencia no tiene límites humanos.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do Juicio.restar_intento()
+	do restar_intento()
 
-	if Juicio.sin_intentos()
+	if sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta3
 
 - ¿Recuerdas el nombre de aquella cuenta?
 
-	do Juicio.sumar_intento()
+	do sumar_intento()
 	=> fin_interrogatorio3
 
 
@@ -264,7 +260,7 @@ Lilliana: ¿Qué habría más que decir...?
 
 ~ sexto_checkpoint
 
-do Juicio.checkpoint_actual = "sexto_checkpoint"
+do set_checkpoint("sexto_checkpoint")
 
 Lilliana: Ahm...
 Lilliana: No...
@@ -290,10 +286,8 @@ Defensa: Y acá tengo una prueba.
 
 ~ evidencia_3
 
-do Juicio.prueba_actual = "Chat Original"
-do Juicio.label_correcto = "prueba_correcta_chatog"
-do Juicio.label_error = "error_evidencia_3"
-do Juicio.mostrar_selector_pruebas()
+do set_prueba("Chat Original", "prueba_correcta_chatog", "error_evidencia_3")
+do mostrar_selector_pruebas()
 
 ~ error_evidencia_3
 
@@ -341,24 +335,24 @@ Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 
 - Reintentar
 
-	do Juicio.reiniciar_intentos()
+	do reiniciar_intentos()
 
-	if Juicio.checkpoint_actual == "primer_checkpoint"
+	if checkpoint_actual == "primer_checkpoint"
 		=> primer_checkpoint
 
-	if Juicio.checkpoint_actual == "segundo_checkpoint"
+	if checkpoint_actual == "segundo_checkpoint"
 		=> segundo_checkpoint
 
-	if Juicio.checkpoint_actual == "tercer_checkpoint"
+	if checkpoint_actual == "tercer_checkpoint"
 		=> tercer_checkpoint
 
-	if Juicio.checkpoint_actual == "cuarto_checkpoint"
+	if checkpoint_actual == "cuarto_checkpoint"
 		=> cuarto_checkpoint
 
-	if Juicio.checkpoint_actual == "quinto_checkpoint"
+	if checkpoint_actual == "quinto_checkpoint"
 		=> quinto_checkpoint
 
-	if Juicio.checkpoint_actual == "sexto_checkpoint"
+	if checkpoint_actual == "sexto_checkpoint"
 		=> sexto_checkpoint
 
 - Salir
