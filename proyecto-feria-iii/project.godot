@@ -21,12 +21,11 @@ buses/default_bus_layout="uid://cbd6nbfb6lnlq"
 
 [autoload]
 
-DialogueManager="*uid://c3rodes2l3gxb"
-AudioManager="*uid://c6a48comekhju"
 GameManager="*uid://c1ij8hv3x6p4q"
+DialogueManager="*uid://c3rodes2l3gxb"
 VisualManager="*uid://bk08j2usi35xp"
+AudioManager="*uid://c6a48comekhju"
 Global="*uid://bexvl5cwh34ym"
-Juicio="*uid://gxk4c8ixjmhn"
 
 [dialogue_manager]
 

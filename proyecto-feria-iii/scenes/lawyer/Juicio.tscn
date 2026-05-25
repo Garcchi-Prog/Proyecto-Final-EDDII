@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c7slc8i8vgi4o"]
 
 [ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
+[ext_resource type="Script" uid="uid://gxk4c8ixjmhn" path="res://scripts/juicio.gd" id="1_lm43y"]
 [ext_resource type="PackedScene" uid="uid://m4d720fb2yt6" path="res://scenes/lawyer/health/VidaUi.tscn" id="2_lm43y"]
 
 [node name="Juicio" type="Node2D" unique_id=788102766]
+script = ExtResource("1_lm43y")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=442160134]
 offset_right = 1928.0
