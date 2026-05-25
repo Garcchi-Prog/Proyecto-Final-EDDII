@@ -4,32 +4,22 @@ var intentos = 5
 var max_intentos = 5
 var checkpoint_actual = ""
 var prueba_espera = false
-var ui_vidas = null
 var prueba_actual = ""
 var label_correcto = ""
 var label_error = ""
-
 var dialogue_resource = load("res://resources/dialogues/Juicio.dialogue")
-
 var balloon = null
 var character_manager = null
-
+@onready var ui_vidas= $VidaUi
 
 func _ready():
 
 	DialogueManager.game_states = [self]
 
-	# Character Manager
-	character_manager = get_node("Character")
+	character_manager = $Character
 
-	# UI vidas
-	if has_node("VidaUi"):
+	ui_vidas.actualizar_vidas(intentos)
 
-		ui_vidas = get_node("VidaUi")
-
-		ui_vidas.actualizar_vidas(intentos)
-
-	# Iniciar diálogo
 	balloon = DialogueManager.show_dialogue_balloon(
 		dialogue_resource,
 		"start"
