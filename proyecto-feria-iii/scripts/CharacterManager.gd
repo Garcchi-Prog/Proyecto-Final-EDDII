@@ -56,7 +56,7 @@ func actualizar_personaje(nombre):
 			mostrar_sprite("Defensa_pensando")
 			
 		"Defensa(mad)":
-			mostrar_sprite("Defensa enojado")
+			mostrar_sprite("Defensa_enojado")
 
 		"Fiscal":
 			mostrar_sprite("Fiscal_normal")
