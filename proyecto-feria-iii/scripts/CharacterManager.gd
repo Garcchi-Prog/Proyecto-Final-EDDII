@@ -9,7 +9,7 @@ var sprites = {
 	"Defensa_pensando":
 		preload("res://resources/Sprites/abogado/thinking.png"),
 
-	"Fiscal_enojado":
+	"Defensa_enojado":
 		preload("res://resources/Sprites/abogado/enojado.png"),
 
 	"Fiscal_normal":
@@ -27,7 +27,7 @@ var sprites = {
 	"Lilliana_enojada":
 		preload("res://resources/Sprites/lilliana/lili enojada.png"),
 	
-	"Valentina normal":
+	"Valentina_normal":
 		preload("res://resources/Sprites/valentina/va normal.png"),
 	
 	"Juez":
@@ -44,3 +44,25 @@ func mostrar_sprite(nombre):
 func ocultar_sprite():
 
 	personaje.visible = false
+
+func actualizar_personaje(nombre):
+
+	match nombre:
+
+		"Defensa":
+			mostrar_sprite("Defensa_normal")
+
+		"Fiscal":
+			mostrar_sprite("Fiscal_normal")
+
+		"Lilliana":
+			mostrar_sprite("Lilliana_hablando")
+
+		"Valentina":
+			mostrar_sprite("Valentina_normal")
+
+		"Juez":
+			mostrar_sprite("Juez")
+
+		_:
+			ocultar_sprite()

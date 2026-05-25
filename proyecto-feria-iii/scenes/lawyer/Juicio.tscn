@@ -25,13 +25,18 @@ grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Character" type="Control" parent="." unique_id=679881249]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 706.0
+offset_top = 403.0
+offset_right = 1335.0
+offset_bottom = 840.0
 script = ExtResource("3_lm43y")
 
 [node name="TextureRect" type="TextureRect" parent="Character" unique_id=1041213648]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
