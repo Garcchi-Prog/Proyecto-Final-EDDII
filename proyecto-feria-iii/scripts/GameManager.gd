@@ -14,7 +14,6 @@ var pruebas: Array[Array] = [
 	["Lista de Asistencia", false, false],
 	["Chat Original", false, false]
 ]
-
 var prueba_seleccionada = ""
 
 var lawyerID: int

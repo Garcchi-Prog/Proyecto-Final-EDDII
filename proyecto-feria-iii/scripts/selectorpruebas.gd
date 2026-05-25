@@ -2,7 +2,10 @@ extends CanvasLayer
 
 @onready var grid = $TextureRect/Panel/GridContainer
 
+var juicio = null
+
 func _ready():
+	juicio = get_tree().current_scene
 
 	for prueba in GameManager.pruebas:
 
@@ -26,25 +29,25 @@ func seleccionar_prueba(nombre):
 
 	queue_free()
 
-	# Volver a mostrar textbox
-	if Juicio.balloon:
-		Juicio.balloon.balloon.show()
+	# Mostrar textbox otra vez
+	if juicio.balloon:
+		juicio.balloon.balloon.show()
 
 	# PRUEBA CORRECTA
-	if nombre == Juicio.prueba_actual:
+	if nombre == juicio.prueba_actual:
 
-		Juicio.continuar_dialogo(Juicio.label_correcto)
+		juicio.continuar_dialogo(juicio.label_correcto)
 
 		return
 
 	# PRUEBA INCORRECTA
-	Juicio.restar_intento()
+	juicio.restar_intento()
 
-	if Juicio.sin_intentos():
+	if juicio.sin_intentos():
 
-		Juicio.continuar_dialogo("game_over")
+		juicio.continuar_dialogo("game_over")
 
 		return
 
-	# Comentario de error
-	Juicio.continuar_dialogo(Juicio.label_error)
+	# ERROR DE EVIDENCIA
+	juicio.continuar_dialogo(juicio.label_error)

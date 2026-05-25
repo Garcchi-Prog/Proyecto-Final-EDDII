@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c7slc8i8vgi4o"]
 
 [ext_resource type="Texture2D" uid="uid://cfafbit1yh8xo" path="res://assets/ui/backgorunds/Menu_background.png" id="1_g74r4"]
-[ext_resource type="Script" uid="uid://gxk4c8ixjmhn" path="res://scripts/juicio.gd" id="1_lm43y"]
+[ext_resource type="Script" uid="uid://gxk4c8ixjmhn" path="res://scripts/Juicio.gd" id="1_lm43y"]
 [ext_resource type="PackedScene" uid="uid://m4d720fb2yt6" path="res://scenes/lawyer/health/VidaUi.tscn" id="2_lm43y"]
+[ext_resource type="Script" uid="uid://8sdnsk72wvt5" path="res://scripts/CharacterManager.gd" id="3_lm43y"]
 
 [node name="Juicio" type="Node2D" unique_id=788102766]
 script = ExtResource("1_lm43y")
@@ -22,3 +23,15 @@ offset_right = 1910.0
 offset_bottom = 198.0
 grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="Character" type="Control" parent="." unique_id=679881249]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_lm43y")
+
+[node name="TextureRect" type="TextureRect" parent="Character" unique_id=1041213648]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

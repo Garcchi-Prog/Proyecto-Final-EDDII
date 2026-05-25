@@ -12,15 +12,18 @@ var balloon = null
 var character_manager = null
 
 func _ready():
-	character_manager = get_tree().current_scene.get_node("Character")
 
-	if get_tree().current_scene.has_node("VidaUi"):
+	DialogueManager.game_states = [self]
 
-		ui_vidas = get_tree().current_scene.get_node("VidaUi")
+	character_manager = get_node("Character")
+
+	if has_node("VidaUi"):
+
+		ui_vidas = get_node("VidaUi")
 
 		ui_vidas.actualizar_vidas(intentos)
 
-		balloon = DialogueManager.show_dialogue_balloon(dialogue_resource,"start")
+		balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 
 func continuar_dialogo(label):
 	if balloon:
