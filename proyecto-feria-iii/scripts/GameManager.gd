@@ -24,6 +24,10 @@ func _ready() -> void:
 	tube_client.peer_connected.connect(playerConnected.emit)
 
 @rpc("any_peer", "call_local", "reliable")
+func update_evidence(evidence: int):
+	pruebas[evidence][1] = true
+
+@rpc("any_peer", "call_local", "reliable")
 func _start():
 	if detectID == 1:
 		if tube_client.is_server:

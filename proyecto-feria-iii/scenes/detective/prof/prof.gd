@@ -12,7 +12,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("clic izq") and inArea:
 		var dialogue_resource = load("res://dialogue/pro_dialogo.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource)
-		GameManager.pruebas[2][1] = true
+		
+		GameManager.update_evidence.rpc(2)
+		
 		texture_rect.visible = false
 		inArea = false
 		area_2d.free()

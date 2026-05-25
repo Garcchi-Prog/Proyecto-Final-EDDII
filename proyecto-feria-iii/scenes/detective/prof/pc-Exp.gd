@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		var dialogue_resource = load("res://dialogue/infor_dialogo.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource)
 		
-		GameManager.pruebas[0][1] = true
+		GameManager.update_evidence.rpc(0)
 		
 		inArea = false
 		area_2d.free()

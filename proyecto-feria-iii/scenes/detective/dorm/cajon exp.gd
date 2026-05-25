@@ -14,7 +14,9 @@ func _input(event: InputEvent) -> void:
 		texture_rect.texture = preload("res://assets/detective/fondo/cerrado.png")
 		var dialogue_resource = load("res://dialogue/dorm_dialogo.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource)
-		GameManager.pruebas[1][1] = true
+		
+		GameManager.update_evidence.rpc(1)
+		
 		inArea = false
 		area_2d.free()
 		
