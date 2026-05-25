@@ -9,8 +9,10 @@ var label_correcto = ""
 var label_error = ""
 var dialogue_resource = load("res://resources/dialogues/Juicio.dialogue")
 var balloon = null
+var character_manager = null
 
 func _ready():
+	character_manager = get_tree().current_scene.get_node("Character")
 
 	if get_tree().current_scene.has_node("VidaUi"):
 
