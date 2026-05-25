@@ -17,11 +17,9 @@ func _ready():
 
 	ui_vidas.actualizar_vidas(intentos)
 
-	balloon = DialogueManager.show_dialogue_balloon(
-		dialogue_resource,
-		"start"
-	)
-	DialogueManager.game_states = [self]
+	balloon = DialogueManager.show_dialogue_balloon(dialogue_resource,"start")
+	DialogueManager.game_states = [self] + DialogueManager.game_states
+
 
 
 func _process(_delta):

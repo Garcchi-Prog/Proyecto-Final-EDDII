@@ -1,8 +1,5 @@
 ~ start
 
-
-
-
 Juez: Procedo a iniciar este juicio contra la acusada Valentina, quien ha sido denunciada por la víctima Lilliana por incitación al odio, falsificación de información y amenazas continuas. Puede la denunciante proceder a dar su declaración de los hechos.
 
 Lilliana: Muchas gracias su Señoría... desde hace medio mes llevo recibiendo mensajes de odio de una cuenta anónima.
@@ -22,7 +19,7 @@ Fiscal: Un error típico de un criminal arrogante.
 
 ~ primer_checkpoint
 
-do checkpoint_actual = "primer_checkpoint"
+do Juicio.checkpoint_actual = "primer_checkpoint"
 
 Defensa(thought): Me parece que hay algo que no cuadra con base a su declaración...
 Defensa(thought): Voy a desenmascarar la verdad a través de sus mentiras
@@ -35,16 +32,16 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_preguntas
 
 - Preguntar la hora en la que vio el mensaje.
 
-	do sumar_intento()
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio
 
 - ¿Qué aplicación usaba para ver los mensajes?
@@ -52,9 +49,9 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 	Fiscal: Si va a presentar argumentos tan absurdos, será mejor que guarde silencio.
 	Defensa(thought): ¡Demonios! Me equivoqué torpemente...
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_preguntas
@@ -66,7 +63,7 @@ Defensa(thought): ¿Qué debería preguntarle a la joven Lilliana?
 
 ~ segundo_checkpoint
 
-do checkpoint_actual = "segundo_checkpoint"
+do Juicio.checkpoint_actual = "segundo_checkpoint"
 
 Defensa: Joven Lilliana, permítame preguntarle algo referente a su declaración.
 Defensa: ¿Recuerda usted la hora en la que la cuenta anónima le envió ese mensaje?
@@ -80,10 +77,10 @@ Fiscal: Cuestionar su precisión bajo trauma es una táctica desesperada y franc
 
 ~ evidencia_1
 
-do prueba_actual = "Foto del Live"
-do label_correcto = "prueba_correcta_live"
-do label_error = "error_evidencia_1"
-do mostrar_selector_pruebas()
+do Juicio.prueba_actual = "Foto del Live"
+do Juicio.label_correcto = "prueba_correcta_live"
+do Juicio.label_error = "error_evidencia_1"
+do Juicio.mostrar_selector_pruebas()
 
 ~ error_evidencia_1
 
@@ -91,11 +88,6 @@ Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
 Defensa(thought): Debo elegir mejor la prueba...
 
 => evidencia_1
-
-
-
-
-
 
 ~ prueba_correcta_live
 
@@ -107,7 +99,7 @@ Lilliana: ¡Pero ese mensaje me llegó y hay pruebas verídicas!
 
 ~ tercer_checkpoint
 
-do checkpoint_actual = "tercer_checkpoint"
+do Juicio.checkpoint_actual = "tercer_checkpoint"
 
 Fiscal: El hecho de que la víctima intentara llevar una vida normal en medio de su calvario no invalida la prueba digital.
 Fiscal: Mi clienta pudo haber revisado su teléfono minutos después.
@@ -120,16 +112,16 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¡¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta2
 
 - ¿El mensaje es editado o falsificado?
 
-	do sumar_intento()
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio2
 
 - ¿Alguien más vio su pantalla?
@@ -137,9 +129,9 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 	Fiscal: ¿Acaso no escucha los testimonios de este juicio además de los suyos?!
 	Defensa(thought): ¡Diablos! Debo pensar mejor en lo que pregunto.
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta2
@@ -151,7 +143,7 @@ Fiscal: No perdamos el tiempo con la agenda social de la señorita Lilliana.
 
 ~ cuarto_checkpoint
 
-do checkpoint_actual = "cuarto_checkpoint"
+do Juicio.checkpoint_actual = "cuarto_checkpoint"
 
 Defensa: ¡PROTESTO!
 Defensa: Aún falta demostrar si el mensaje es verídico.
@@ -184,10 +176,10 @@ Defensa(thought): No concuerda con cierta evidencia que tengo a la mano.
 
 ~ evidencia_2
 
-do prueba_actual = "Lista de Asistencia"
-do label_correcto = "prueba_correcta_asistencia"
-do label_error = "error_evidencia_2"
-do mostrar_selector_pruebas()
+do Juicio.prueba_actual = "Lista de Asistencia"
+do Juicio.label_correcto = "prueba_correcta_asistencia"
+do Juicio.label_error = "error_evidencia_2"
+do Juicio.mostrar_selector_pruebas()
 
 ~ error_evidencia_2
 
@@ -195,7 +187,6 @@ Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
 Defensa(thought): Debo elegir mejor la prueba...
 
 => evidencia_2
-
 
 ~ prueba_correcta_asistencia
 
@@ -221,7 +212,7 @@ Defensa: Como lo sospeché...
 
 ~ quinto_checkpoint
 
-do checkpoint_actual = "quinto_checkpoint"
+do Juicio.checkpoint_actual = "quinto_checkpoint"
 
 Defensa: En fin, hay algo que quisiera retomar acerca del mensaje.
 Defensa: ¿Tengo permiso para hablar, su señoría?
@@ -241,9 +232,9 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente es muy despistado, mi clienta ya lo mencionó en muchas ocasiones.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta3
@@ -254,16 +245,16 @@ Lilliana: ¿Qué habría más que decir...?
 	Fiscal: Realmente parece que tu incompetencia no tiene límites humanos.
 	Defensa(thought): ¡Demonios! A este punto pensarán que soy un fraude.
 
-	do restar_intento()
+	do Juicio.restar_intento()
 
-	if sin_intentos()
+	if Juicio.sin_intentos()
 		=> game_over
 
 	=> ronda_pregunta3
 
 - ¿Recuerdas el nombre de aquella cuenta?
 
-	do sumar_intento()
+	do Juicio.sumar_intento()
 	=> fin_interrogatorio3
 
 
@@ -273,7 +264,7 @@ Lilliana: ¿Qué habría más que decir...?
 
 ~ sexto_checkpoint
 
-do checkpoint_actual = "sexto_checkpoint"
+do Juicio.checkpoint_actual = "sexto_checkpoint"
 
 Lilliana: Ahm...
 Lilliana: No...
@@ -299,10 +290,10 @@ Defensa: Y acá tengo una prueba.
 
 ~ evidencia_3
 
-do prueba_actual = "Chat Original"
-do label_correcto = "prueba_correcta_chatog"
-do label_error = "error_evidencia_3"
-do mostrar_selector_pruebas()
+do Juicio.prueba_actual = "Chat Original"
+do Juicio.label_correcto = "prueba_correcta_chatog"
+do Juicio.label_error = "error_evidencia_3"
+do Juicio.mostrar_selector_pruebas()
 
 ~ error_evidencia_3
 
@@ -310,7 +301,6 @@ Fiscal: Esta evidencia no tiene relación con lo que estaba argumentando.
 Defensa(thought): Debo elegir mejor la prueba...
 
 => evidencia_3
-
 
 ~ prueba_correcta_chatog
 
@@ -341,9 +331,6 @@ do get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 => END
 
-
-
-
 ~ game_over
 
 Juez: Al no haber suficientes pruebas que permitan comprobar la inocencia de la acusada, se declara a esta misma culpable de los cargos de acoso y amenaza a la señorita Lilliana.
@@ -354,24 +341,24 @@ Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 
 - Reintentar
 
-	do reiniciar_intentos()
+	do Juicio.reiniciar_intentos()
 
-	if checkpoint_actual == "primer_checkpoint"
+	if Juicio.checkpoint_actual == "primer_checkpoint"
 		=> primer_checkpoint
 
-	if checkpoint_actual == "segundo_checkpoint"
+	if Juicio.checkpoint_actual == "segundo_checkpoint"
 		=> segundo_checkpoint
 
-	if checkpoint_actual == "tercer_checkpoint"
+	if Juicio.checkpoint_actual == "tercer_checkpoint"
 		=> tercer_checkpoint
 
-	if checkpoint_actual == "cuarto_checkpoint"
+	if Juicio.checkpoint_actual == "cuarto_checkpoint"
 		=> cuarto_checkpoint
 
-	if checkpoint_actual == "quinto_checkpoint"
+	if Juicio.checkpoint_actual == "quinto_checkpoint"
 		=> quinto_checkpoint
 
-	if checkpoint_actual == "sexto_checkpoint"
+	if Juicio.checkpoint_actual == "sexto_checkpoint"
 		=> sexto_checkpoint
 
 - Salir
