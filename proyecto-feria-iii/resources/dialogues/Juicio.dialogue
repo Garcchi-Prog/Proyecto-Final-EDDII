@@ -288,7 +288,7 @@ Defensa(mad): Y acá tengo una prueba.
 
 ~ evidencia_3
 
-do set_prueba("Chat Original", "prueba_correcta_chatog", "error_evidencia_3")
+do set_prueba("PC institucional", "prueba_correcta_chatog", "error_evidencia_3")
 do mostrar_selector_pruebas()
 
 ~ error_evidencia_3
