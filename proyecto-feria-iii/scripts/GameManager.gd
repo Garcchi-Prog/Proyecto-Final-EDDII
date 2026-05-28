@@ -43,6 +43,22 @@ func _start():
 			print("adios")
 			get_tree().root.add_child(lawyerScene)
 
+@rpc("any_peer", "call_local", "reliable")
+func _end():
+	if tube_client.is_server:
+		if detectID == 1:
+			_kick(lawyerID)
+		else:
+			_kick(detectID)
+		
+		_terminateSession()
+	
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	
+	for prueba in pruebas:
+		prueba[1] = false
+		prueba[2] = false
+
 func _createSession() -> void:
 	tube_client.create_session()
 	sessionId = tube_client.session_id

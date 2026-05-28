@@ -359,6 +359,6 @@ Defensa(thought): ¿En serio voy a rendirme así de fácil...?
 
 - Salir
 
-	do terminar_juego.rpc()
+	do terminar_juego()
 
 	=> END
