@@ -323,7 +323,7 @@ Defensa: Acaba de admitir el fraude y el acoso.
 
 Narrador: Lilliana cae de rodillas gritando mientras su teléfono se rompe en el suelo.
 
-do terminar_juego.rpc()
+do terminar_juego()
 
 => END
 
