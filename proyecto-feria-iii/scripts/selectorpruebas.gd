@@ -9,7 +9,7 @@ var imagenes_pruebas = {
 	"PC institucional": "res://assets/detective/fondo/pc.png",
 	"Foto del Live": "res://assets/detective/fondo/cajon abierto.png",
 	"Lista de Asistencia": "res://assets/detective/fondo/asistencia borrar.png",
-	"Chat Original": "res://assets/detective/evidencia/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg"
+	"Chat Original": "res://assets/detective/evidencia/chatog.jpg"
 }
 
 func _ready():

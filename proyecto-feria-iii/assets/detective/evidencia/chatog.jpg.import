@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo7dmxg6thq1k"
-path="res://.godot/imported/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg-94e6e1ec5a259334c8f1238803f71ac8.ctex"
+path="res://.godot/imported/chatog.jpg-0610142cfec7a7f9d4979e99e20bb1e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/detective/evidencia/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg"
-dest_files=["res://.godot/imported/339f3ed5-7415-4e69-b994-05b4d60cdc52.jpg-94e6e1ec5a259334c8f1238803f71ac8.ctex"]
+source_file="res://assets/detective/evidencia/chatog.jpg"
+dest_files=["res://.godot/imported/chatog.jpg-0610142cfec7a7f9d4979e99e20bb1e4.ctex"]
 
 [params]
 
