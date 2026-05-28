@@ -6,7 +6,7 @@ var juicio = null
 
 # Diccionario: nombre -> ruta imagen
 var imagenes_pruebas = {
-	"PC institucional": "res://assets/detective/fondo/pc.png",
+	"PC institucional":"res://assets/detective/evidencia/chatog.jpg",
 	"Foto del Live": "res://assets/detective/fondo/cajon abierto.png",
 	"Lista de Asistencia": "res://assets/detective/fondo/asistencia borrar.png",
 	"Chat Original": "res://assets/detective/evidencia/chatog.jpg"
