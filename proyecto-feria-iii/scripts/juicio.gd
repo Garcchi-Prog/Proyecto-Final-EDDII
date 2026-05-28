@@ -76,4 +76,4 @@ func mostrar_selector_pruebas():
 	get_tree().current_scene.add_child(selector)
 
 func terminar_juego():
-	GameManager._end().rpc
+	GameManager._end.rpc()
