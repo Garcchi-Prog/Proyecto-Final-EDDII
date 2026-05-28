@@ -96,12 +96,3 @@ func _on_start_pressed() -> void:
 		rolesSelected = true
 	else:
 		GameManager._start.rpc()
-	
-	
-	
-	
-	
-	
-	
-	
-	

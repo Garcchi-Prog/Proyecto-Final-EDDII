@@ -74,3 +74,19 @@ func mostrar_selector_pruebas():
 	var selector = escena.instantiate()
 	selector.juicio = self
 	get_tree().current_scene.add_child(selector)
+
+@rpc("any_peer", "call_local", "reliable")
+func terminar_juego():
+	if GameManager.tube_client.is_server:
+		if GameManager.detectID == 1:
+			GameManager._kick(GameManager.lawyerID)
+		else:
+			GameManager._kick(GameManager.detectID)
+		
+		GameManager._terminateSession()
+	
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	
+	for prueba in GameManager.pruebas:
+		prueba[1] = false
+		prueba[2] = false
